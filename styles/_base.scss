@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    // min-height: calc(100vh - #{$header-height});
+    font-size: $text-sm;
+    font-family: 'Open Sans', 'segoe ui', 'microsoft jhenghei', 'microsoft mhei', stheititc, 'Helvetica Neue', sans-serif;
+    color: $gray-5;
+    background-color: $gray-1;
+
+    @media (min-width: 1024.98px) {
+        font-size: $text-md;
+    }
+
+    @media (min-width: 1440px) {
+        font-size: $text-lg;
+    }
+}
+
+#wrapper {
+    width: 100%;
+
+    &.fixed {
+        position: fixed;
+    }
+}

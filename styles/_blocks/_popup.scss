@@ -1,0 +1,106 @@
+.popup {
+    &__mask {
+        @extend .d-flex-center;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $mask-color;
+        z-index: $z-index-popup;
+
+        // ~ .popup__mask {
+        //     background-color: transparent !important;
+        // }
+    }
+
+    &__wrap {
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 90%;
+        max-height: 80vh;
+        background-color: $gray-1;
+
+        @media (min-width: 1024.98px) {
+            width: 600px;
+        }
+    }
+
+    &__header {
+        @extend .border-bottom;
+
+        // display: flex;
+        // align-items: center;
+        padding: $padding-1;
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: center;
+        background-color: $white;
+
+        .welcome {
+            color: $blue-1;
+
+            + .title {
+                margin-left: $padding-0;
+            }
+        }
+
+        .title {
+            color: $gray-5;
+        }
+    }
+
+    &__body {
+        padding: $padding-1;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1024.98px) {
+    #login {
+        .popup__content {
+            margin: 0 auto;
+            width: 300px;
+        }
+    }
+
+    #register {
+        .popup__content {
+            margin: 0 auto;
+            width: 450px;
+        }
+    }
+
+}
+
+.close-button {
+    @extend .hover-style-4;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5em;
+    height: 5em;
+    font-size: 1em;
+    font-weight: bolder;
+    color: $gray-5;
+    background-color: $white;
+    cursor: pointer;
+
+    > .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        white-space: nowrap;
+        transform: translate(-50%, -50%);
+        z-index: $z-index-absolute;
+    }
+}

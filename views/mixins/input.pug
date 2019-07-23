@@ -1,0 +1,24 @@
+mixin input-default(id, name, label, placeholder='', tip)
+    .input
+        if label
+            label(for= id)= label
+        input(id= id, name= name, type='text', placeholder= placeholder)
+    if tip
+        .input__tip= tip
+
+mixin input-password(id, name, label, placeholder='', tip)
+    .input
+        if label
+            label(for= id)= label
+        input(id= id, name= name, type='password', placeholder= placeholder)
+    if tip
+        .input__tip= tip
+
+mixin input-verify(id, name, label, placeholder='', tip)
+    .input
+        if label
+            label(for= id)= label
+        input.sm(id= id, name= name, type='password', placeholder= placeholder)
+        img.ml-4(src="./assets/images/verify.jpg", width="auto", height="30", alt="", srcset="")
+    if tip
+        .input__tip= tip

@@ -1,0 +1,51 @@
+.footer {
+    background-color: $blue-1;
+
+    &__wrap {
+        @extend .responsive-width;
+
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+        padding: $padding-2;
+        // height: $footer-height;
+        color: $white;
+    }
+
+    &__map {
+        display: flex;
+    }
+
+    &__list {
+        margin-right: $padding-2;
+        line-height: 1.6em;
+
+        * {
+            display: block;
+        }
+
+        .title {
+            font-size: 1em;
+            font-weight: bold;
+            color: $white;
+        }
+
+        .nav {
+            font-size: 0.8em;
+            color: $white;
+        }
+    }
+
+    &__contact {
+        margin-left: auto;
+    }
+
+    .copyright {
+        height: $copyright-height;
+        font-size: 0.675em;
+        text-align: center;
+        line-height: $copyright-height;
+        color: $white;
+        background-color: $blue-3;
+    }
+}

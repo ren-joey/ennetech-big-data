@@ -1,0 +1,104 @@
+#header {
+    @extend .border-bottom;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 $padding-1;
+    height: $header-height;
+    background-color: $white;
+    z-index: $z-index-fixed;
+
+    .logo {
+        position: relative;
+        padding: 0 $padding-1;
+        font-size: 2em;
+        font-weight: 900;
+        line-height: $header-height;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $gray-1;
+        }
+    }
+
+    .menu {
+        &-left {
+            @extend .border-right;
+
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            padding: 0 $padding-1;
+            height: $header-height;
+            cursor: pointer;
+        }
+
+        &-right {
+            display: flex;
+            align-items: center;
+            padding: 0 $padding-1;
+            height: $header-height;
+            cursor: pointer;
+        }
+
+        &__nav {
+            position: relative;
+            padding: 0 $padding-1;
+            height: $header-height;
+            font-size: 0.875em;
+            white-space: nowrap;
+            line-height: $header-height;
+
+            &:hover {
+                background-color: $gray-1;
+            }
+        }
+    }
+
+    + * {
+        margin-top: $header-height;
+    }
+
+    + .title {
+        padding-top: $padding-2;
+    }
+
+    + div:not(.banner) {
+        padding-top: $padding-1;
+    }
+}
+
+.nav-select {
+    @extend .border;
+    @extend .box-shadow-1;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    width: $nav-option-width;
+    background-color: $white;
+    border-radius: $radius;
+    transform: translateY(95%);
+    z-index: $z-index-absolute;
+
+    &__option {
+        @extend .hover-style-1;
+
+        position: relative;
+        width: $nav-option-width;
+        height: $nav-option-height;
+        font-size: 1em;
+        text-align: center;
+        white-space: nowrap;
+        line-height: $nav-option-height;
+
+        &:not(:last-child) {
+            @extend .border-bottom;
+        }
+    }
+}

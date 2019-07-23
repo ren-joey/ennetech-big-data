@@ -1,0 +1,106 @@
+.input {
+    display: flex;
+    align-items: center;
+    margin-bottom: $padding-1;
+    width: 100%;
+
+    label {
+        margin-right: $padding-1;
+        font-size: 0.9em;
+    }
+
+    textarea {
+        width: 100%;
+        font-size: 0.8em;
+    }
+
+    input:not([type='checkbox']),
+    select {
+        @extend .border;
+
+        flex: 1;
+        padding: 0 $padding-1;
+        min-width: 0;
+        height: $input-height;
+        font-size: 1em;
+        line-height: $input-height;
+        color: $black;
+        border-radius: $radius;
+
+        &.sm {
+            width: 120px;
+        }
+
+        + * {
+            margin-left: $padding-1;
+        }
+    }
+
+    input[type='checkbox'] {
+        width: $padding-2;
+        height: $padding-1;
+    }
+
+    ::placeholder {
+        font-size: 0.8em;
+        color: $gray-4;
+    }
+
+    &__tip {
+        margin-top: -$padding-0;
+        padding-bottom: $padding-1;
+        width: 100%;
+        font-size: 0.7em;
+        text-align: right;
+        color: $gray-5;
+    }
+
+    .confirm-button {
+        @extend .hover-style-3;
+
+        padding: $padding-0 $padding-1;
+        flex: 1;
+        font-size: 1em;
+        text-align: center;
+        line-height: 1.8em;
+        color: $white;
+        background-color: $blue-1;
+        cursor: pointer;
+    }
+
+    .gray-button {
+        @extend .border;
+        @extend .hover-style-3;
+
+        position: relative;
+        padding: 0 $padding-1;
+        flex: 1;
+        font-size: 0.875em;
+        text-align: center;
+        line-height: 1.8em;
+        color: $gray-5;
+        background-color: $gray-2;
+        cursor: pointer;
+    }
+}
+
+.form-division {
+    position: relative;
+    margin: $padding-1 0;
+    width: 100%;
+    height: 1px;
+    background-color: $gray-4;
+
+    > .title {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        padding: 0 $padding-0;
+        font-size: 0.9em;
+        font-weight: bold;
+        white-space: nowrap;
+        color: $gray-4;
+        background-color: $gray-1;
+        transform: translate(-50%, -50%);
+    }
+}

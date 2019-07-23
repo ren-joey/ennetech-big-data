@@ -1,0 +1,13 @@
+.banner {
+    height: $banner-height;
+
+    .swiper-container {
+        width: 100%;
+        height: $banner-height;
+    }
+
+    + * {
+        margin-top: $padding-2;
+    }
+}
+// banner

@@ -1,0 +1,16 @@
+extends ./layouts/main
+
+block script
+
+block style
+
+block body
+    section#section
+        .main-wrap.pt-0
+            .content
+                +breadcrumb('測試 > 測試 > 測試')
+                +title()
+                article.article
+
+block body-end
+    script(src="./lib/ckeditor/ckeditor.js")

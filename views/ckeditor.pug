@@ -1,0 +1,32 @@
+extends ./layouts/main
+
+block script
+
+block style
+
+block body
+    section#section
+        //
+            <h1 class="title">
+            標題區域
+            </h1>
+        .main-wrap
+            aside.sidebar
+                .sidebar__nav 123
+                .sidebar__nav 123
+                .sidebar__nav 123
+                .sidebar__nav 123
+                .sidebar__nav 123
+            .content
+                article.article
+                    .breadcrumb
+                        | 首頁 > API市集 > API列表
+                    hr
+                    +input-default('input_title', 'title', 標題)
+                    +input-default('input_desc', 'desc', 說明)
+                    textarea#ckeditor(name='ckeditor', rows='10', cols='80')
+                        | This is my textarea to be replaced with CKEditor.
+
+
+block body-end
+    script(src="./lib/ckeditor/ckeditor.js")

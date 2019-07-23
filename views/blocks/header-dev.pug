@@ -1,0 +1,34 @@
+include login
+include register
+header#header
+    .logo
+        | LOGO
+        a.click-area(href="/")
+    ul.menu-left
+        li.menu__nav
+            | DEV
+            ul.nav-select(style="display: none;")
+                li.nav-select__option
+                    | iframe
+                    a.click-area(href="iframe.html")
+                li.nav-select__option
+                    | ckeditor
+                    a.click-area(href="ckeditor.html")
+                li.nav-select__option
+                    | ckeditor-article
+                    a.click-area(href="ckeditor-article.html")
+        li.menu__nav
+            | 數據探索
+            ul.nav-select(style="display: none;")
+                li.nav-select__option 選單內容
+                li.nav-select__option 選單內容
+                li.nav-select__option 選單內容
+                li.nav-select__option 選單內容
+        li.menu__nav 生活數據
+        li.menu__nav 創育能量庫
+    ul.menu-right
+        li.menu__nav 關於平台
+        li.menu__nav 常見問題
+        li.menu__nav
+            | 登入
+            a#login_button.click-area(href="#")
