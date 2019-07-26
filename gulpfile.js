@@ -19,7 +19,9 @@ var paths = {
 
 gulp.task('pug', function(){
   return gulp.src(paths.pug + '*.pug')
-    .pipe(pug())
+    .pipe(pug({
+      pretty: true
+    }))
     .pipe(gulp.dest(paths.output))
     .pipe(sync.reload({
       stream: true
@@ -27,9 +29,9 @@ gulp.task('pug', function(){
 });
 
 gulp.task('styles', function(){
-  return gulp.src(paths.styles + '**/*.scss')
+  return gulp.src(paths.styles + 'index.scss')
   .pipe(sass({
-    outputStyle: 'compressed',
+    outputStyle: 'expanded',
     includePaths: ['./node_modules']
   }))
   .pipe(prefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
@@ -51,7 +53,7 @@ gulp.task('styles', function(){
 // })
 
 gulp.task('watch', function(){
-  // gulp.watch(paths.styles + '**/*.scss', ['styles']);
+  gulp.watch(paths.styles + '**/*.scss', ['styles']);
   gulp.watch(paths.pug + '**/*.pug', ['pug']);
   // gulp.watch(paths.js + '**/*.js', ['js']);
 })

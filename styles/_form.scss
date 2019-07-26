@@ -41,11 +41,6 @@
         height: $padding-1;
     }
 
-    ::placeholder {
-        font-size: 0.8em;
-        color: $gray-4;
-    }
-
     &__tip {
         margin-top: -$padding-0;
         padding-bottom: $padding-1;
@@ -53,6 +48,13 @@
         font-size: 0.7em;
         text-align: right;
         color: $gray-5;
+    }
+
+    &__warn {
+        width: 100%;
+        font-size: 0.875em;
+        text-align: center;
+        color: #f00;
     }
 
     .confirm-button {
@@ -103,4 +105,31 @@
         background-color: $gray-1;
         transform: translate(-50%, -50%);
     }
+}
+
+.input-wrap {
+    position: relative;
+    flex: 1;
+
+    &__required-warn {
+        position: absolute;
+        top: 50%;
+        right: $padding-0;
+        font-size: 0.7em;
+        color: #f00;
+        transform: translateY(-50%);
+    }
+
+    + * {
+        margin-left: $padding-1;
+    }
+
+    input {
+        width: 100%;
+    }
+}
+
+::placeholder {
+    font-size: 0.8em;
+    color: $gray-4;
 }

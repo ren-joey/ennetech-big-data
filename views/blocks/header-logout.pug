@@ -1,0 +1,54 @@
+include login
+include register
+include forgot-password
+include reset-password
+header#header.header
+    .header__logo
+        | LOGO
+        a.click-area(href="/")
+    form.search-wrap
+        input.search-input(type="text", name="search")
+        a#search_submit.fas.fa-search(href="#")
+    #header_menu_btn_m.header__hamburger
+        i.fas.fa-bars
+    .header__menu
+        ul.menu
+            li#header_menu_close_btn_m.menu__nav.thin.mobile.mobile-order-1
+                i.fas.fa-times.rotation-style
+            li.menu__nav
+                | 開發專區
+                span.thin.mobile Dev
+                ul.nav-select(style="display: none;")
+                    li.nav-select__option
+                        | table
+                        a.click-area(href="table.html")
+                    li.nav-select__option
+                        | iframe
+                        a.click-area(href="iframe.html")
+                    li.nav-select__option
+                        | ckeditor
+                        a.click-area(href="ckeditor.html")
+                    li.nav-select__option
+                        | ckeditor-article
+                        a.click-area(href="ckeditor-article.html")
+            li.menu__nav
+                | 數據探索
+                span.thin.mobile Explore
+                ul.nav-select(style="display: none;")
+                    li.nav-select__option 選單內容
+                    li.nav-select__option 選單內容
+                    li.nav-select__option 選單內容
+                    li.nav-select__option 選單內容
+            li.menu__nav
+                | 生活數據
+                span.thin.mobile Living Data
+            li.menu__nav 創育能量庫
+            li.menu__nav 關於平台
+            li.menu__nav 常見問題
+            li.menu__nav.mobile.mobile-order-2
+                | 登入
+                span.thin.mobile Login
+                a#login_button_m.click-area(href="#")
+            li.menu__nav.pc
+                | 登入
+                a#login_button.click-area(href="#")

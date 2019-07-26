@@ -14,4 +14,17 @@ hr {
     bottom: 0;
     left: 0;
     opacity: 0;
+    z-index: 1;
+}
+
+@media (max-width: 1024px) {
+    .pc {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1024.98px) {
+    .mobile {
+        display: none !important;
+    }
 }

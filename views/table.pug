@@ -1,0 +1,49 @@
+extends ./layouts/main
+
+block script
+
+block style
+    link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+
+block body
+    section#section
+        .main-wrap
+            .content
+                +breadcrumb('測試 > 測試 > 測試')
+                +title()
+                article.article
+                    table#table.table-style
+                        thead
+                            tr
+                                th(style="width: 4em; font-weight: bold;") 編號
+                                th 標題
+                                th(style="width: 10em;") 更新日期
+                        tbody
+                            tr
+                                td 1
+                                td.hover-style
+                                    | 我是標題我是標題我是標題我是標題我是標題我是標題
+                                    a.click-area(href="#")
+                                td 7/15/2019
+                            tr
+                                td 2
+                                td.hover-style
+                                    | 我是標題我是標題我是標題我是標題我是標題我是標題
+                                    a.click-area(href="#")
+                                td 7/15/2019
+                            tr
+                                td 3
+                                td.hover-style
+                                    | 我是標題我是標題我是標題我是標題我是標題我是標題
+                                    a.click-area(href="#")
+                                td 7/15/2019
+                            tr
+                                td 4
+                                td.hover-style
+                                    | 我是標題我是標題我是標題我是標題我是標題我是標題
+                                    a.click-area(href="#")
+                                td 7/15/2019
+
+block body-end
+    script(src="./lib/datatables/datatables.min.js")
+    script(src="./lib/ckeditor/ckeditor.js")

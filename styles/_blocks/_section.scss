@@ -5,6 +5,7 @@
     // padding-bottom: $footer-height + $copyright-height;
     margin-right: auto;
     margin-left: auto;
+    min-height: calc(100vh - #{$header-height} - 1.6em - 90px);
 }
 
 .main-title {
@@ -53,6 +54,7 @@
 }
 
 .content {
+    // padding-top: $padding-2;
     width: 100%;
     // min-height: calc(100vh - 320px); //fixme
 }

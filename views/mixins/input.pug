@@ -1,24 +1,34 @@
-mixin input-default(id, name, label, placeholder='', tip)
+mixin input-default(id, name, label, placeholder='', tip, required)
     .input
         if label
             label(for= id)= label
-        input(id= id, name= name, type='text', placeholder= placeholder)
+        if required
+            input(id= id, name= name, type='text', placeholder= placeholder, required='required')
+        else
+            input(id= id, name= name, type='text', placeholder= placeholder)
     if tip
         .input__tip= tip
 
-mixin input-password(id, name, label, placeholder='', tip)
+mixin input-password(id, name, label, placeholder='', tip, required)
     .input
         if label
             label(for= id)= label
-        input(id= id, name= name, type='password', placeholder= placeholder)
+        if required
+            input(id= id, name= name, type='password', placeholder= placeholder, required='required')
+        else
+            input(id= id, name= name, type='password', placeholder= placeholder)
     if tip
         .input__tip= tip
 
-mixin input-verify(id, name, label, placeholder='', tip)
+mixin input-verify(id, name, label, placeholder='', tip, required)
     .input
         if label
             label(for= id)= label
-        input.sm(id= id, name= name, type='password', placeholder= placeholder)
+        if required
+            input.sm(id= id, name= name, type='password', placeholder= placeholder, required='required')
+        else
+            input.sm(id= id, name= name, type='password', placeholder= placeholder)
+
         img.ml-4(src="./assets/images/verify.jpg", width="auto", height="30", alt="", srcset="")
     if tip
         .input__tip= tip

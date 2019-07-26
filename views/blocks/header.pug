@@ -1,27 +1,35 @@
 include login
 include register
-header#header
-    .logo
+include forgot-password
+header#header.header
+    .header__logo
         | LOGO
         a.click-area(href="/")
-    ul.menu-left
-        li.menu__nav
-            | API服務
-            ul.nav-select(style="display: none;")
-                li.nav-select__option 選單內容
-                li.nav-select__option 選單內容
-                li.nav-select__option 選單內容
-                li.nav-select__option 選單內容
-        li.menu__nav
-            | 數據探索
-            ul.nav-select(style="display: none;")
-                li.nav-select__option 選單內容
-                li.nav-select__option 選單內容
-                li.nav-select__option 選單內容
-                li.nav-select__option 選單內容
-        li.menu__nav 生活數據
-        li.menu__nav 創育能量庫
-    ul.menu-right
-        li.menu__nav 關於平台
-        li.menu__nav 常見問題
-        li.menu__nav 登入
+    form.search-wrap
+        input.search-input(type="text", name="search")
+        button#search_submit.fas.fa-search(type="submit")
+    .header__hamburger
+        i.fas.fa-bars
+    .header__menu
+        ul.menu-left
+            li.menu__nav
+                | API服務
+                ul.nav-select(style="display: none;")
+                    li.nav-select__option 選單內容
+                    li.nav-select__option 選單內容
+                    li.nav-select__option 選單內容
+                    li.nav-select__option 選單內容
+            li.menu__nav
+                | 數據探索
+                ul.nav-select(style="display: none;")
+                    li.nav-select__option 選單內容
+                    li.nav-select__option 選單內容
+                    li.nav-select__option 選單內容
+                    li.nav-select__option 選單內容
+            li.menu__nav 生活數據
+            li.menu__nav 創育能量庫
+        ul.menu-right
+            li.menu__nav 關於平台
+            li.menu__nav 常見問題
+            li.menu__nav
+                i.fas.fa-user-circle

@@ -1,0 +1,98 @@
+.table-style {
+    @extend .border;
+
+    width: 100%;
+    font-size: 0.875em;
+    line-height: 3em;
+
+    .sorting_asc,
+    .sorting_asc_disabled,
+    .sorting_desc,
+    .sorting_desc_disabled,
+    .sorting {
+        &::before,
+        &::after {
+            bottom: 0 !important;
+        }
+    }
+
+    .hover-style {
+        transition: 0.3s;
+
+        &:hover {
+            background-color: $blue-table-hover;
+        }
+    }
+
+    td,
+    th {
+        position: relative;
+        padding: 0 $padding-1;
+        text-align: center;
+
+        &:not(:last-child) {
+            border-right: 1px solid $white;
+        }
+    }
+
+    thead {
+        tr {
+            color: $white;
+            background-color: $blue-1;
+        }
+    }
+
+    tbody {
+        tr {
+            &:nth-child(odd) {
+                background-color: $white;
+            }
+
+            &:nth-child(even) {
+                background-color: $blue-table;
+            }
+        }
+    }
+}
+
+.article {
+    .dataTables_wrapper {
+        .dataTables_info {
+            color: $gray-5 !important;
+        }
+
+        .dataTables_filter {
+            label {
+                position: relative;
+
+                i {
+                    position: absolute;
+                    top: 50%;
+                    right: $padding-1;
+                    display: block;
+                    color: $gray-5;
+                    transform: translateY(-50%);
+                    z-index: 0;
+                }
+
+                input {
+                    position: relative;
+                    width: 1.6em;
+                    height: 1.6em;
+                    font-size: 1em;
+                    line-height: 2.4em;
+                    background-color: transparent;
+                    border-radius: 1.6em;
+                    z-index: 1;
+                    transition: 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+                    cursor: pointer;
+
+                    &:focus {
+                        width: 200px;
+                    }
+                }
+            }
+        }
+    }
+}
+
