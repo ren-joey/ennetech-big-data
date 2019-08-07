@@ -1,0 +1,60 @@
+extends ./layouts/backstage-login
+
+block script
+
+block style
+    link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+
+block body
+    +header-backstage-login(4)
+
+    section#section.backstage
+        .main-wrap
+            .content
+                .article-wrap
+                    //- include ./blocks/backstage-aside-permission
+                    +sidebar-permission(1)
+                    article.article
+                        .breadcrumb
+                            | 首頁 > 權限管理 > 管理者列表
+                        .input
+                            .confirm-button(data-toggle='modal', data-target='#modal_admin_add') 新增
+                        table#table.table-style
+                            thead
+                                tr
+                                    th(style="width: 4em; font-weight: bold;") 編號
+                                    th 帳號
+                                    th 姓名
+                                    th 權限
+                                    th 狀態
+                            tbody
+                                tr.hover-style(data-toggle='modal', data-target='#modal_admin_edit')
+                                    td 1
+                                    td james@abc.com
+                                    td James
+                                    td 最高
+                                    td 啟用
+                                tr.hover-style(data-toggle='modal', data-target='#modal_admin_edit')
+                                    td 1
+                                    td james@abc.com
+                                    td James
+                                    td 最高
+                                    td 啟用
+                                tr.hover-style(data-toggle='modal', data-target='#modal_admin_edit')
+                                    td 1
+                                    td james@abc.com
+                                    td James
+                                    td 最高
+                                    td 啟用
+                                tr.hover-style(data-toggle='modal', data-target='#modal_admin_edit')
+                                    td 1
+                                    td james@abc.com
+                                    td James
+                                    td 最高
+                                    td 啟用
+    include ./blocks/modal-admin-add
+    include ./blocks/modal-admin-edit
+
+block body-end
+    script(src="./lib/datatables/datatables.min.js")
+    script(src="./lib/ckeditor/ckeditor.js")

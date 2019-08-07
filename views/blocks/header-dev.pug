@@ -1,5 +1,6 @@
 include login
 include register
+include email-confirm
 include forgot-password
 include reset-password
 header#header.header
@@ -19,6 +20,15 @@ header#header.header
                 | 開發專區
                 span.thin.mobile Dev
                 ul.nav-select(style="display: none;")
+                    li.nav-select__option
+                        | living-data
+                        a.click-area(href="living-data.html")
+                    li.nav-select__option
+                        | filter-article
+                        a.click-area(href="filter-article.html")
+                    li.nav-select__option
+                        | map
+                        a.click-area(href="map.html")
                     li.nav-select__option
                         | table
                         a.click-area(href="table.html")

@@ -1,0 +1,37 @@
+extends ./layouts/backstage-login
+
+block script
+
+block style
+    link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+
+block body
+    +header-backstage-login(5)
+
+    section#section.backstage
+        .main-wrap
+            .content
+                .article-wrap
+                    //- include ./blocks/backstage-aside-system
+                    +sidebar-system(4)
+                    article.article
+                        .breadcrumb
+                            | 首頁 > 系統管理 > 網站統計分析
+                        //- +input-bootstrap('input_title', 'title', '標題', '請輸入標題', '', true)
+                        //- +input-bootstrap('input_desc', 'desc', '說明', '請輸入文件說明', '', true)
+                        .input
+                            .form-group
+                                label(for='exampleFormControlTextarea1') Google Analytics
+                                textarea#exampleFormControlTextarea1.form-control(rows='3')
+                        .input.mt-2
+                            .confirm-button
+                                | 儲存
+                                a.click-area(href="#")
+                        .input
+                            .gray-button
+                                | 取消
+                                a.click-area(href="#")
+
+block body-end
+    script(src="./lib/datatables/datatables.min.js")
+    script(src="./lib/ckeditor/ckeditor.js")

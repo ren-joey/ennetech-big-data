@@ -1,0 +1,67 @@
+#modal_member_add.modal.fade(tabindex='-1', role='dialog')
+    .modal-dialog.modal-dialog-scrollable(role='document')
+        .modal-content
+            .modal-header
+                h5.modal-title 新增會員
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') ×
+            .modal-body
+                .input
+                    .input-group
+                        .input-group-prepend
+                            .input-group-text 帳號
+                        input.form-control(type='text', placeholder='請輸入帳號')
+                .input
+                    .input-group
+                        .input-group-prepend
+                            .input-group-text 密碼
+                        input.form-control(type='password', placeholder='請輸入12-16位密碼')
+                .input
+                    .input-group
+                        .input-group-prepend
+                            .input-group-text 姓名
+                        input.form-control(type='password', placeholder='請輸入姓名')
+                .input
+                    .input-group
+                        .input-group-prepend
+                            .input-group-text 生日
+                        select.form-control.select-year(required='')
+                .input
+                    .input-group
+                        .input-group-prepend
+                            .input-group-text 性別
+                        select.form-control
+                            option 男
+                            option 女
+                .input
+                    .input-group
+                        .input-group-prepend
+                            .input-group-text 公司名稱
+                        input.form-control(type='password', placeholder='請輸入公司名稱')
+                .input
+                    .input-group
+                        .input-group-prepend
+                            .input-group-text 職稱
+                        input.form-control(type='password', placeholder='請輸入職稱')
+                .input
+                    .input-group
+                        .input-group-prepend
+                            .input-group-text 統編
+                        input.form-control(type='password', placeholder='請輸入公司統一編號')
+                .input
+                    .custom-control.custom-switch
+                        input#customSwitch3.custom-control-input(type='checkbox')
+                        label.custom-control-label(for='customSwitch3') 啟用
+                    .custom-control.custom-switch
+                        input#customSwitch4.custom-control-input(type='checkbox')
+                        label.custom-control-label(for='customSwitch4') 新創會員
+                .input
+                    .input-group
+                        .input-group-prepend
+                            .input-group-text 選擇新創公司
+                        select.form-control
+                            option(disabled, selected) --請選擇新創公司--
+            .modal-footer
+                button.btn.btn-primary(type='button') 儲存送出
+                button.btn.btn-secondary(type='button', data-dismiss='modal') 關閉
+

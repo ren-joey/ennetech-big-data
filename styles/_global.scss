@@ -17,6 +17,24 @@ hr {
     z-index: 1;
 }
 
+#section {
+    .btn-primary {
+        background-color: $blue-1;
+        border-color: $blue-1;
+
+        &:hover,
+        &:visited,
+        &:active {
+            background-color: $blue-3;
+            border-color: $blue-3;
+        }
+    }
+}
+
+h5 {
+    font-weight: bold;
+}
+
 @media (max-width: 1024px) {
     .pc {
         display: none !important;

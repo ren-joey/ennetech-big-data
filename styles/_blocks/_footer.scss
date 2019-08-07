@@ -18,6 +18,7 @@
 
     &__list {
         margin-right: $padding-2;
+        white-space: nowrap;
         line-height: 1.6em;
 
         * {

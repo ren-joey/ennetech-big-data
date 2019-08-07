@@ -1,6 +1,6 @@
 .popup {
     &__mask {
-        @extend .d-flex-center;
+        @include d-flex-center;
 
         position: fixed;
         top: 0;
@@ -28,7 +28,7 @@
     }
 
     &__header {
-        @extend .border-bottom;
+        @include border-bottom;
 
         // display: flex;
         // align-items: center;
@@ -86,7 +86,7 @@
 }
 
 .close-button {
-    @extend .hover-style-4;
+    @include hover-style-4;
 
     position: absolute;
     top: 0;

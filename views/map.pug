@@ -1,0 +1,113 @@
+extends ./layouts/main
+
+block script
+
+block style
+
+block body
+    +header-login(1, 4)
+
+    section#section
+        .main-wrap
+            .content
+                +breadcrumb('首頁 > 關於平台 > 網站地圖')
+                +title-no-date('網站地圖')
+                .row
+                    .col-12.col-sm-6.col-lg-4
+                        +article-title('首頁', 'Home Page')
+                        article.article.p-0
+                            .map__wrap
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;搜尋
+                                    a.click-area(href="#")
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;服務條款
+                                    a.click-area(href="#")
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;隱私權
+                                    a.click-area(href="#")
+                    .col-12.col-sm-6.col-lg-4
+                        +article-title('關於平台', 'About The Platform')
+                        article.article.p-0
+                            .map__wrap
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;平台緣起
+                                    a.click-area(href="#")
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;最新消息
+                                    a.click-area(href="#")
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;數據創育專欄
+                                    a.click-area(href="#")
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;網站地圖
+                                    a.click-area(href="#")
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;相關連結
+                                    a.click-area(href="#")
+                    .col-12.col-sm-6.col-lg-4
+                        +article-title('生活數據', 'Living Data')
+                        article.article.p-0
+                            .map__wrap
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;數據匯入
+                                    a.click-area(href="#")
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;視覺化
+                                    a.click-area(href="#")
+                    .col-12.col-sm-6.col-lg-4
+                        +article-title('API市集', 'API Market')
+                        article.article.p-0
+                            .map__wrap
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;最新上架
+                                    a.click-area(href="#")
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;熱門上架
+                                    a.click-area(href="#")
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;統計分析
+                                    a.click-area(href="#")
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;我的API
+                                    a.click-area(href="#")
+                    .col-12.col-sm-6.col-lg-4
+                        +article-title('數據探索', 'Data Exploring')
+                        article.article.p-0
+                            .map__wrap
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;分析引擎
+                                    a.click-area(href="#")
+                    .col-12.col-sm-6.col-lg-4
+                        +article-title('數據能量庫', 'Data Base')
+                        article.article.p-0
+                            .map__wrap
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;育成樣貌
+                                    a.click-area(href="#")
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;新創業者列表
+                                    a.click-area(href="#")
+                                .map__link
+                                    i.fas.fa-link
+                                    | &nbsp;活動資訊
+                                    a.click-area(href="#")
+
+block body-end

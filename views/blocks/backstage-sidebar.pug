@@ -1,0 +1,80 @@
+mixin sidebar(active)
+    aside.sidebar
+        .sidebar__nav(class=(active === 1) ? 'active' : '')
+            | 首頁Banner
+            a.click-area(href=(active === 1) ? false : "backstage-banner.html")
+        .sidebar__nav(class=(active === 2) ? 'active' : '')
+            | 平台緣起
+            a.click-area(href=(active === 2) ? false : "backstage-about.html")
+        .sidebar__nav(class=(active === 3) ? 'active' : '')
+            | 最新消息
+            a.click-area(href=(active === 3) ? false : "backstage-news.html")
+        .sidebar__nav(class=(active === 4) ? 'active' : '')
+            | 數據創育專欄
+            a.click-area(href=(active === 4) ? false : "backstage-data.html")
+        .sidebar__nav(class=(active === 5) ? 'active' : '')
+            | API交換共同規範
+            a.click-area(href=(active === 5) ? false : "#")
+        .sidebar__nav(class=(active === 6) ? 'active' : '')
+            | API使用條款
+            a.click-area(href=(active === 6) ? false : "#")
+        .sidebar__nav(class=(active === 7) ? 'active' : '')
+            | API上架使用教學
+            a.click-area(href=(active === 7) ? false : "#")
+        .sidebar__nav(class=(active === 8) ? 'active' : '')
+            | 隱私權聲明
+            a.click-area(href=(active === 8) ? false : "backstage-privacy.html")
+        .sidebar__nav(class=(active === 9) ? 'active' : '')
+            | 資料開放宣告
+            a.click-area(href=(active === 9) ? false : "#")
+        .sidebar__nav(class=(active === 10) ? 'active' : '')
+            | 蒐集資料同意書
+            a.click-area(href=(active === 10) ? false : "#")
+        .sidebar__nav(class=(active === 11) ? 'active' : '')
+            | 常見問題
+            a.click-area(href=(active === 11) ? false : "#")
+        .sidebar__nav(class=(active === 12) ? 'active' : '')
+            | 新創業者列表
+            a.click-area(href=(active === 12) ? false : "#")
+        .sidebar__nav(class=(active === 13) ? 'active' : '')
+            | 數據活動資訊
+            a.click-area(href=(active === 13) ? false : "#")
+        .sidebar__nav(class=(active === 14) ? 'active' : '')
+            | 網站地圖
+            a.click-area(href=(active === 14) ? false : "#")
+        .sidebar__nav(class=(active === 15) ? 'active' : '')
+            | 相關連結
+            a.click-area(href=(active === 15) ? false : "#")
+
+mixin sidebar-member(active)
+    aside.sidebar
+        .sidebar__nav(class=(active === 1) ? 'active' : '')
+            | 會員列表
+            a.click-area(href=(active === 1) ? false : "backstage-member.html")
+        .sidebar__nav(class=(active === 2) ? 'active' : '')
+            | 新創公司列表
+            a.click-area(href=(active === 2) ? false : "backstage-company.html")
+
+mixin sidebar-system(active)
+    aside.sidebar
+        .sidebar__nav(class=(active === 1) ? 'active' : '')
+            | 個資檔案存取紀錄
+            a.click-area(href=(active === 1) ? false : "backstage-access-log.html")
+        .sidebar__nav(class=(active === 2) ? 'active' : '')
+            | 操作紀錄管理
+            a.click-area(href=(active === 2) ? false : "backstage-operate-log.html")
+        .sidebar__nav(class=(active === 3) ? 'active' : '')
+            | 備份機制
+            a.click-area(href=(active === 3) ? false : "backstage-backup.html")
+        .sidebar__nav(class=(active === 4) ? 'active' : '')
+            | 網站統計分析
+            a.click-area(href=(active === 4) ? false : "backstage-analytic.html")
+
+mixin sidebar-permission(active)
+    aside.sidebar
+        .sidebar__nav(class=(active === 1) ? 'active' : '')
+            | 管理者列表
+            a.click-area(href=(active === 1) ? false : "backstage-admin.html")
+        .sidebar__nav(class=(active === 2) ? 'active' : '')
+            | 權限群組設定
+            a.click-area(href=(active === 2) ? false : "backstage-group.html")

@@ -1,13 +1,43 @@
 .banner {
-    height: $banner-height;
+    height: $banner-height-m;
 
     .swiper-container {
         width: 100%;
-        height: $banner-height;
+        height: $banner-height-m;
     }
 
     + * {
         margin-top: $padding-2;
+    }
+
+    + #section {
+        min-height: calc(100vh - #{$header-height} - 1.6em - 90px - #{$banner-height-m}) !important;
+    }
+
+    .swiper-slide {
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+@media (min-width: 1024.98px) {
+    .banner {
+        height: $banner-height;
+
+        .swiper-container {
+            height: $banner-height;
+        }
+
+        + #section {
+            min-height: calc(100vh - #{$header-height} - 1.6em - 90px - #{$banner-height}) !important;
+        }
     }
 }
 // banner

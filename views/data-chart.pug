@@ -1,0 +1,18 @@
+extends ./layouts/main
+
+block script
+
+block style
+
+block body
+    +header-login(4, 2)
+
+    section#section
+        .main-wrap
+            .content
+                +breadcrumb('首頁 > 生活數據 > 視覺化')
+                +title('視覺化')
+                article.article
+
+block body-end
+    script(src="./lib/ckeditor/ckeditor.js")

@@ -1,0 +1,81 @@
+.backstage {
+    &__wallpaper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url('../assets/images/04.jpg');
+        background-position: center bottom;
+        background-size: 100% 100%;
+        opacity: 0.15;
+        z-index: -1;
+    }
+}
+
+.member {
+    &__wrap {
+        @include border;
+
+        width: 90%;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+
+        @media (min-width: 1024.98px) {
+            width: 360px;
+        }
+    }
+
+    &__header {
+        @include border-bottom;
+
+        // display: flex;
+        // align-items: center;
+        padding: $padding-1;
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: center;
+        background-color: $white;
+
+        .welcome {
+            color: $blue-1;
+
+            + .title {
+                margin-left: $padding-0;
+            }
+        }
+
+        .title {
+            color: $gray-5;
+        }
+    }
+
+    &__body {
+        padding: $padding-1;
+        background-color: $gray-1;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.image-upload {
+    display: flex;
+    align-items: flex-start;
+    margin: $padding-2 0;
+
+    &__preview {
+        margin-right: $padding-1;
+        padding: 6px;
+        width: 40%;
+        border: 2px solid $gray-3;
+    }
+
+    &__content {
+        flex: 1;
+    }
+}

@@ -16,7 +16,7 @@
 
     input:not([type='checkbox']),
     select {
-        @extend .border;
+        @include border;
 
         flex: 1;
         padding: 0 $padding-1;
@@ -58,8 +58,7 @@
     }
 
     .confirm-button {
-        @extend .hover-style-3;
-
+        position: relative;
         padding: $padding-0 $padding-1;
         flex: 1;
         font-size: 1em;
@@ -68,11 +67,15 @@
         color: $white;
         background-color: $blue-1;
         cursor: pointer;
+
+        @media (min-width: 1024.98px) {
+            @include hover-style-3;
+        }
     }
 
     .gray-button {
-        @extend .border;
-        @extend .hover-style-3;
+        @include border;
+        @include hover-style-3;
 
         position: relative;
         padding: 0 $padding-1;
@@ -83,6 +86,17 @@
         color: $gray-5;
         background-color: $gray-2;
         cursor: pointer;
+    }
+
+    .custom-file {
+        .custom-file-label {
+            margin-right: 0;
+            margin-left: 0;
+
+            &::after {
+                content: '瀏覽檔案';
+            }
+        }
     }
 }
 

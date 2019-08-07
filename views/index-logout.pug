@@ -6,6 +6,8 @@ block style
     link(rel="stylesheet", href="./lib/swiper/css/swiper.min.css")
 
 block body
+    +header-logout
+
     include ./elements/banner
 
     section#section
@@ -25,9 +27,9 @@ block body
                         article.article
                             .row
                                 .col-6
-                                    img(src="./assets/images/chart-1.png", width="100%", height="auto")
+                                    img(src="./assets/images/chart-1.png", width="100%", height="auto", alt="首頁_數據創育_圖表一")
                                 .col-6
-                                    img(src="./assets/images/chart-2.png", width="100%", height="auto")
+                                    img(src="./assets/images/chart-2.png", width="100%", height="auto", alt="首頁_數據創育_圖表二")
                 .row
                     .col-12.col-md-6
                         +article-title('最新API', '最新資料一把罩', true)

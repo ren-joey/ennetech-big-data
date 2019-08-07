@@ -3,11 +3,66 @@ extends ./layouts/main
 block script
 
 block style
+    link(rel="stylesheet", href="./lib/swiper/css/swiper.min.css")
 
 block body
+    +header-login(3, 1)
+
     section#section
         .main-wrap
             .content
-                +breadcrumb('測試 > 測試')
-                +iframe()
+                //- +breadcrumb('首頁 > 數據探索 > 分析引擎')
+                +title('分析引擎')
+                article.article
+                    #swiper_container_simple_controller.btn-group.btn-group-sm(role='group', aria-label='Basic example')
+                        button.btn.btn-primary.page1(type='button') Page1
+                        button.btn.btn-primary.page2(type='button') Page2
+                        button.btn.btn-primary.page3(type='button') Page3
+                    .swiper-container.swiper-container-simple
+                        .swiper-wrapper
+                            .swiper-slide
+                                .pt-4
+                                +article-title('上傳檔案', 'File Upload')
+                                .row
+                                    .col-12.col-md-6
+                                        .upload-wrap
+                                            input#file1(type="file")
+                                            div 檔案拖曳至此
+                                                span.text-blue 上傳數據
+                                            button.btn.btn-primary 或選擇檔案
+                                            label(for="file1") 未選擇任何檔案
+                                            .d-flex
+                                                img(src="./assets/images/csv-icon.png", height="40", width="auto", alt="")
+                                                img(src="./assets/images/json-icon.png", height="40", width="auto", alt="")
+                                    .col-12.col-md-6
+                                        .upload-wrap
+                                            input#file2(type="file")
+                                            div 檔案拖曳至此
+                                                span.text-orange 上傳schema
+                                            button.btn.btn-primary 或選擇檔案
+                                            label(for="file2") 未選擇任何檔案
+                                            .d-flex
+                                                img(src="./assets/images/json-icon.png", height="40", width="auto", alt="")
+                                .pt-4
+                                +article-title('開發說明', 'Development Information')
+                                h5 標題範本
+                                p 都必須被迫重寫所有的程式碼，一開始還不覺得有什麼不對，反正也只能任由工具大廠擺佈，該重寫就重寫。當然，部份原因也是為整個開發工具集還不夠完善，經驗也還累積的不夠多。但是內心深處總隱隱覺得不對，不過也還是只能隨波逐流。即便到了 Client/Server 架構的時代，資料庫也都已經升級使用MS-SQL，但也僅限於利用它來讀取及寫入資料，Store Procedure那是什麼？好像有聽過，User Define Fujnction（UDF）？好像聽過，但跟它不熟。
+                                textarea.pt-2.pb-4(name="", cols="30", rows="10", style="width: calc(100% - 2px)")
+                            .swiper-slide
+                                .pt-4
+                                +iframe('http://220.135.181.172:8080/bigobject/login')
+                            .swiper-slide
+                                .pt-4
+                                +iframe('http://220.135.181.172:8080/bigobject/login')
 block body-end
+    script(src="./lib/swiper/js/swiper.min.js")
+    script.
+        $('input[type="file"]').on('change', (e) => {
+            if (e.target.files.length === 0) return
+            const input = $(e.target)
+            const id = input.attr('id')
+            const label = $(`[for="${id}"]`)
+            const fileName = e.target.files[0].name
+            if (fileName) label.text(`您已選擇檔案${fileName}`)
+            else label.text('未選擇任何檔案')
+        })

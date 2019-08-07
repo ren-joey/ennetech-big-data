@@ -1,0 +1,74 @@
+extends ./layouts/backstage-logout
+
+block script
+
+block style
+
+block body
+    section#section.backstage.center
+        .backstage__wallpaper
+        #member
+            #login.member__wrap
+                .member__header
+                    span.welcome BACKSTAGE
+                    span.title 數據管理後台
+                .member__body
+                    .member__content
+                        +input-default('login_account', 'account', '', '電子郵件')
+                        +input-password('login_password', 'password', '', '請輸入12-16碼英數混合密碼', '英文字母需區分大小寫')
+                        +input-verify('login_verify', 'verify', '', '請輸入圖形內容')
+                        .input
+                            .input__warn
+                                i.fas.fa-exclamation-triangle
+                                | &nbsp;警告語範例
+                        .input
+                            #login_confirm_button.confirm-button
+                                | 登入
+                                a.click-area(href='backstage-login.html')
+                        .input
+                            #forgot_password_button.gray-button 忘記密碼
+            #forgot_password.member__wrap(style="display: none;")
+                .member__header
+                    span.welcome FORGOT PASSWORD
+                    span.title 忘記密碼
+                #forgot_password_email.member__body
+                    .member__content
+                        .input
+                            | 我們會將密碼寄到您註冊時所填寫的電子信箱
+                            br
+                            | 請先確認可以收到該信件。
+                        +input-default('register_account', 'account', '', '使用者電子郵件', '', true)
+                        +input-verify('register_verify', 'verify', '', '請輸入圖形內容')
+                        .input
+                            #forgot_password_next_button.confirm-button 寄送驗證信
+                        .input
+                            #forgot_password_cancel_button.gray-button 返回
+                #forgot_password_complete.member__body(style='display: none;')
+                    .member__content
+                        .input
+                            | 認證完成
+                            br
+                            | 認證信箱 XXXX@gmail.com 已認證完成
+                            | 您現在可以使用林口數據創育平台會員的服務
+                        .input
+                            #forgot_password_complete_button.confirm-button 完成
+            #reset_password.member__wrap(style="display: none;")
+                .member__header
+                    span.welcome RESET PASSWORD
+                    span.title 重設密碼
+                #reset_password_input.member__body
+                    .member__content
+                        +input-password('reset_password', 'reset_password', '', '請輸入新密碼', '必須包含(1)大小寫字母、(2)數字及(3)指定特殊字元(!$%@#*?&))', true)
+                        +input-password('confirm_reset_password', 'confirm_reset_password', '', '密碼確認', '', true)
+                        .input
+                            #reset_password_next_button.confirm-button 重設密碼
+                #reset_password_complete.member__body(style='display: none;')
+                    .member__content
+                        .input
+                            | 密碼變更完成
+                            br
+                            | 使用者帳號: XXXXXXXX
+                            | 您現在可以使用新的密碼登入
+                        .input
+                            #reset_password_complete_button.confirm-button 回首頁
+block body-end

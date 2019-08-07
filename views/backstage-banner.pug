@@ -1,0 +1,55 @@
+extends ./layouts/backstage-login
+
+block script
+
+block style
+
+block body
+    +header-backstage-login(1)
+
+    section#section.backstage
+        .main-wrap
+            .content
+                .article-wrap
+                    //- include ./blocks/backstage-aside
+                    +sidebar(1)
+                    article.article
+                        .breadcrumb
+                            | 首頁 > 內容管理 > 首頁Banner
+                        +input-bootstrap('speed', 'speed', '輪播速度', '指定秒數切換輪播圖片')
+                        .image-upload
+                            .image-upload__preview
+                                img(src="https://dummyimage.com/1920x460/5fa9cb/000.png&text=1920:460", width="100%", height="auto", alt="首頁輪播_第一張_示意圖", srcset="")
+                            .image-upload__content
+                                +input-file('file_1', 'file-1', '選擇圖檔1')
+                                +input-default('title_1', 'title-1', '', '圖片標題', '', false)
+                                +input-default('url_1', 'url-1', '', 'BANNER URL連結', '', false)
+                                +input-warn-icon('上傳檔案大小不得超過5M')
+                                +input-warn-icon('圖片解析度最佳為1920*460')
+                                +input-warn-icon('重要文案請放置於中央768*460範圍中避免手機版被裁切')
+                        .image-upload
+                            .image-upload__preview
+                                img(src="https://dummyimage.com/1920x460/5fa9cb/000.png&text=1920:460", width="100%", height="auto", alt="首頁輪播_第二張_示意圖", srcset="")
+                            .image-upload__content
+                                +input-file('file_2', 'file-2', '選擇圖檔2')
+                                +input-default('title_2', 'title-2', '', '圖片標題', '', false)
+                                +input-default('url_2', 'url-2', '', 'BANNER URL連結', '', false)
+                                +input-warn-icon('上傳檔案大小不得超過5M')
+                                +input-warn-icon('圖片解析度最佳為1920*460')
+                                +input-warn-icon('重要文案請放置於中央768*460範圍中避免手機版被裁切')
+                        .image-upload
+                            .image-upload__preview
+                                img(src="https://dummyimage.com/1920x460/5fa9cb/000.png&text=1920:460", width="100%", height="auto", alt="首頁輪播_第三張_示意圖", srcset="")
+                            .image-upload__content
+                                +input-file('file_3', 'file-3', '選擇圖檔3')
+                                +input-default('title_3', 'title-3', '', '圖片標題', '', false)
+                                +input-default('url_3', 'url-3', '', 'BANNER URL連結', '', false)
+                                +input-warn-icon('上傳檔案大小不得超過5M')
+                                +input-warn-icon('圖片解析度最佳為1920*460')
+                                +input-warn-icon('重要文案請放置於中央768*460範圍中避免手機版被裁切')
+                        .input
+                            .confirm-button 儲存
+
+
+block body-end
+    script(src="./lib/ckeditor/ckeditor.js")

@@ -1,0 +1,102 @@
+extends ./layouts/main
+
+block script
+
+block style
+    link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+
+block body
+    +header-login(2)
+
+    section#section
+        .main-wrap
+            .content
+                +breadcrumb('首頁 > API市集 > API列表')
+                +title('API列表')
+                .article-wrap
+                    aside#filter.sidebar
+                        .sidebar__name
+                            .name
+                                i.fas.fa-caret-down
+                                | &nbsp;機關分類
+                            .tip 共83項
+                        .sidebar__filter
+                            .input
+                                select
+                                    option test
+                                    option test
+                                    option test
+                        .sidebar__name
+                            .name
+                                i.fas.fa-caret-down
+                                | &nbsp;主題分類
+                            .tip 共83項
+                        .sidebar__filter
+                            .input
+                                select
+                                    option test
+                                    option test
+                                    option test
+                        .sidebar__name
+                            .name
+                                i.fas.fa-caret-down
+                                | &nbsp;行政區分類
+                            .tip 共83項
+                        .sidebar__filter
+                            .input
+                                select
+                                    option test
+                                    option test
+                                    option test
+                        .sidebar__name
+                            .name
+                                i.fas.fa-caret-down
+                                | &nbsp;更新時間分類
+                            .tip 共83項
+                        .sidebar__filter
+                            .input
+                                select
+                                    option test
+                                    option test
+                                    option test
+                        .sidebar__nav.mobile
+                            .input
+                                #filter_confirm_button.confirm-button 完成
+
+                    article.article
+                        table#table.table-style
+                            thead
+                                tr
+                                    th(style="font-weight: bold;") 編號
+                                    th 標題
+                                    th 更新日期
+                            tbody
+                                tr
+                                    td 1
+                                    td.hover-style
+                                        | 我是標題我是標題我是標題我是標題我是標題我是標題
+                                        a.click-area(href="#")
+                                    td 7/15/2019
+                                tr
+                                    td 2
+                                    td.hover-style
+                                        | 我是標題我是標題我是標題我是標題我是標題我是標題
+                                        a.click-area(href="#")
+                                    td 7/15/2019
+                                tr
+                                    td 3
+                                    td.hover-style
+                                        | 我是標題我是標題我是標題我是標題我是標題我是標題
+                                        a.click-area(href="#")
+                                    td 7/15/2019
+                                tr
+                                    td 4
+                                    td.hover-style
+                                        | 我是標題我是標題我是標題我是標題我是標題我是標題
+                                        a.click-area(href="#")
+                                    td 7/15/2019
+
+
+block body-end
+    script(src="./lib/datatables/datatables.min.js")
+    script(src="./lib/ckeditor/ckeditor.js")

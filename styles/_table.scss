@@ -18,10 +18,15 @@
 
     .hover-style {
         transition: 0.3s;
+        cursor: pointer;
 
         &:hover {
             background-color: $blue-table-hover;
         }
+    }
+
+    tr {
+        position: relative;
     }
 
     td,
@@ -39,6 +44,10 @@
         tr {
             color: $white;
             background-color: $blue-1;
+
+            th {
+                white-space: nowrap;
+            }
         }
     }
 
@@ -53,6 +62,12 @@
             }
         }
     }
+}
+
+.table-filter {
+    padding: $padding-1;
+    color: $gray-5;
+    cursor: pointer;
 }
 
 .article {
@@ -88,7 +103,7 @@
                     cursor: pointer;
 
                     &:focus {
-                        width: 200px;
+                        width: 180px;
                     }
                 }
             }

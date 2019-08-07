@@ -1,0 +1,39 @@
+#modal_admin_add.modal.fade(tabindex='-1', role='dialog')
+    .modal-dialog.modal-dialog-scrollable(role='document')
+        .modal-content
+            .modal-header
+                h5.modal-title 新增管理者
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') ×
+            .modal-body
+                .input
+                    .input-group
+                        .input-group-prepend
+                            .input-group-text 帳號
+                        input.form-control(type='text', placeholder='請輸入帳號')
+                .input
+                    .input-group
+                        .input-group-prepend
+                            .input-group-text 密碼
+                        input.form-control(type='password', placeholder='請輸入12-16位密碼')
+                .input
+                    .input-group
+                        .input-group-prepend
+                            .input-group-text 姓名
+                        input.form-control(type='password', placeholder='請輸入姓名')
+                .input
+                    .input-group
+                        .input-group-prepend
+                            .input-group-text 權限
+                        select.custom-select(required='')
+                            option(value='', disabled, selected) --請選擇權限--
+                            option(value='1') One
+                            option(value='2') Two
+                            option(value='3') Three
+                .input
+                    .custom-control.custom-switch
+                        input#customSwitch1.custom-control-input(type='checkbox')
+                        label.custom-control-label(for='customSwitch1') 啟用
+            .modal-footer
+                button.btn.btn-primary(type='button') 儲存送出
+                button.btn.btn-secondary(type='button', data-dismiss='modal') 關閉

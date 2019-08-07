@@ -1,0 +1,18 @@
+extends ./layouts/main
+
+block script
+
+block style
+
+block body
+    +header-login(1, 1)
+
+    section#section
+        .main-wrap
+            .content
+                +breadcrumb('首頁 > 關於平台 > 平台緣起')
+                +title('平台緣起')
+                article.article
+
+block body-end
+    script(src="./lib/ckeditor/ckeditor.js")

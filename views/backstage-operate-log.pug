@@ -1,0 +1,57 @@
+extends ./layouts/backstage-login
+
+block script
+
+block style
+    link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+
+block body
+    +header-backstage-login(5)
+
+    section#section.backstage
+        .main-wrap
+            .content
+                .article-wrap
+                    //- include ./blocks/backstage-aside-system
+                    +sidebar-system(2)
+                    article.article
+                        .breadcrumb
+                            | 首頁 > 系統管理 > 操作紀錄管理
+                        //- +input-bootstrap('input_title', 'title', '標題', '請輸入標題', '', true)
+                        //- +input-bootstrap('input_desc', 'desc', '說明', '請輸入文件說明', '', true)
+                        .input
+                            .btn-group.border.ml-auto(role='group', aria-label='First group')
+                                button.btn.btn-primary(type='button') 30天
+                                button.btn.btn-default(type='button') 60天
+                                button.btn.btn-default(type='button') 全部
+                        table#table.table-style
+                            thead
+                                tr
+                                    th 時間
+                                    th 帳號
+                                    th ID
+                                    th 動作
+                                    th Detail
+                                    th 公司名稱
+                                    th IP
+                            tbody
+                                tr.hover-style(data-toggle='modal', data-target='#modal_member_edit')
+                                    td 1
+                                    td
+                                    td
+                                    td
+                                    td
+                                    td
+                                    td
+                        .input.mt-2
+                            .confirm-button
+                                | 儲存
+                                a.click-area(href="#")
+                        .input
+                            .gray-button
+                                | 取消
+                                a.click-area(href="#")
+
+block body-end
+    script(src="./lib/datatables/datatables.min.js")
+    script(src="./lib/ckeditor/ckeditor.js")

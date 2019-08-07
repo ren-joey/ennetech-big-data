@@ -1,0 +1,45 @@
+extends ./layouts/backstage-login
+
+block script
+
+block style
+    link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+
+block body
+    +header-backstage-login(4)
+
+    section#section.backstage
+        .main-wrap
+            .content
+                .article-wrap
+                    //- include ./blocks/backstage-aside-permission
+                    +sidebar-permission(2)
+                    article.article
+                        .breadcrumb
+                            | 首頁 > 權限管理 > 權限群組設定
+                        .input
+                            .confirm-button(data-toggle='modal', data-target='#modal_group_add') 新增
+                        table#table.table-style
+                            thead
+                                tr
+                                    th(style="width: 4em; font-weight: bold;") 編號
+                                    th 群組
+                            tbody
+                                tr.hover-style(data-toggle='modal', data-target='#modal_group_edit')
+                                    td 1
+                                    td 最高管理員
+                                tr.hover-style(data-toggle='modal', data-target='#modal_group_edit')
+                                    td 2
+                                    td 一般管理員-編輯
+                                tr.hover-style(data-toggle='modal', data-target='#modal_group_edit')
+                                    td 3
+                                    td 一般管理員-瀏覽
+                                tr.hover-style(data-toggle='modal', data-target='#modal_group_edit')
+                                    td 4
+                                    td 一般管理員-僅發佈
+    include ./blocks/modal-group-add
+    include ./blocks/modal-group-edit
+
+block body-end
+    script(src="./lib/datatables/datatables.min.js")
+    script(src="./lib/ckeditor/ckeditor.js")

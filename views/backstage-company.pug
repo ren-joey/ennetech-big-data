@@ -1,0 +1,192 @@
+extends ./layouts/backstage-login
+
+block script
+
+block style
+    link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+
+block body
+    +header-backstage-login(2)
+
+    section#section.backstage
+        .main-wrap
+            .content
+                .article-wrap
+                    //- include ./blocks/backstage-aside-member
+                    +sidebar-member(2)
+                    article.article
+                        .breadcrumb
+                            | 首頁 > 會員管理 > 新創公司列表
+                        .form-row.align-items-center
+                            .col-auto
+                                label.sr-only(for='inlineFormInputGroup') 統編搜尋
+                                .input-group.mb-2
+                                    .input-group-prepend
+                                        .input-group-text 統編
+                                    input#company_id_filter.form-control(type='text', placeholder='統編搜尋')
+                            .col-auto
+                                label.sr-only(for='inlineFormInputGroup') 類型搜尋
+                                .input-group.mb-2
+                                    .input-group-prepend
+                                        .input-group-text 類型
+                                    select#company_type_filter.form-control.company-type(type='text', placeholder='類型搜尋')
+                            .col-auto
+                                label.sr-only(for='inlineFormInputGroup') 規模搜尋
+                                .input-group.mb-2
+                                    .input-group-prepend
+                                        .input-group-text 規模
+                                    select#company_size_filter.form-control
+                                        option(value="-1", selected) 全部
+                                        option(value="1,10") 10人以下
+                                        option(value="11,50") 11~50
+                                        option(value="51,200") 51~200
+                                        option(value="201,500") 201~500
+                                        option(value="501") 501人以上
+                            .col-auto
+                                label.sr-only(for='inlineFormInputGroup')
+                                .input-group.mb-2
+                                    .input-group-prepend
+                                        .input-group-text 狀態
+                                    select#company_state_filter.form-control
+                                        option(value="-1", selected) 全部
+                                        option(value="1") 啟用
+                                        option(value="0") 停用
+                            .col-auto
+                                button.btn.btn-outline-danger.mb-2
+                                    i.fas.fa-redo
+                                    | &nbsp;回復列表
+                        //- +input-bootstrap('input_title', 'title', '標題', '請輸入標題', '', true)
+                        //- +input-bootstrap('input_desc', 'desc', '說明', '請輸入文件說明', '', true)
+                        table#company_table.table-style
+                            thead
+                                tr
+                                    th #
+                                    th 公司
+                                    th Codename
+                                    th Token
+                                    th 統編
+                                    th 狀態
+                            tbody
+                                tr.hover-style(data-toggle='modal', data-target='#modal_company_edit')
+                                    td 1
+                                    td
+                                    td
+                                    td
+                                    td 1776
+                                    td 啟用
+                                tr.hover-style(data-toggle='modal', data-target='#modal_company_edit')
+                                    td 2
+                                    td
+                                    td
+                                    td
+                                    td 1664
+                                    td 啟用
+                                tr.hover-style(data-toggle='modal', data-target='#modal_company_edit')
+                                    td 3
+                                    td
+                                    td
+                                    td
+                                    td 24
+                                    td 啟用
+                                tr.hover-style(data-toggle='modal', data-target='#modal_company_edit')
+                                    td 4
+                                    td
+                                    td
+                                    td
+                                    td
+                                    td 啟用
+                        .input
+                            .confirm-button(data-toggle='modal', data-target='#modal_company_add') 新增
+    include ./blocks/modal-company-add
+    include ./blocks/modal-company-edit
+
+block body-end
+    script(src="./lib/datatables/datatables.min.js")
+    script(src="./lib/ckeditor/ckeditor.js")
+    script.
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var id = $('#company_id_filter').val();
+                var dataId = data[4]; // use data for the age column
+
+                if ( dataId.indexOf(id) !== -1 )
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var state = $('#company_state_filter').val();
+                var dataState = data[5] || ''; // use data for the age column
+
+                if ( +state === -1 ||
+                    (dataState.indexOf('啟用') !== -1 && +state === 1) ||
+                    (dataState.indexOf('關閉') !== -1 && +state === 0) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+        const datatableBinding = () => {
+            const table = $('#company_table')
+            if(table.length) {
+                const filter = $('#filter')
+                const wrapper = $('#wrapper')
+
+                const dataTable = table.DataTable({
+                    language: {
+                        lengthMenu: '每頁 _MENU_ 筆',
+                        zeroRecords: '<i class="fas fa-box-open"></i> 很抱歉，沒有符合的結果',
+                        info: '第 _PAGE_ 頁，共 _PAGES_ 頁',
+                        infoEmpty: '',
+                        search: '<i class="fas fa-search"></i>',
+                        infoFiltered: '',
+                        paginate: {
+                            first: '第一頁',
+                            last: '最後一頁',
+                            next: '下一頁',
+                            previous: '上一頁'
+                        }
+                    }
+                })
+
+                const filterInsert = () => {
+                    setTimeout(() => {
+                        const tableFilter = $('#table_filter')
+                        if (tableFilter.length === 0) {
+                            filterInsert()
+                        } else {
+                            if (filter.length === 0) return
+                            $('<i id="table_filter_icon" class="table-filter mobile fas fa-filter"/>').prependTo(tableFilter)
+                        }
+                    }, 10)
+                };
+                filterInsert()
+
+                // 篩選器手機板事件綁定
+                wrapper
+                    .on('click', '#table_filter_icon', () => {
+                        filter.fadeIn()
+                        filter.css('display', 'flex')
+                        wrapper.addClass('fixed')
+                    })
+                    .on('click', '#filter_confirm_button', () => {
+                        filter.fadeOut()
+                        wrapper.removeClass('fixed')
+                    })
+
+                $('#company_id_filter').on('keyup', () => {
+                    dataTable.draw()
+                })
+
+                $('#company_size_filter, #company_state_filter, #company_type_filter').on('change', () => {
+                    dataTable.draw()
+                })
+            }
+        }
+        datatableBinding()

@@ -1,0 +1,18 @@
+extends ./layouts/main
+
+block script
+
+block style
+
+block body
+    +header-login(1, 5)
+
+    section#section
+        .main-wrap
+            .content
+                +breadcrumb('首頁 > 關於平台 > 相關連結')
+                +title('相關連結')
+                article.article
+
+block body-end
+    script(src="./lib/ckeditor/ckeditor.js")
