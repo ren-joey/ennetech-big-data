@@ -39,14 +39,35 @@
 
     &__contact {
         margin-left: auto;
+        padding-left: $padding-2;
+        border-left: 1px dotted $white;
+
+        .brand {
+            font-size: 1.6em;
+            font-weight: bolder;
+        }
     }
 
     .copyright {
-        height: $copyright-height;
+        padding: $padding-1 0;
+        // height: $copyright-height;
         font-size: 0.675em;
         text-align: center;
-        line-height: $copyright-height;
+        // line-height: $copyright-height;
         color: $white;
         background-color: $blue-3;
     }
+}
+
+.counter-digit {
+    display: inline-block;
+    margin: 3px 0 0;
+    padding: 0 5px;
+    height: 2em;
+    font-size: 0.675em;
+    font-weight: bolder;
+    color: $white;
+    background-color: $black;
+    border: 1px solid $white;
+    border-radius: 3px;
 }

@@ -4,114 +4,99 @@ block script
 
 block style
     link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css")
 
 block body
-    +header-backstage-login(2)
+    +header-backstage-login(3)
 
     section#section.backstage
         .main-wrap
             .content
                 .article-wrap
                     //- include ./blocks/backstage-aside-member
-                    +sidebar-member(2)
+                    +sidebar-data(1)
                     article.article
                         .breadcrumb
-                            | 首頁 > 會員管理 > 新創公司列表
+                            | 首頁 > 數據管理 > API管理
                         .form-row.align-items-center
                             .col-auto
                                 label.sr-only(for='inlineFormInputGroup') 統編搜尋
                                 .input-group.mb-2
                                     .input-group-prepend
                                         .input-group-text 統編
-                                    input#company_id_filter.form-control(type='text', placeholder='統編搜尋')
-                            .col-auto
-                                label.sr-only(for='inlineFormInputGroup') 類型搜尋
-                                .input-group.mb-2
-                                    .input-group-prepend
-                                        .input-group-text 類型
-                                    select#company_type_filter.form-control.company-type(type='text', placeholder='類型搜尋')
-                            .col-auto
-                                label.sr-only(for='inlineFormInputGroup') 規模搜尋
-                                .input-group.mb-2
-                                    .input-group-prepend
-                                        .input-group-text 規模
-                                    select#company_size_filter.form-control
-                                        option(value="-1", selected) 全部
-                                        option(value="1,10") 10人以下
-                                        option(value="11,50") 11~50
-                                        option(value="51,200") 51~200
-                                        option(value="201,500") 201~500
-                                        option(value="501") 501人以上
+                                    input#api_id_filter.form-control(type='text', placeholder='統編搜尋')
                             .col-auto
                                 label.sr-only(for='inlineFormInputGroup')
                                 .input-group.mb-2
                                     .input-group-prepend
                                         .input-group-text 狀態
-                                    select#company_state_filter.form-control
+                                    select#api_state_filter.form-control
                                         option(value="-1", selected) 全部
-                                        option(value="1") 啟用
-                                        option(value="0") 停用
+                                        option(value="待審查") 待審查
+                                        option(value="已發佈") 已發佈
+                                        option(value="退件") 退件
                             .col-auto
-                                button#company_reset_filter.btn.btn-outline-danger.mb-2
+                                button#api_reset_filter.btn.btn-outline-danger.mb-2
                                     i.fas.fa-redo
                                     | &nbsp;回復列表
                             .col-auto.ml-auto
-                                button.btn.btn-primary.mb-2(data-toggle='modal', data-target='#modal_company_add')
+                                button.btn.btn-primary.mb-2(data-toggle='modal', data-target='#modal_api_add')
                                     i.fas.fa-plus-square
                                     | &nbsp;新增
+                        //- .input
+                        //-     .confirm-button(data-toggle='modal', data-target='#modal_member_add') 新增
                         //- +input-bootstrap('input_title', 'title', '標題', '請輸入標題', '', true)
                         //- +input-bootstrap('input_desc', 'desc', '說明', '請輸入文件說明', '', true)
-                        //- .input
-                        //-     .confirm-button(data-toggle='modal', data-target='#modal_company_add') 新增
-                        table#company_table.table-style
+                        table#api_table.table-style
                             thead
                                 tr
                                     th #
-                                    th 公司
-                                    th Codename
-                                    th Token
+                                    th 帳號
+                                    th 姓名
                                     th 統編
                                     th 狀態
+                                    th 創建時間
                             tbody
-                                tr.hover-style(data-toggle='modal', data-target='#modal_company_edit')
+                                tr.hover-style(data-toggle='modal', data-target='#modal_api_edit')
                                     td 1
+                                    td james@abc.com
+                                    td James
                                     td
+                                    td 待審查
+                                    td 2019-08-08
+                                tr.hover-style(data-toggle='modal', data-target='#modal_api_edit')
+                                    td 1
+                                    td james@abc.com
+                                    td James
                                     td
+                                    td 待審查
+                                    td 2019-08-08
+                                tr.hover-style(data-toggle='modal', data-target='#modal_api_edit')
+                                    td 1
+                                    td james@abc.com
+                                    td James
                                     td
-                                    td 1776
-                                    td 啟用
-                                tr.hover-style(data-toggle='modal', data-target='#modal_company_edit')
-                                    td 2
+                                    td 待審查
+                                    td 2019-08-08
+                                tr.hover-style(data-toggle='modal', data-target='#modal_api_edit')
+                                    td 1
+                                    td james@abc.com
+                                    td James
                                     td
-                                    td
-                                    td
-                                    td 1664
-                                    td 啟用
-                                tr.hover-style(data-toggle='modal', data-target='#modal_company_edit')
-                                    td 3
-                                    td
-                                    td
-                                    td
-                                    td 24
-                                    td 啟用
-                                tr.hover-style(data-toggle='modal', data-target='#modal_company_edit')
-                                    td 4
-                                    td
-                                    td
-                                    td
-                                    td
-                                    td 啟用
-    include ./blocks/modal-company-add
-    include ./blocks/modal-company-edit
+                                    td 待審查
+                                    td 2019-08-08
+    include ./blocks/modal-api-add
+    include ./blocks/modal-api-edit
 
 block body-end
     script(src="./lib/datatables/datatables.min.js")
     script(src="./lib/ckeditor/ckeditor.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js")
     script.
         $.fn.dataTable.ext.search.push(
             function( settings, data, dataIndex ) {
-                var id = $('#company_id_filter').val();
-                var dataId = data[4]; // use data for the age column
+                var id = $('#api_id_filter').val();
+                var dataId = data[3]; // use data for the age column
 
                 if ( dataId.indexOf(id) !== -1 )
                 {
@@ -123,12 +108,11 @@ block body-end
 
         $.fn.dataTable.ext.search.push(
             function( settings, data, dataIndex ) {
-                var state = $('#company_state_filter').val();
-                var dataState = data[5] || ''; // use data for the age column
+                var state = $('#api_state_filter').val();
+                var dataState = data[4] || ''; // use data for the age column
 
                 if ( +state === -1 ||
-                    (dataState.indexOf('啟用') !== -1 && +state === 1) ||
-                    (dataState.indexOf('關閉') !== -1 && +state === 0) )
+                    dataState.indexOf(state) !== -1)
                 {
                     return true;
                 }
@@ -137,7 +121,7 @@ block body-end
         );
 
         const datatableBinding = () => {
-            const table = $('#company_table')
+            const table = $('#api_table')
             if(table.length) {
                 const filter = $('#filter')
                 const wrapper = $('#wrapper')
@@ -184,21 +168,23 @@ block body-end
                         wrapper.removeClass('fixed')
                     })
 
-                $('#company_id_filter').on('keyup', () => {
+                $('#api_id_filter').on('keyup', () => {
                     dataTable.draw()
                 })
 
-                $('#company_size_filter, #company_state_filter, #company_type_filter').on('change', () => {
+                $('#api_state_filter').on('change', () => {
                     dataTable.draw()
                 })
 
-                $('#company_reset_filter').on('click', () => {
-                    $('#company_id_filter').val('')
-                    $('#company_size_filter').val('-1')
-                    $('#company_state_filter').val('-1')
-                    $('#company_type_filter').val('-1')
+                $('#api_reset_filter').on('click', () => {
+                    $('#api_id_filter').val('')
+                    $('#api_state_filter').val('-1')
                     dataTable.draw()
                 })
             }
         }
-        datatableBinding()
+
+        window.onload = () => {
+            datatableBinding()
+            $('#select_company').select2();
+        }

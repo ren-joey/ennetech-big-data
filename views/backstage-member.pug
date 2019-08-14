@@ -4,6 +4,7 @@ block script
 
 block style
     link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css")
 
 block body
     +header-backstage-login(2)
@@ -44,10 +45,15 @@ block body
                                         option(value="1") 啟用
                                         option(value="0") 停用
                             .col-auto
-                                button.btn.btn-outline-danger.mb-2
+                                button#member_reset_filter.btn.btn-outline-danger.mb-2
                                     i.fas.fa-redo
                                     | &nbsp;回復列表
-
+                            .col-auto.ml-auto
+                                button.btn.btn-primary.mb-2(data-toggle='modal', data-target='#modal_member_add')
+                                    i.fas.fa-plus-square
+                                    | &nbsp;新增
+                        //- .input
+                        //-     .confirm-button(data-toggle='modal', data-target='#modal_member_add') 新增
                         //- +input-bootstrap('input_title', 'title', '標題', '請輸入標題', '', true)
                         //- +input-bootstrap('input_desc', 'desc', '說明', '請輸入文件說明', '', true)
                         table#member_table.table-style
@@ -88,14 +94,13 @@ block body
                                     td 最高
                                     th 統編
                                     td 啟用
-                        .input
-                            .confirm-button(data-toggle='modal', data-target='#modal_member_add') 新增
     include ./blocks/modal-member-add
     include ./blocks/modal-member-edit
 
 block body-end
     script(src="./lib/datatables/datatables.min.js")
     script(src="./lib/ckeditor/ckeditor.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js")
     script.
         $.fn.dataTable.ext.search.push(
             function( settings, data, dataIndex ) {
@@ -194,6 +199,17 @@ block body-end
                 $('#member_level_filter, #member_state_filter').on('change', () => {
                     dataTable.draw()
                 })
+
+                $('#member_reset_filter').on('click', () => {
+                    $('#member_id_filter').val('')
+                    $('#member_level_filter').val('-1')
+                    $('#member_state_filter').val('-1')
+                    dataTable.draw()
+                })
             }
         }
-        datatableBinding()
+
+        window.onload = () => {
+            datatableBinding()
+            $('#select_company').select2();
+        }

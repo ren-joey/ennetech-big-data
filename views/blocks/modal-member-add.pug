@@ -56,11 +56,12 @@
                         input#customSwitch4.custom-control-input(type='checkbox')
                         label.custom-control-label(for='customSwitch4') 新創會員
                 .input
-                    .input-group
-                        .input-group-prepend
-                            .input-group-text 選擇新創公司
-                        select.form-control
-                            option(disabled, selected) --請選擇新創公司--
+                    select#select_company.form-control
+                        option(disabled, selected) --請選擇新創公司--
+                        option 公司A
+                        option 公司B
+                        option 公司C
+                        option 公司D
             .modal-footer
                 button.btn.btn-primary(type='button') 儲存送出
                 button.btn.btn-secondary(type='button', data-dismiss='modal') 關閉

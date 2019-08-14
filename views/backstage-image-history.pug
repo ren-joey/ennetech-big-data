@@ -1,0 +1,148 @@
+extends ./layouts/backstage-login
+
+block script
+
+block style
+    link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css")
+
+block body
+    +header-backstage-login(1)
+
+    section#section.backstage
+        .main-wrap
+            .content
+                .article-wrap
+                    //- include ./blocks/backstage-aside-member
+                    +sidebar(17)
+                    article.article
+                        .breadcrumb
+                            | 首頁 > 內容管理 > 圖檔上傳紀錄
+                        //- .form-row.align-items-center
+                        //-     .col-auto
+                        //-         label.sr-only(for='inlineFormInputGroup')
+                        //-         .input-group.mb-2
+                        //-             .input-group-prepend
+                        //-                 .input-group-text 等級
+                        //-             select#member_level_filter.form-control
+                        //-                 option(value="-1", selected) 全部
+                        //-                 option(value="一般") 一般
+                        //-                 option(value="新創") 新創
+                        //-                 option(value="最高") 最高
+                        //-     .col-auto
+                        //-         label.sr-only(for='inlineFormInputGroup') 統編搜尋
+                        //-         .input-group.mb-2
+                        //-             .input-group-prepend
+                        //-                 .input-group-text 統編
+                        //-             input#member_id_filter.form-control(type='text', placeholder='統編搜尋')
+                        //-     .col-auto
+                        //-         label.sr-only(for='inlineFormInputGroup')
+                        //-         .input-group.mb-2
+                        //-             .input-group-prepend
+                        //-                 .input-group-text 狀態
+                        //-             select#member_state_filter.form-control
+                        //-                 option(value="-1", selected) 全部
+                        //-                 option(value="1") 啟用
+                        //-                 option(value="0") 停用
+                        //-     .col-auto
+                        //-         button#member_reset_filter.btn.btn-outline-danger.mb-2
+                        //-             i.fas.fa-redo
+                        //-             | &nbsp;回復列表
+                        //-     .col-auto.ml-auto
+                        //-         button.btn.btn-primary.mb-2(data-toggle='modal', data-target='#modal_member_add')
+                        //-             i.fas.fa-plus-square
+                        //-             | &nbsp;新增
+                        //- .input
+                        //-     .confirm-button(data-toggle='modal', data-target='#modal_member_add') 新增
+                        //- +input-bootstrap('input_title', 'title', '標題', '請輸入標題', '', true)
+                        //- +input-bootstrap('input_desc', 'desc', '說明', '請輸入文件說明', '', true)
+                        table#image_table.table-style
+                            thead
+                                tr
+                                    th #
+                                    th 時間
+                                    th 檔案名稱
+                                    th 圖檔網址
+                                    th 說明
+                                    th 圖片預覽
+                            tbody
+                                tr.hover-style
+                                    td 1
+                                    td 2018-08-08
+                                    td 01.png
+                                    td https://24.114.158.3/01.png
+                                    td
+                                    td
+                                        img(src="https://dummyimage.com/80x50/cccccc/000.png&text=80:50", widtd="100%", height="auto", alt="", srcset="")
+                                tr.hover-style
+                                    td 1
+                                    td 2018-08-08
+                                    td 01.png
+                                    td https://24.114.158.3/01.png
+                                    td
+                                    td
+                                        img(src="https://dummyimage.com/80x50/cccccc/000.png&text=80:50", widtd="100%", height="auto", alt="", srcset="")
+                                tr.hover-style
+                                    td 1
+                                    td 2018-08-08
+                                    td 01.png
+                                    td https://24.114.158.3/01.png
+                                    td
+                                    td
+                                        img(src="https://dummyimage.com/80x50/cccccc/000.png&text=80:50", widtd="100%", height="auto", alt="", srcset="")
+                                tr.hover-style(data-toggle='modal', data-target='#modal_member_edit')
+                                    td 1
+                                    td 2018-08-08
+                                    td 01.png
+                                    td https://24.114.158.3/01.png
+                                    td
+                                    td
+                                        img(src="https://dummyimage.com/80x50/cccccc/000.png&text=80:50", widtd="100%", height="auto", alt="", srcset="")
+
+block body-end
+    script(src="./lib/datatables/datatables.min.js")
+    script(src="./lib/ckeditor/ckeditor.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js")
+    script.
+        const datatableBinding = () => {
+            const table = $('#image_table')
+            if(table.length) {
+                const filter = $('#filter')
+                const wrapper = $('#wrapper')
+
+                const dataTable = table.DataTable({
+                    language: {
+                        lengthMenu: '每頁 _MENU_ 筆',
+                        zeroRecords: '<i class="fas fa-box-open"></i> 很抱歉，沒有符合的結果',
+                        info: '第 _PAGE_ 頁，共 _PAGES_ 頁',
+                        infoEmpty: '',
+                        search: '<i class="fas fa-search"></i>',
+                        infoFiltered: '',
+                        paginate: {
+                            first: '第一頁',
+                            last: '最後一頁',
+                            next: '下一頁',
+                            previous: '上一頁'
+                        }
+                    }
+                })
+
+                const filterInsert = () => {
+                    setTimeout(() => {
+                        const tableFilter = $('#table_filter')
+                        if (tableFilter.length === 0) {
+                            filterInsert()
+                        } else {
+                            if (filter.length === 0) return
+                            $('<i id="table_filter_icon" class="table-filter mobile fas fa-filter"/>').prependTo(tableFilter)
+                        }
+                    }, 10)
+                };
+                filterInsert()
+            }
+        }
+
+        window.onload = () => {
+            datatableBinding()
+            $('#select_company').select2();
+        }

@@ -45,6 +45,12 @@ mixin sidebar(active)
         .sidebar__nav(class=(active === 15) ? 'active' : '')
             | 相關連結
             a.click-area(href=(active === 15) ? false : "#")
+        .sidebar__nav(class=(active === 16) ? 'active' : '')
+            | 圖檔上傳
+            a.click-area(href=(active === 16) ? false : "backstage-image-upload.html")
+        .sidebar__nav(class=(active === 17) ? 'active' : '')
+            | 圖檔上傳紀錄
+            a.click-area(href=(active === 17) ? false : "backstage-image-history.html")
 
 mixin sidebar-member(active)
     aside.sidebar
@@ -54,6 +60,12 @@ mixin sidebar-member(active)
         .sidebar__nav(class=(active === 2) ? 'active' : '')
             | 新創公司列表
             a.click-area(href=(active === 2) ? false : "backstage-company.html")
+
+mixin sidebar-data(active)
+    aside.sidebar
+        .sidebar__nav(class=(active === 1) ? 'active' : '')
+            | API管理
+            a.click-area(href=(active === 1) ? false : "backstage-api.html")
 
 mixin sidebar-system(active)
     aside.sidebar

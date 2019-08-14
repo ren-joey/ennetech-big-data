@@ -26,6 +26,10 @@ block body
                                 button.btn.btn-outline-primary(type='button', data-toggle='modal', data-target='#modal') 紀錄
                         textarea#ckeditor(name='ckeditor', rows='10', cols='80')
                             | This is my textarea to be replaced with CKEditor.
+                        .row.my-2.justify-content-end
+                            .col-auto
+                                button.btn.btn-primary.px-4 儲存
+                                button.btn.btn-outline-secondary.px-4 取消
     include ./blocks/modal-log
 
 block body-end
