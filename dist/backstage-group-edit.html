@@ -1,0 +1,250 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=480px"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=7"/>
+    <title>資料</title>
+    <link rel="stylesheet" href="./styles/main.css"/>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./lib/fontawesome-free-5.9.0-web/css/all.css"/>
+    <link rel="stylesheet" href="./lib/datatables/datatables.min.css"/>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="wrapper__mask"></div>
+            <header class="header" id="header">
+              <div class="header__logo">LOGO<a class="click-area" href="/"></a></div>
+              <div class="header__hamburger" id="header_menu_btn_m"><i class="fas fa-bars"></i></div>
+              <div class="header__menu">
+                <ul class="menu">
+                  <li class="menu__nav thin mobile mobile-order-1" id="header_menu_close_btn_m"><i class="fas fa-times rotation-style"></i></li>
+                  <li class="menu__nav">內容管理<a class="click-area" href="backstage-banner.html"></a></li>
+                  <li class="menu__nav">會員管理<a class="click-area" href="backstage-member.html"></a></li>
+                  <li class="menu__nav">數據管理<a class="click-area" href="backstage-api.html"></a></li>
+                  <li class="menu__nav active">權限管理<a class="click-area"></a></li>
+                  <li class="menu__nav">系統管理<a class="click-area" href="backstage-access-log.html"></a></li>
+                  <li class="menu__nav mobile">登出<span class="thin mobile">LOGOUT</span><a class="click-area" href="backstage-logout.html"></a></li>
+                  <li class="menu__nav mobile mobile-order-2 mobile-thin"><i class="fas fa-user inline"></i>&nbsp;歡迎，陳先生</li>
+                  <li class="menu__nav pc"><i class="fas fa-user inline"></i>&nbsp;歡迎，陳先生
+                    <ul class="nav-select" style="display: none;">
+                      <li class="nav-select__option">登出<a class="click-area" href="backstage-logout.html"></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </header>
+      <section class="backstage" id="section">
+        <div class="main-wrap">
+          <div class="content">
+            <div class="article-wrap">
+                    <aside class="sidebar">
+                      <div class="sidebar__nav">管理者列表<a class="click-area" href="backstage-admin.html"></a></div>
+                      <div class="sidebar__nav active">權限群組設定<a class="click-area"></a></div>
+                    </aside>
+              <article class="article">
+                <div class="breadcrumb">首頁 > 權限管理 > 權限群組設定 > 編輯權限群組</div>
+                <div class="input">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">群組名稱</div>
+                    </div>
+                    <input class="form-control" type="text" placeholder="最高管理員" value="" disabled="disabled"/>
+                  </div>
+                </div>
+                <table class="table-style">
+                  <thead>
+                    <tr>
+                      <th>功能</th>
+                      <th>瀏覽</th>
+                      <th>新增</th>
+                      <th>編輯</th>
+                      <th>刪除</th>
+                      <th>全選</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>功能項目</td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p1_1" type="checkbox"/>
+                          <label class="custom-control-label" for="p1_1"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p1_2" type="checkbox"/>
+                          <label class="custom-control-label" for="p1_2"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p1_3" type="checkbox"/>
+                          <label class="custom-control-label" for="p1_3"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p1_4" type="checkbox"/>
+                          <label class="custom-control-label" for="p1_4"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p1_5" type="checkbox"/>
+                          <label class="custom-control-label" for="p1_5"></label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>功能項目</td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p2_1" type="checkbox"/>
+                          <label class="custom-control-label" for="p2_1"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p2_2" type="checkbox"/>
+                          <label class="custom-control-label" for="p2_2"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p2_3" type="checkbox"/>
+                          <label class="custom-control-label" for="p2_3"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p2_4" type="checkbox"/>
+                          <label class="custom-control-label" for="p2_4"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p2_5" type="checkbox"/>
+                          <label class="custom-control-label" for="p2_5"></label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>功能項目</td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p3_1" type="checkbox"/>
+                          <label class="custom-control-label" for="p3_1"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p3_2" type="checkbox"/>
+                          <label class="custom-control-label" for="p3_2"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p3_3" type="checkbox"/>
+                          <label class="custom-control-label" for="p3_3"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p3_4" type="checkbox"/>
+                          <label class="custom-control-label" for="p3_4"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p3_5" type="checkbox"/>
+                          <label class="custom-control-label" for="p3_5"></label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>功能項目</td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p4_1" type="checkbox"/>
+                          <label class="custom-control-label" for="p4_1"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p4_2" type="checkbox"/>
+                          <label class="custom-control-label" for="p4_2"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p4_3" type="checkbox"/>
+                          <label class="custom-control-label" for="p4_3"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p4_4" type="checkbox"/>
+                          <label class="custom-control-label" for="p4_4"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p4_5" type="checkbox"/>
+                          <label class="custom-control-label" for="p4_5"></label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>功能項目</td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p5_1" type="checkbox"/>
+                          <label class="custom-control-label" for="p5_1"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p5_2" type="checkbox"/>
+                          <label class="custom-control-label" for="p5_2"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p5_3" type="checkbox"/>
+                          <label class="custom-control-label" for="p5_3"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p5_4" type="checkbox"/>
+                          <label class="custom-control-label" for="p5_4"></label>
+                        </div>
+                      </td>
+                      <td class="p-2">
+                        <div class="custom-control custom-switch">
+                          <input class="custom-control-input" id="p5_5" type="checkbox"/>
+                          <label class="custom-control-label" for="p5_5"></label>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="row justify-content-center mt-3">
+                  <div class="col-auto"><a class="btn btn-primary" href="backstage-group.html">儲存送出</a><a class="btn btn-outline-secondary ml-2" href="backstage-group.html">取消</a></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="./lib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/greensock-js/TweenMax.min.js"></script>
+    <script src="./lib/datatables/datatables.min.js"></script>
+    <script src="./lib/ckeditor/ckeditor.js"></script>
+    <script src="./js/backstage-main.js"></script>
+  </body>
+</html>

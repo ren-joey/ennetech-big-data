@@ -40,8 +40,8 @@ include ../mixins/input
                     input#register_name(type="text", name="name", placeholder="中文真實姓名", required='required')
                     input#register_phone(type="text", name="phone", placeholder="手機")
                 .input
-                    select(name='register_year').select-year
-                    select(name='register_sex')
+                    select(name='register_year', required="required").select-year
+                    select(name='register_sex', required="requide")
                         option(disabled, selected) 請選擇性別
                         option 男
                         option 女
@@ -62,6 +62,11 @@ include ../mixins/input
                         option(value='31~100') 31~100人
                         option(value='101~500') 101~500人
                         option(value='501~') 501人以上
+                .form-division
+                    .title 請輸入公司所在地點
+                .input
+                    select(name='register_company_city').select-city
+                    select(name='register_company_region').select-region
                 +input-verify('register_verify', 'verify', '', '請輸入圖形內容')
                 .input
                     input#term(name='term', type='checkbox')

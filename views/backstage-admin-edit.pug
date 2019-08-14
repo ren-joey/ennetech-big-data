@@ -1,0 +1,55 @@
+extends ./layouts/backstage-login
+
+block script
+
+block style
+    link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+
+block body
+    +header-backstage-login(4)
+
+    section#section.backstage
+        .main-wrap
+            .content
+                .article-wrap
+                    //- include ./blocks/backstage-aside-permission
+                    +sidebar-permission(1)
+                    article.article
+                        .breadcrumb
+                            | 首頁 > 權限管理 > 管理者列表 > 編輯管理者
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 帳號
+                                input.form-control(type='text', placeholder='請輸入帳號', disabled)
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 密碼
+                                input.form-control(type='password', placeholder='請輸入12-16位密碼')
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 姓名
+                                input.form-control(type='password', placeholder='請輸入姓名')
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 權限
+                                select.custom-select(required='')
+                                    option(value='', disabled, selected) --請選擇權限--
+                                    option(value='1') One
+                                    option(value='2') Two
+                                    option(value='3') Three
+                        .input
+                            .custom-control.custom-switch
+                                input#customSwitch1.custom-control-input(type='checkbox')
+                                label.custom-control-label(for='customSwitch1') 啟用
+                        .row.justify-content-center.mt-3
+                            .col-auto
+                                a.btn.btn-primary(href="backstage-admin.html") 儲存送出
+                                a.btn.btn-outline-secondary.ml-2(href="backstage-admin.html") 取消
+
+block body-end
+    script(src="./lib/datatables/datatables.min.js")
+    script(src="./lib/ckeditor/ckeditor.js")

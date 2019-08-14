@@ -17,8 +17,11 @@ block body
                     article.article
                         .breadcrumb
                             | 首頁 > 權限管理 > 管理者列表
-                        .input
-                            .confirm-button(data-toggle='modal', data-target='#modal_admin_add') 新增
+                        .form-row
+                            .col-auto.ml-auto
+                                a.btn.btn-primary.mb-2(href="backstage-admin-add.html")
+                                    i.fas.fa-plus-square
+                                    | &nbsp;新增
                         table#table.table-style
                             thead
                                 tr
@@ -28,25 +31,25 @@ block body
                                     th 權限
                                     th 狀態
                             tbody
-                                tr.hover-style(data-toggle='modal', data-target='#modal_admin_edit')
+                                tr.hover-style(page-href="backstage-admin-edit.html")
                                     td 1
                                     td james@abc.com
                                     td James
                                     td 最高
                                     td 啟用
-                                tr.hover-style(data-toggle='modal', data-target='#modal_admin_edit')
+                                tr.hover-style(page-href="backstage-admin-edit.html")
                                     td 1
                                     td james@abc.com
                                     td James
                                     td 最高
                                     td 啟用
-                                tr.hover-style(data-toggle='modal', data-target='#modal_admin_edit')
+                                tr.hover-style(page-href="backstage-admin-edit.html")
                                     td 1
                                     td james@abc.com
                                     td James
                                     td 最高
                                     td 啟用
-                                tr.hover-style(data-toggle='modal', data-target='#modal_admin_edit')
+                                tr.hover-style(page-href="backstage-admin-edit.html")
                                     td 1
                                     td james@abc.com
                                     td James

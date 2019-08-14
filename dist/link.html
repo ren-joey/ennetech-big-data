@@ -158,8 +158,8 @@
                       <input id="register_phone" type="text" name="phone" placeholder="手機"/>
                     </div>
                     <div class="input">
-                      <select class="select-year" name="register_year"></select>
-                      <select name="register_sex">
+                      <select class="select-year" name="register_year" required="required"></select>
+                      <select name="register_sex" required="requide">
                         <option disabled="disabled" selected="selected">請選擇性別</option>
                         <option>男</option>
                         <option>女</option>
@@ -185,6 +185,13 @@
                         <option value="101~500">101~500人</option>
                         <option value="501~">501人以上</option>
                       </select>
+                    </div>
+                    <div class="form-division">
+                      <div class="title">請輸入公司所在地點</div>
+                    </div>
+                    <div class="input">
+                      <select class="select-city" name="register_company_city"></select>
+                      <select class="select-region" name="register_company_region"></select>
                     </div>
                           <div class="input">
                             <input class="sm" id="register_verify" name="verify" type="password" placeholder="請輸入圖形內容"/><img class="ml-4" src="./assets/images/verify.jpg" width="auto" height="30" alt="驗證圖片" srcset=""/>

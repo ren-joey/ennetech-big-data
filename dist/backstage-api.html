@@ -71,9 +71,6 @@
                   <div class="col-auto">
                     <button class="btn btn-outline-danger mb-2" id="api_reset_filter"><i class="fas fa-redo"></i>&nbsp;回復列表</button>
                   </div>
-                  <div class="col-auto ml-auto">
-                    <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#modal_api_add"><i class="fas fa-plus-square"></i>&nbsp;新增</button>
-                  </div>
                 </div>
                 <table class="table-style" id="api_table">
                   <thead>
@@ -126,31 +123,19 @@
           </div>
         </div>
       </section>
-      <div class="modal fade" id="modal_api_add" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">新增API請求</h5>
-              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-            </div>
-            <div class="modal-body"></div>
-            <div class="modal-footer">
-              <button class="btn btn-primary" type="button">儲存送出</button>
-              <button class="btn btn-secondary" type="button" data-dismiss="modal">關閉</button>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="modal fade" id="modal_api_edit" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">API請求明細</h5>
               <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
             </div>
-            <div class="modal-body"></div>
+            <div class="modal-body">
+              <iframe src="http://220.135.181.172:8080/bigobject/login" width="100%" height="500"></iframe>
+            </div>
             <div class="modal-footer">
-              <button class="btn btn-primary" type="button">儲存送出</button>
+              <button class="btn btn-primary" type="button">核准</button>
+              <button class="btn btn-danger" type="button">退件</button>
               <button class="btn btn-secondary" type="button" data-dismiss="modal">關閉</button>
             </div>
           </div>

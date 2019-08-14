@@ -17,24 +17,27 @@ block body
                     article.article
                         .breadcrumb
                             | 首頁 > 權限管理 > 權限群組設定
-                        .input
-                            .confirm-button(data-toggle='modal', data-target='#modal_group_add') 新增
+                        .form-row
+                            .col-auto.ml-auto
+                                a.btn.btn-primary.mb-2(href="backstage-group-add.html")
+                                    i.fas.fa-plus-square
+                                    | &nbsp;新增
                         table#table.table-style
                             thead
                                 tr
                                     th(style="width: 4em; font-weight: bold;") 編號
                                     th 群組
                             tbody
-                                tr.hover-style(data-toggle='modal', data-target='#modal_group_edit')
+                                tr.hover-style(page-href="backstage-group-edit.html")
                                     td 1
                                     td 最高管理員
-                                tr.hover-style(data-toggle='modal', data-target='#modal_group_edit')
+                                tr.hover-style(page-href="backstage-group-edit.html")
                                     td 2
                                     td 一般管理員-編輯
-                                tr.hover-style(data-toggle='modal', data-target='#modal_group_edit')
+                                tr.hover-style(page-href="backstage-group-edit.html")
                                     td 3
                                     td 一般管理員-瀏覽
-                                tr.hover-style(data-toggle='modal', data-target='#modal_group_edit')
+                                tr.hover-style(page-href="backstage-group-edit.html")
                                     td 4
                                     td 一般管理員-僅發佈
     include ./blocks/modal-group-add

@@ -1,0 +1,152 @@
+extends ./layouts/backstage-login
+
+block script
+
+block style
+    link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+
+block body
+    +header-backstage-login(4)
+
+    section#section.backstage
+        .main-wrap
+            .content
+                .article-wrap
+                    //- include ./blocks/backstage-aside-permission
+                    +sidebar-permission(2)
+                    article.article
+                        .breadcrumb
+                            | 首頁 > 權限管理 > 權限群組設定 > 編輯權限群組
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 群組名稱
+                                input.form-control(type='text', placeholder='最高管理員', value='', disabled)
+                        table.table-style
+                            thead
+                                tr
+                                    th 功能
+                                    th 瀏覽
+                                    th 新增
+                                    th 編輯
+                                    th 刪除
+                                    th 全選
+                            tbody
+                                tr
+                                    td 功能項目
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p1_1.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p1_1')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p1_2.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p1_2')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p1_3.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p1_3')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p1_4.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p1_4')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p1_5.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p1_5')
+                                tr
+                                    td 功能項目
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p2_1.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p2_1')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p2_2.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p2_2')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p2_3.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p2_3')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p2_4.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p2_4')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p2_5.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p2_5')
+                                tr
+                                    td 功能項目
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p3_1.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p3_1')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p3_2.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p3_2')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p3_3.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p3_3')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p3_4.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p3_4')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p3_5.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p3_5')
+                                tr
+                                    td 功能項目
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p4_1.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p4_1')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p4_2.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p4_2')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p4_3.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p4_3')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p4_4.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p4_4')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p4_5.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p4_5')
+                                tr
+                                    td 功能項目
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p5_1.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p5_1')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p5_2.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p5_2')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p5_3.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p5_3')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p5_4.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p5_4')
+                                    td.p-2
+                                        .custom-control.custom-switch
+                                            input#p5_5.custom-control-input(type='checkbox')
+                                            label.custom-control-label(for='p5_5')
+                        .row.justify-content-center.mt-3
+                            .col-auto
+                                a.btn.btn-primary(href="backstage-group.html") 儲存送出
+                                a.btn.btn-outline-secondary.ml-2(href="backstage-group.html") 取消
+
+block body-end
+    script(src="./lib/datatables/datatables.min.js")
+    script(src="./lib/ckeditor/ckeditor.js")

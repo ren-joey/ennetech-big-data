@@ -39,10 +39,6 @@ block body
                                 button#api_reset_filter.btn.btn-outline-danger.mb-2
                                     i.fas.fa-redo
                                     | &nbsp;回復列表
-                            .col-auto.ml-auto
-                                button.btn.btn-primary.mb-2(data-toggle='modal', data-target='#modal_api_add')
-                                    i.fas.fa-plus-square
-                                    | &nbsp;新增
                         //- .input
                         //-     .confirm-button(data-toggle='modal', data-target='#modal_member_add') 新增
                         //- +input-bootstrap('input_title', 'title', '標題', '請輸入標題', '', true)
@@ -85,7 +81,6 @@ block body
                                     td
                                     td 待審查
                                     td 2019-08-08
-    include ./blocks/modal-api-add
     include ./blocks/modal-api-edit
 
 block body-end
