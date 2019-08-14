@@ -1,0 +1,417 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=480px"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=7"/>
+    <title>資料</title>
+    <link rel="stylesheet" href="./styles/main.css"/>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./lib/fontawesome-free-5.9.0-web/css/all.css"/>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="wrapper__mask"></div>
+            <div class="popup__mask" id="login" style="display: none;">
+              <div class="close-button" id="login_cancel_button">
+                <div class="text">關閉</div>
+              </div>
+              <div class="popup__wrap">
+                <div class="popup__header"><span class="welcome">WELCOME</span><span class="title">觀迎使用數據創育平台</span></div>
+                <div class="popup__body">
+                  <div class="popup__content">
+                          <div class="input">
+                            <input id="login_account" name="account" type="text" placeholder="電子郵件"/>
+                          </div>
+                          <div class="input">
+                            <input id="login_password" name="password" type="password" placeholder="請輸入12-16碼英數混合密碼"/>
+                          </div>
+                          <div class="input__tip">英文字母需區分大小寫</div>
+                          <div class="input">
+                            <input class="sm" id="login_verify" name="verify" type="password" placeholder="請輸入圖形內容"/><img class="ml-4" src="./assets/images/verify.jpg" width="auto" height="30" alt="驗證圖片" srcset=""/>
+                          </div>
+                    <div class="input">
+                      <div class="input__warn"><i class="fas fa-exclamation-triangle"></i>&nbsp;警告語範例</div>
+                    </div>
+                    <div class="input">
+                      <div class="confirm-button" id="login_confirm_button">登入<a class="click-area" href="index-login.html"></a></div>
+                    </div>
+                    <div class="input">
+                      <div class="gray-button" id="register_button">加入會員</div>
+                    </div>
+                    <div class="input">
+                      <div class="gray-button" id="forgot_password_button">忘記密碼</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="popup__mask" id="register" style="display: none;">
+              <div class="close-button" id="register_cancel_button">
+                <div class="text">取消註冊</div>
+              </div>
+              <div class="popup__wrap">
+                <div class="popup__header"><span class="welcome">WELCOME</span><span class="title">觀迎使用數據創育平台</span></div>
+                <div class="popup__body" id="register_term" style="display: none;">
+                  <div class="popup__content">
+                    <div class="form-division">
+                      <div class="title">使用條款</div>
+                    </div>
+                    <div class="input">
+                      <textarea rows="20">林口創育平臺使用條款
+中華民國 108 年 07 月 12 日訂定
+本林口創育平臺使用規則（以下簡稱「本規則」），係針對經濟部中小企業處未來城市大數據應用示範計畫（以下簡稱本計畫），提供林口新創園進駐團隊使用，並以此基礎發展數據交換機制與應用之服務、營運等資料，說明開放資料之使用者權利、義務以及 相關權利事項，且使用者將依循本規則、創育平臺服務授權書（以下簡稱「授權書」）所示方式使用 API 以及相關資料，故 訂定本規則。
+定義
+資料提供者：
+進駐於林口新創園使用此平台所取得或作成之開放資料，並依授權書而釋出予使用者之人或團體。
+受其他政府機關補助、委辦、委託或其他類似之關係，因而取得或作成之開放資料，並依授權書釋出予使用者之人或團體。
+其他具有各類電子資料而自願依授權書釋出取得或作成之開放資料之人或團體。
+使用者：指依本規則約定取得開放資料，並對其利用之自然 人、法人、政府機關或團體，包括遵照本規則之使用者再轉授權利用之人或團體。
+開放資料：指資料提供者擁有著作財產權、經授權得再轉授 權第三人利用，或其他得以合法使用之資料，並以公開、可修改，且無必要技術限制之格式，而以 Open API 形式提供 者，包括但不限於下列資料：
+受著作權法保護之著作。
+其他不受著作權法或其他相關法規保護之資料，並隨同 Open API 形式一併提供者
+衍生物：指依授權書所提供之開放資料，進行後續重製、改作、編輯或為其他方式利用之修改物。
+開放資料用
+資料提供者提供之開放資料，授權使用者得不限時間及地域、非專屬、不可撤回、免授權金進行利用，但不得為商業目的之利用。
+前項所稱利用，包括針對各式著作之使用，以及其他開發各種非商業目的利用之產品或服務型態之衍生物。
+使用者得再轉授權他人為第 1 項之利用。
+使用者依本規則約定利用開放資料，無須另行取得資料提供 者之書面或其他方式授權。
+本規則約定得利用開放資料之範圍不及於專利權、商標權。
+若使用者欲就資料提供者所供開放資料進行商業目的之利 用，則須自行洽詢各該資料提供者並協商相關利用事宜。
+使用者之同意與義務
+使用者依本規則利用開放資料者，視為確知並同意遵守本規 則所列之約定。
+使用者依本規則利用開放資料及後續之衍生物，若不符附件 所示之「顯名聲明」要求者，即屬未盡顯名標示義務，視為 自始未取得開放資料之授權，則資料提供者得依法主張其權 利。
+使用者對開放資料或其衍生物進行公開形式之利用時，須明 確標示開放資料之來源（網站連結），並須標示本規則之日期 版次與網址。 (四)使用者對開放資料進行利用而產生衍生物時，須標示開放資 料已被變更。
+自林口創育管理平台利用開放資料之使用者，再授權予其他使用者利用開放資料時，亦應與該使用者約定如本規則之要求（特別如：附件所示之顯名聲明）。
+本規則或其內容變更 本規則如有修正者，使用者仍係依原規則之約定內容使用開放 資料，但新規則公告時，使用者得選擇依新規則之約定使用開 放資料。
+使用者之權利請求限制
+使用者依本規則利用開放資料受有損害，或致第三人受有損害而遭求償者，除資料提供者惡意下架開放資料或法令另有 規定外，使用者不得向資料提供者請求任何賠償或補償。
+使用者依本規則使用開放資料，視為確知資料提供者依授權 書提供之開放資料，非屬任何申述、保證或暗示其推薦、同 意之意思表示，故不得以其使用之開放資料向資料提供者請 求損害賠償或補償。
+使用者依本規則利用開放資料受有損害，或致第三人受有損 害而遭求償者，除法令另有規定外，使用者不得向資料提供 者請求任何賠償或補償。
+林口創育平台僅係提供資料提供者放置 API 之平台，並供註冊之會員使用，但不對使用者之使用、任何 不當行為，或資料提供者所提供之資料、API 等內容負擔任 何監督或管理責任，故資料提供者或使用者有任何侵害他人 權益之行為，應自負其責，平台相關管理團隊不負賠償之責。
+準據法 本規則之解釋、效力、履行及其他未盡事宜，以中華民國法律 為準據法。
+管轄法院 因本規則所生之相關爭議，以我國台北地方法院作為合意之第 一審專屬管轄法院。</textarea>
+                    </div>
+                    <div class="input">
+                      <div class="confirm-button" id="term_close_button">關閉</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="popup__body" id="register_privacy" style="display: none;">
+                  <div class="popup__content">
+                    <div class="form-division">
+                      <div class="title">隱私權政策</div>
+                    </div>
+                    <div class="input">
+                      <textarea rows="20">林口新創園 隱私權聲明
+ 林口新創園（以下簡稱本會）尊重並保護您的隱私權。為了幫助您瞭解本會如何蒐集、處理及利用您的個人資料，請務必詳細閱讀本會的「隱私權聲明」。
+ 壹、適用範圍
+ 一、本會「隱私權聲明」適用於您與本會洽辦業務、參與各項活動（如報名研討會/課程、加入網站會員、訂閱電子報等）或透過電話、傳真或本會網站意見信箱提出詢問或建議時（包括本會官網及本會各業務部門網站），所涉及之個人資料蒐集、處理與利用行為。
+ 二、凡經由本會網站連結至第三方獨立管理、經營之網站，有關個人資料的保護，適用第三方或各該網站的隱私權政策，本會不負任何連帶責任。
+ 貳、個人資料之蒐集、處理及利用
+ 一、當您與本會洽辦業務或參與本會各項活動，我們將視業務或活動性質請您提供必要的個人資料，並在該特定目的範圍內處理及利用您的個人資料；非經您書面同意，本會不會將個人資料用於其他用途。
+ 二、如果您使用電話、傳真或本會網站意見信箱與本會聯繫時，請您提供正確的電話、傳真號碼或電子信箱地址，作為回覆來詢事項之用。
+ 三、您的個人資料在處理過程中，本會將遵守相關之流程及內部作業規範，並依據資訊安全之要求，進行必要之人員控管。
+ 四、單純瀏覽本會網站及下載檔案之行為，本會不會蒐集任何與個人身分有關之資訊。
+ 參、與第三人共用個人資料
+ 一、本會絕不會提供、交換、出租或出售任何您的個人資料給其他個人、團體、私人企業或公務機關，但有法律依據或合約義務者，不在此限。
+ 二、前項但書之情形包括不限於：
+ 1. 配合司法單位合法的調查。
+ 2. 配合主管機關依職權或職務需要之調查或使用（例如審計部或會計師查帳）。
+ 3. 基於善意相信揭露您的個人資料為法律所必需。
+ 4. 當您在本會網站的行為，違反本會的服務條款或可能損害或妨礙本會權益或導致任何人遭受損害時，經本會研析揭露您的個人資料是為了辨識、聯絡或採取法律行動所必要者。
+ 5. 基於委外契約關係，本會依約履行提供個人資料之義務。
+ 三、本會委託廠商協助蒐集、處理或利用您的個人資料時，將對委外廠商或個人善盡監督管理之責。
+ 肆、cookie 之運用
+ 一、基於網站內部管理之需要及提供最佳個人化服務，本會網站將在您的瀏覽器中寫入cookies並讀取記錄瀏覽者的 IP 位址、上網時間，以及在各項資訊查閱之次數，進行網站流量和網路行為調查之總量分析，不會對「個別」瀏覽者進行分析。
+ 二、若您不願接受 cookie 的寫入，您可將使用中之瀏覽器設定為拒絕 cookie 的寫入，但也因此會使網站某些功能無法正常執行。
+ 伍、伺服器紀錄
+ 當您透過瀏覽器、應用程式或其他用戶端使用本會網站時，我們的伺服器會自動記錄特定的技術性資訊。這些伺服器紀錄可能包含您的網頁要求、網際網路通訊協定位址、瀏覽器類型、瀏覽器語言、送出要求的日期和時間等資訊。此伺服器紀錄僅作為伺服器管理的參考，本會不會利用此伺服器紀錄對「個別」瀏覽者進行分析。
+ 陸、隱私權聲明之修改
+ 本隱私權聲明將適時依據法律修正、相關技術之發展及內部管理制度之調整而配合修改，以落實保障您隱私權及網路安全之初衷。當本會完成相關條款修改時，會立即將其刊登於本會網站中，並以醒目標示提醒您前往點選閱讀。</textarea>
+                    </div>
+                    <div class="input">
+                      <div class="confirm-button" id="privacy_close_button">關閉</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="popup__body" id="register_list">
+                  <div class="popup__content">
+                    <div class="form-division">
+                      <div class="title">請輸入電子郵件及密碼</div>
+                    </div>
+                          <div class="input">
+                            <input id="register_account" name="account" type="text" placeholder="電子郵件" required="required"/>
+                          </div>
+                          <div class="input">
+                            <input id="register_password" name="password" type="password" placeholder="12-16碼英數混合密碼" required="required"/>
+                          </div>
+                          <div class="input__tip">必須包含(1)大小寫字母、(2)數字及(3)指定特殊字元(!$%@#*?&amp;))</div>
+                          <div class="input">
+                            <input id="register_password_confirm" name="password-confirm" type="password" placeholder="再次確認密碼" required="required"/>
+                          </div>
+                    <div class="form-division">
+                      <div class="title">請輸入姓名及相關資訊</div>
+                    </div>
+                    <div class="input">
+                      <input id="register_name" type="text" name="name" placeholder="中文真實姓名" required="required"/>
+                      <input id="register_phone" type="text" name="phone" placeholder="手機"/>
+                    </div>
+                    <div class="input">
+                      <select class="select-year" name="register_year"></select>
+                      <select name="register_sex">
+                        <option disabled="disabled" selected="selected">請選擇性別</option>
+                        <option>男</option>
+                        <option>女</option>
+                      </select>
+                    </div>
+                    <div class="form-division">
+                      <div class="title">請輸入公司相關資訊(非必填)</div>
+                    </div>
+                    <div class="input">
+                      <input name="register_company_name" type="text" placeholder="公司名稱"/>
+                      <input name="register_company_id" type="text" placeholder="統編"/>
+                    </div>
+                    <div class="input">
+                      <input name="register_company_position" type="text" placeholder="職稱"/>
+                      <input name="register_company_" type="text" placeholder="設立國籍"/>
+                    </div>
+                    <div class="input">
+                      <select class="company-type" name="register_company_type"></select>
+                      <select name="register_company_size">
+                        <option disabled="disabled" selected="selected">公司規模</option>
+                        <option value="~30">30人以下</option>
+                        <option value="31~100">31~100人</option>
+                        <option value="101~500">101~500人</option>
+                        <option value="501~">501人以上</option>
+                      </select>
+                    </div>
+                          <div class="input">
+                            <input class="sm" id="register_verify" name="verify" type="password" placeholder="請輸入圖形內容"/><img class="ml-4" src="./assets/images/verify.jpg" width="auto" height="30" alt="驗證圖片" srcset=""/>
+                          </div>
+                    <div class="input">
+                      <input id="term" name="term" type="checkbox"/>
+                      <label for="term">本人已詳閱並同意<a id="term_button" href="#">使用條款</a>及<a id="privacy_button" href="#">隱私權政策</a>內容</label>
+                    </div>
+                    <div class="input">
+                      <div class="confirm-button" id="register_next_button">下一步</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="popup__body" id="register_agreement" style="display: none;">
+                  <div class="popup__content">
+                    <div class="form-division">
+                      <div class="title">個資使用同意書</div>
+                    </div>
+                    <div class="input">
+                      <textarea rows="20">財團法人資訊工業策進會蒐集個人資料告知事項暨個人資料提供同意書
+版本：P-V4-DSI
+財團法人資訊工業策進會(下稱本會)為遵守個人資料保護法令及本會個人資料保護政策、規章，於向您蒐集個人資料前，依法向您告知下列事項，敬請詳閱。
+一、 蒐集目的及類別本會因辦理或執行業務、活動、計畫、提供服務及供本會用於內部行政管理、陳報主管機關或其他合於本會捐助章程所定業務、寄送本會或產業相關活動訊息之蒐集目的，而需獲取您下列個人資料類別：姓名、聯絡方式(如電話號碼、職稱、電子信箱、居住或工作地址等)、身分證統一編號，或其他得以直接或間接識別您個人之資料。※您日後如不願再收到本會所寄送之行銷訊息，可於收到前述訊息時，直接點選訊息內拒絕接受之連結。
+二、 個人資料利用之期間、地區、對象及方式除涉及國際業務或活動外，您的個人資料僅供本會於中華民國領域、在前述蒐集目的之必要範圍內，以合理方式利用至蒐集目的消失為止。
+三、 當事人權利您可依前述業務、活動所定規則或依本會網站（https://www.iii.org.tw/）「個資當事人行使權利專頁」公告方式向本會行使下列權利：(一) 查詢或請求閱覽。(二) 請求製給複製本。(三) 請求補充或更正。(四) 請求停止蒐集、處理及利用(五) 請求刪除您的個人資料。
+四、 不提供個人資料之權益影響若您未提供正確或不提供個人資料，本會將無法為您提供蒐集目的之相關服務。
+五、 您瞭解此一同意書符合個人資料保護法及相關法規之要求，且同意本會留存此同意書，供日後取出查驗。
+個人資料之同意提供：一、本人已充分獲知且已瞭解上述貴會告知事項。二、 本人同意貴會於所列蒐集目的之必要範圍內，蒐集、處理及利用本人之個人資料。</textarea>
+                    </div>
+                    <div class="input">
+                      <input id="agreement" name="term" type="checkbox"/>
+                      <label for="agreement">本人已詳閱並同意「個資使用同意書」內容</label>
+                    </div>
+                    <div class="input">
+                      <div class="confirm-button" id="agreement_agree_button">送出</div>
+                    </div>
+                    <div class="input">
+                      <div class="gray-button" id="agreement_disagree_button">返回</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="popup__body" id="register_complete" style="display: none;">
+                  <div class="popup__content">
+                    <div class="input">註冊完成！ 請進行會員Email認證！<br/><br/>在尚未認證前，您將無法使用會員專屬各項服務，請務必完成認證流程！<br/><br/>※若沒收到認證信請檢查垃圾信箱<br/>※請在24小時內完成認證流程</div>
+                    <div class="input">
+                      <div class="confirm-button" id="register_complete_button">完成</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="popup__mask" id="register_email_confirm" style="display: none;">
+              <div class="popup__wrap">
+                <div class="popup__header"><span class="welcome">WELCOME</span><span class="title">觀迎使用數據創育平台</span></div>
+                <div class="popup__body">
+                  <div class="popup__content">
+                    <div class="input">認證完成<br/>認證信箱 XXXX@gmail.com 已認證完成
+                      您現在可以使用林口數據創育平台會員的服務
+                    </div>
+                    <div class="input">
+                      <div class="confirm-button" id="register_email_confirm_button">完成</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="popup__mask" id="forgot_password" style="display: none;">
+              <div class="close-button" id="forgot_password_cancel_button">
+                <div class="text">關閉</div>
+              </div>
+              <div class="popup__wrap">
+                <div class="popup__header"><span class="welcome">FORGOT PASSWORD</span><span class="title">忘記密碼</span></div>
+                <div class="popup__body" id="forgot_password_email">
+                  <div class="popup__content">
+                    <div class="input">我們會將密碼寄到您註冊時所填寫的電子信箱<br/>請先確認可以收到該信件。</div>
+                          <div class="input">
+                            <input id="register_account" name="account" type="text" placeholder="使用者電子郵件" required="required"/>
+                          </div>
+                          <div class="input">
+                            <input class="sm" id="register_verify" name="verify" type="password" placeholder="請輸入圖形內容"/><img class="ml-4" src="./assets/images/verify.jpg" width="auto" height="30" alt="驗證圖片" srcset=""/>
+                          </div>
+                    <div class="input">
+                      <div class="confirm-button" id="forgot_password_next_button">寄送驗證信</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="popup__body" id="forgot_password_complete" style="display: none;">
+                  <div class="popup__content">
+                    <div class="input">認證完成<br/>認證信箱 XXXX@gmail.com 已認證完成
+                      您現在可以使用林口數據創育平台會員的服務
+                    </div>
+                    <div class="input">
+                      <div class="confirm-button" id="forgot_password_complete_button">完成</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="popup__mask" id="reset_password" style="display: none;">
+              <div class="close-button" id="reset_password_cancel_button">
+                <div class="text">關閉</div>
+              </div>
+              <div class="popup__wrap">
+                <div class="popup__header"><span class="welcome">RESET PASSWORD</span><span class="title">重設密碼</span></div>
+                <div class="popup__body" id="reset_password_input">
+                  <div class="popup__content">
+                          <div class="input">
+                            <input id="reset_password" name="reset_password" type="password" placeholder="請輸入新密碼" required="required"/>
+                          </div>
+                          <div class="input__tip">必須包含(1)大小寫字母、(2)數字及(3)指定特殊字元(!$%@#*?&amp;))</div>
+                          <div class="input">
+                            <input id="confirm_reset_password" name="confirm_reset_password" type="password" placeholder="密碼確認" required="required"/>
+                          </div>
+                    <div class="input">
+                      <div class="confirm-button" id="reset_password_next_button">重設密碼</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="popup__body" id="reset_password_complete" style="display: none;">
+                  <div class="popup__content">
+                    <div class="input">密碼變更完成<br/>使用者帳號: XXXXXXXX
+                      您現在可以使用新的密碼登入
+                    </div>
+                    <div class="input">
+                      <div class="confirm-button" id="reset_password_complete_button">回首頁</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <header class="header" id="header">
+              <div class="header__logo">LOGO<a class="click-area" href="/"></a></div>
+              <form class="search-wrap">
+                <input class="search-input" type="text" name="search"/><a class="fas fa-search" id="search_submit" href="#"></a>
+              </form>
+              <div class="header__hamburger" id="header_menu_btn_m"><i class="fas fa-bars"></i></div>
+              <div class="header__menu">
+                <ul class="menu">
+                  <li class="menu__nav thin mobile mobile-order-1" id="header_menu_close_btn_m"><i class="fas fa-times rotation-style"></i></li>
+                  <li class="menu__nav active">關於平台<span class="thin mobile">About</span>
+                    <ul class="nav-select" style="display: none;">
+                      <li class="nav-select__option active">平台緣起<a class="click-area"></a></li>
+                      <li class="nav-select__option">最新消息<a class="click-area" href="news.html"></a></li>
+                      <li class="nav-select__option">數據創育專欄<a class="click-area" href="living-data.html"></a></li>
+                      <li class="nav-select__option">網站地圖<a class="click-area" href="map.html"></a></li>
+                      <li class="nav-select__option">相關連結<a class="click-area" href="link.html"></a></li>
+                    </ul>
+                  </li>
+                  <li class="menu__nav new">API市集<span class="thin mobile">API Market</span><a class="click-area" href="api-list.html"></a>
+                    <ul class="nav-select" style="display: none;">
+                      <li class="nav-select__option new">最新上架<a class="click-area" href="api-new.html"></a></li>
+                      <li class="nav-select__option">熱門上架<a class="click-area" href="api-hot.html"></a></li>
+                      <li class="nav-select__option">統計分析<a class="click-area" href="api-analytic.html"></a></li>
+                      <li class="nav-select__option">我的API<a class="click-area" href="api-custom.html"></a></li>
+                    </ul>
+                  </li>
+                  <li class="menu__nav hot">數據探索<span class="thin mobile">Explore</span><a class="click-area" href="data-explore.html"></a>
+                    <ul class="nav-select" style="display: none;">
+                      <li class="nav-select__option hot">分析引擎<a class="click-area" href="data-explore.html"></a></li>
+                    </ul>
+                  </li>
+                  <li class="menu__nav">生活數據<span class="thin mobile">Living Data</span><a class="click-area" href="living-data.html"></a>
+                    <ul class="nav-select" style="display: none;">
+                      <li class="nav-select__option">數據匯入<a class="click-area" href="data-import.html"></a></li>
+                      <li class="nav-select__option">視覺化<a class="click-area" href="data-chart.html"></a></li>
+                    </ul>
+                  </li>
+                  <li class="menu__nav">數據能量庫<span class="thin mobile">API Market</span>
+                    <ul class="nav-select" style="display: none;">
+                      <li class="nav-select__option">數據育成樣貌輪廓<a class="click-area" href="#"></a></li>
+                      <li class="nav-select__option">新創業者分類列表<a class="click-area" href="#"></a></li>
+                      <li class="nav-select__option">數據活動資訊<a class="click-area" href="#"></a></li>
+                    </ul>
+                  </li>
+                  <li class="menu__nav">常見問題</li>
+                  <li class="menu__nav mobile">登出<span class="thin mobile">LOGOUT</span><a class="click-area" href="index-logout.html"></a></li>
+                  <li class="menu__nav mobile mobile-order-2 mobile-thin"><i class="fas fa-user inline"></i>&nbsp;歡迎，陳先生</li>
+                  <li class="menu__nav pc"><i class="fas fa-user inline"></i>&nbsp;歡迎，陳先生
+                    <ul class="nav-select" style="display: none;">
+                      <li class="nav-select__option">登出<a class="click-area" href="index-logout.html"></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </header>
+      <section id="section">
+        <div class="main-wrap">
+          <div class="content">
+                <div class="breadcrumb">首頁 &gt; 關於平台 &gt; 平台緣起</div>
+                <div class="main-title">
+                  <h1>平台緣起</h1>
+                  <div class="status">
+                    <div class="status__date">發布日期7/17/2019</div>
+                    <div class="status__ver">發布版本1.0.0</div>
+                  </div>
+                </div>
+            <article class="article"></article>
+          </div>
+        </div>
+      </section>
+      <footer class="footer" id="footer">
+        <div class="footer__wrap">
+          <div class="footer__map">
+            <div class="footer__list"><a class="title" href="#">關於我們</a></div>
+            <div class="footer__list"><a class="title" href="#">相關連結</a></div>
+            <div class="footer__list"><a class="title" href="#">隱私權說明</a></div>
+            <div class="footer__list"><a class="title" href="#">資料開放宣告</a></div>
+          </div>
+          <div class="footer__contact">
+            <div class="brand">LOGO</div>hello@startupterrace.tw<br/>(02) 2369-2358<br/>24449 新北市林口區仁愛路二段496號<br/>星期一至星期五 9:00 ~ 18:00
+          </div>
+        </div>
+        <div class="copyright">建議瀏覽器： Microsoft Internet Explorer AG以上、Google Chrome 最新版本<br/>本網站為經濟部中小企業處「林口新創園」之計畫專案，著作權為其所有，非經同意，不得為任何形式之利用。<br/>©2019 未來城市大數據應用示範計畫版權所有 | All rights reserved.<br/>
+          <div class="counter-digit">0</div>
+          <div class="counter-digit">0</div>
+          <div class="counter-digit">0</div>
+          <div class="counter-digit">1</div>
+          <div class="counter-digit">8</div>
+          <div class="counter-digit">9</div>
+          <div class="counter-digit">6</div>
+        </div>
+      </footer>
+    </div>
+    <script src="./lib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/greensock-js/TweenMax.min.js"></script>
+    <script src="./lib/ckeditor/ckeditor.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

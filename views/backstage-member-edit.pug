@@ -1,0 +1,202 @@
+extends ./layouts/backstage-login
+
+block script
+
+block style
+    link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css")
+
+block body
+    +header-backstage-login(2)
+
+    section#section.backstage
+        .main-wrap
+            .content
+                .article-wrap
+                    //- include ./blocks/backstage-aside-member
+                    +sidebar-member(1)
+                    article.article
+                        .breadcrumb
+                            | 首頁 > 會員管理 > 會員列表 > 修改會員
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 帳號
+                                input.form-control(type='text', placeholder='請輸入帳號', value='James', disabled)
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 密碼
+                                input.form-control(type='password', placeholder='請輸入12-16位密碼')
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 新密碼
+                                input.form-control(type='password', placeholder='請輸入12-16位密碼')
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 姓名
+                                input.form-control(type='password', placeholder='請輸入姓名')
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 生日
+                                select.form-control.select-year(required='')
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 性別
+                                select.form-control
+                                    option 男
+                                    option 女
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 公司名稱
+                                input.form-control(type='password', placeholder='請輸入公司名稱')
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 職稱
+                                input.form-control(type='password', placeholder='請輸入職稱')
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 統編
+                                input.form-control(type='password', placeholder='請輸入公司統一編號')
+                        .input
+                            .custom-control.custom-switch
+                                input#customSwitch3.custom-control-input(type='checkbox')
+                                label.custom-control-label(for='customSwitch3') 啟用
+                            .custom-control.custom-switch
+                                input#customSwitch4.custom-control-input(type='checkbox')
+                                label.custom-control-label(for='customSwitch4') 新創會員
+                        .input
+                            select#select_company.form-control
+                                option(disabled, selected) --請選擇新創公司--
+                                option 公司A
+                                option 公司B
+                                option 公司C
+                                option 公司D
+                        .row.justify-content-center
+                            .col-auto
+                                a.btn.btn-primary(href="backstage-member.html") 儲存送出
+                                a.btn.btn-outline-secondary.ml-2(href="backstage-member.html") 取消
+
+block body-end
+    script(src="./lib/datatables/datatables.min.js")
+    script(src="./lib/ckeditor/ckeditor.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js")
+    script.
+        //- $.fn.dataTable.ext.search.push(
+        //-     function( settings, data, dataIndex ) {
+        //-         var level = $('#member_level_filter').val();
+        //-         var dataLevel = data[3]; // use data for the age column
+
+        //-         if ( +level === -1 ||
+        //-             dataLevel.indexOf(level) !== -1 )
+        //-         {
+        //-             return true;
+        //-         }
+        //-         return false;
+        //-     }
+        //- );
+
+        //- $.fn.dataTable.ext.search.push(
+        //-     function( settings, data, dataIndex ) {
+        //-         var id = $('#member_id_filter').val();
+        //-         var dataId = data[4]; // use data for the age column
+
+        //-         if ( dataId.indexOf(id) !== -1 )
+        //-         {
+        //-             return true;
+        //-         }
+        //-         return false;
+        //-     }
+        //- );
+
+        //- $.fn.dataTable.ext.search.push(
+        //-     function( settings, data, dataIndex ) {
+        //-         var state = $('#member_state_filter').val();
+        //-         var dataState = data[5] || ''; // use data for the age column
+
+        //-         if ( +state === -1 ||
+        //-             (dataState.indexOf('啟用') !== -1 && +state === 1) ||
+        //-             (dataState.indexOf('關閉') !== -1 && +state === 0) )
+        //-         {
+        //-             return true;
+        //-         }
+        //-         return false;
+        //-     }
+        //- );
+
+        //- const datatableBinding = () => {
+        //-     const table = $('#member_table')
+        //-     if(table.length) {
+        //-         const filter = $('#filter')
+        //-         const wrapper = $('#wrapper')
+
+        //-         const dataTable = table.DataTable({
+        //-             language: {
+        //-                 lengthMenu: '每頁 _MENU_ 筆',
+        //-                 zeroRecords: '<i class="fas fa-box-open"></i> 很抱歉，沒有符合的結果',
+        //-                 info: '第 _PAGE_ 頁，共 _PAGES_ 頁',
+        //-                 infoEmpty: '',
+        //-                 search: '<i class="fas fa-search"></i>',
+        //-                 infoFiltered: '',
+        //-                 paginate: {
+        //-                     first: '第一頁',
+        //-                     last: '最後一頁',
+        //-                     next: '下一頁',
+        //-                     previous: '上一頁'
+        //-                 }
+        //-             }
+        //-         })
+
+        //-         const filterInsert = () => {
+        //-             setTimeout(() => {
+        //-                 const tableFilter = $('#table_filter')
+        //-                 if (tableFilter.length === 0) {
+        //-                     filterInsert()
+        //-                 } else {
+        //-                     if (filter.length === 0) return
+        //-                     $('<i id="table_filter_icon" class="table-filter mobile fas fa-filter"/>').prependTo(tableFilter)
+        //-                 }
+        //-             }, 10)
+        //-         };
+        //-         filterInsert()
+
+        //-         // 篩選器手機板事件綁定
+        //-         wrapper
+        //-             .on('click', '#table_filter_icon', () => {
+        //-                 filter.fadeIn()
+        //-                 filter.css('display', 'flex')
+        //-                 wrapper.addClass('fixed')
+        //-             })
+        //-             .on('click', '#filter_confirm_button', () => {
+        //-                 filter.fadeOut()
+        //-                 wrapper.removeClass('fixed')
+        //-             })
+
+        //-         $('#member_id_filter').on('keyup', () => {
+        //-             dataTable.draw()
+        //-         })
+
+        //-         $('#member_level_filter, #member_state_filter').on('change', () => {
+        //-             dataTable.draw()
+        //-         })
+
+        //-         $('#member_reset_filter').on('click', () => {
+        //-             $('#member_id_filter').val('')
+        //-             $('#member_level_filter').val('-1')
+        //-             $('#member_state_filter').val('-1')
+        //-             dataTable.draw()
+        //-         })
+        //-     }
+        //- }
+
+        window.onload = () => {
+        //-     datatableBinding()
+            $('#select_company').select2();
+        }

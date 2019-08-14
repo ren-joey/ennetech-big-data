@@ -1,0 +1,120 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=480px"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=7"/>
+    <title>資料</title>
+    <link rel="stylesheet" href="./styles/main.css"/>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./lib/fontawesome-free-5.9.0-web/css/all.css"/>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="wrapper__mask"></div>
+      <header class="header" id="header">
+        <div class="header__logo">LOGO
+          <div class="subtitle">後台管理</div><a class="click-area" href="/"></a>
+        </div>
+        <div class="header__hamburger" id="header_menu_btn_m"><i class="fas fa-bars"></i></div>
+        <div class="header__menu">
+          <ul class="menu">
+            <li class="menu__nav thin mobile mobile-order-1" id="header_menu_close_btn_m"><i class="fas fa-times rotation-style"></i></li>
+          </ul>
+        </div>
+      </header>
+      <section class="backstage center" id="section">
+        <div class="backstage__wallpaper"></div>
+        <div id="member">
+          <div class="member__wrap" id="login">
+            <div class="member__header"><span class="welcome">BACKSTAGE</span><span class="title">數據管理後台</span></div>
+            <div class="member__body">
+              <div class="member__content">
+                    <div class="input">
+                      <input id="login_account" name="account" type="text" placeholder="電子郵件"/>
+                    </div>
+                    <div class="input">
+                      <input id="login_password" name="password" type="password" placeholder="請輸入12-16碼英數混合密碼"/>
+                    </div>
+                    <div class="input__tip">英文字母需區分大小寫</div>
+                    <div class="input">
+                      <input class="sm" id="login_verify" name="verify" type="password" placeholder="請輸入圖形內容"/><img class="ml-4" src="./assets/images/verify.jpg" width="auto" height="30" alt="驗證圖片" srcset=""/>
+                    </div>
+                <div class="input">
+                  <div class="input__warn"><i class="fas fa-exclamation-triangle"></i>&nbsp;警告語範例</div>
+                </div>
+                <div class="input">
+                  <div class="confirm-button" id="login_confirm_button">登入<a class="click-area" href="backstage-login.html"></a></div>
+                </div>
+                <div class="input">
+                  <div class="gray-button" id="forgot_password_button">忘記密碼</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="member__wrap" id="forgot_password" style="display: none;">
+            <div class="member__header"><span class="welcome">FORGOT PASSWORD</span><span class="title">忘記密碼</span></div>
+            <div class="member__body" id="forgot_password_email">
+              <div class="member__content">
+                <div class="input">我們會將密碼寄到您註冊時所填寫的電子信箱<br/>請先確認可以收到該信件。</div>
+                    <div class="input">
+                      <input id="register_account" name="account" type="text" placeholder="使用者電子郵件" required="required"/>
+                    </div>
+                    <div class="input">
+                      <input class="sm" id="register_verify" name="verify" type="password" placeholder="請輸入圖形內容"/><img class="ml-4" src="./assets/images/verify.jpg" width="auto" height="30" alt="驗證圖片" srcset=""/>
+                    </div>
+                <div class="input">
+                  <div class="confirm-button" id="forgot_password_next_button">寄送驗證信</div>
+                </div>
+                <div class="input">
+                  <div class="gray-button" id="forgot_password_cancel_button">返回</div>
+                </div>
+              </div>
+            </div>
+            <div class="member__body" id="forgot_password_complete" style="display: none;">
+              <div class="member__content">
+                <div class="input">認證完成<br/>認證信箱 XXXX@gmail.com 已認證完成
+                  您現在可以使用林口數據創育平台會員的服務
+                </div>
+                <div class="input">
+                  <div class="confirm-button" id="forgot_password_complete_button">完成</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="member__wrap" id="reset_password" style="display: none;">
+            <div class="member__header"><span class="welcome">RESET PASSWORD</span><span class="title">重設密碼</span></div>
+            <div class="member__body" id="reset_password_input">
+              <div class="member__content">
+                    <div class="input">
+                      <input id="reset_password" name="reset_password" type="password" placeholder="請輸入新密碼" required="required"/>
+                    </div>
+                    <div class="input__tip">必須包含(1)大小寫字母、(2)數字及(3)指定特殊字元(!$%@#*?&amp;))</div>
+                    <div class="input">
+                      <input id="confirm_reset_password" name="confirm_reset_password" type="password" placeholder="密碼確認" required="required"/>
+                    </div>
+                <div class="input">
+                  <div class="confirm-button" id="reset_password_next_button">重設密碼</div>
+                </div>
+              </div>
+            </div>
+            <div class="member__body" id="reset_password_complete" style="display: none;">
+              <div class="member__content">
+                <div class="input">密碼變更完成<br/>使用者帳號: XXXXXXXX
+                  您現在可以使用新的密碼登入
+                </div>
+                <div class="input">
+                  <div class="confirm-button" id="reset_password_complete_button">回首頁</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="./lib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/greensock-js/TweenMax.min.js"></script>
+    <script src="./js/backstage-main.js"></script>
+  </body>
+</html>

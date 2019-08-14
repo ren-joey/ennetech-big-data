@@ -1,0 +1,115 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=480px"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=7"/>
+    <title>資料</title>
+    <link rel="stylesheet" href="./styles/main.css"/>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./lib/fontawesome-free-5.9.0-web/css/all.css"/>
+    <link rel="stylesheet" href="./lib/datatables/datatables.min.css"/>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="wrapper__mask"></div>
+            <header class="header" id="header">
+              <div class="header__logo">LOGO<a class="click-area" href="/"></a></div>
+              <div class="header__hamburger" id="header_menu_btn_m"><i class="fas fa-bars"></i></div>
+              <div class="header__menu">
+                <ul class="menu">
+                  <li class="menu__nav thin mobile mobile-order-1" id="header_menu_close_btn_m"><i class="fas fa-times rotation-style"></i></li>
+                  <li class="menu__nav">內容管理<a class="click-area" href="backstage-banner.html"></a></li>
+                  <li class="menu__nav">會員管理<a class="click-area" href="backstage-member.html"></a></li>
+                  <li class="menu__nav">數據管理<a class="click-area" href="backstage-api.html"></a></li>
+                  <li class="menu__nav">權限管理<a class="click-area" href="backstage-admin.html"></a></li>
+                  <li class="menu__nav active">系統管理<a class="click-area"></a></li>
+                  <li class="menu__nav mobile">登出<span class="thin mobile">LOGOUT</span><a class="click-area" href="backstage-logout.html"></a></li>
+                  <li class="menu__nav mobile mobile-order-2 mobile-thin"><i class="fas fa-user inline"></i>&nbsp;歡迎，陳先生</li>
+                  <li class="menu__nav pc"><i class="fas fa-user inline"></i>&nbsp;歡迎，陳先生
+                    <ul class="nav-select" style="display: none;">
+                      <li class="nav-select__option">登出<a class="click-area" href="backstage-logout.html"></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </header>
+      <section class="backstage" id="section">
+        <div class="main-wrap">
+          <div class="content">
+            <div class="article-wrap">
+                    <aside class="sidebar">
+                      <div class="sidebar__nav">個資檔案存取紀錄<a class="click-area" href="backstage-access-log.html"></a></div>
+                      <div class="sidebar__nav">操作紀錄管理<a class="click-area" href="backstage-operate-log.html"></a></div>
+                      <div class="sidebar__nav active">備份機制<a class="click-area"></a></div>
+                      <div class="sidebar__nav">網站統計分析<a class="click-area" href="backstage-analytic.html"></a></div>
+                    </aside>
+              <article class="article">
+                <div class="breadcrumb">首頁 > 系統管理 > 備份機制</div>
+                <div class="input">
+                  <div class="input-group align-items-center">
+                    <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#modal">即時備份</button><small class="text-muted ml-2">系統備份檔下載至備份目錄上</small>
+                  </div>
+                </div>
+                <div class="form-division">
+                  <div class="title">排程</div>
+                </div>
+                <div class="input">
+                  <div class="input-group">
+                    <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                      <input class="custom-control-input" id="monthly_backup" type="checkbox"/>
+                      <label class="custom-control-label" for="monthly_backup">每月第</label>
+                    </div>
+                    <input class="form-control form-control-sm mr-2" type="text"/>天(1-30)
+                  </div>
+                </div>
+                <div class="input">
+                  <div class="input-group">
+                    <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                      <input class="custom-control-input" id="weekly_backup" type="checkbox"/>
+                      <label class="custom-control-label" for="weekly_backup">每週</label>
+                    </div>
+                    <select class="form-control form-control-sm" type="text">
+                      <option value="1">一</option>
+                      <option value="2">二</option>
+                      <option value="3">三</option>
+                      <option value="4">四</option>
+                      <option value="5">五</option>
+                      <option value="6">六</option>
+                      <option value="7">日</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input">
+                  <div class="input-group">時間&nbsp;
+                    <select class="form-control form-control-sm hour-select"></select>&nbsp;:&nbsp;
+                    <select class="form-control form-control-sm minute-select">
+                      <option value="00">00</option>
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                      <option value="40">40</option>
+                      <option value="50">50</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input mt-2">
+                  <div class="confirm-button">儲存<a class="click-area" href="#"></a></div>
+                </div>
+                <div class="input">
+                  <div class="gray-button">取消<a class="click-area" href="#"></a></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="./lib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/greensock-js/TweenMax.min.js"></script>
+    <script src="./lib/datatables/datatables.min.js"></script>
+    <script src="./lib/ckeditor/ckeditor.js"></script>
+    <script src="./js/backstage-main.js"></script>
+  </body>
+</html>

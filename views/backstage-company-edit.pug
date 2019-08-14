@@ -1,0 +1,85 @@
+extends ./layouts/backstage-login
+
+block script
+
+block style
+    link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+
+block body
+    +header-backstage-login(2)
+
+    section#section.backstage
+        .main-wrap
+            .content
+                .article-wrap
+                    //- include ./blocks/backstage-aside-member
+                    +sidebar-member(2)
+                    article.article
+                        .breadcrumb
+                            | 首頁 > 會員管理 > 新創公司列表 > 編輯新創公司
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 公司名稱
+                                input.form-control(type='company_name', placeholder='請輸入公司名稱', disabled)
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text Codename
+                                input.form-control(type='codename', placeholder='請輸入Codename')
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 統編
+                                input.form-control(type='company_id', placeholder='請輸入統編')
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text TOKEN
+                                input.form-control(type='company_token', value="4kab3s", disabled)
+                        .input
+                            .custom-control.custom-switch
+                                input#customSwitch1.custom-control-input(type='checkbox')
+                                label.custom-control-label(for='customSwitch1') 啟用
+                        .form-division
+                            .title 公司相關資訊
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 產業類別
+                                select.company-type.form-control
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 公司規模
+                                select.form-control
+                                    option 10人以下
+                                    option 11~50
+                                    option 51~200
+                                    option 201~500
+                                    option 501人以上
+                        .form-division
+                            .title 新創會員
+                        table#table.table-style
+                                    thead
+                                        tr
+                                            th #
+                                            th 帳號
+                                            th 姓名
+                                            th 職稱
+                                            th 狀態
+                                    tbody
+                                        tr.hover-style
+                                            td 1
+                                            td james@abc.com
+                                            td James
+                                            td 一般
+                                            th 啟用
+                        .row.justify-content-center
+                            .col-auto
+                                a.btn.btn-primary(href="backstage-company.html") 儲存送出
+                                a.btn.btn-outline-secondary.ml-2(href="backstage-company.html") 取消
+
+block body-end
+    script(src="./lib/datatables/datatables.min.js")
+    script(src="./lib/ckeditor/ckeditor.js")

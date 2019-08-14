@@ -1,0 +1,80 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=480px"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=7"/>
+    <title>資料</title>
+    <link rel="stylesheet" href="./styles/main.css"/>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./lib/fontawesome-free-5.9.0-web/css/all.css"/>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="wrapper__mask"></div>
+            <header class="header" id="header">
+              <div class="header__logo">LOGO<a class="click-area" href="/"></a></div>
+              <div class="header__hamburger" id="header_menu_btn_m"><i class="fas fa-bars"></i></div>
+              <div class="header__menu">
+                <ul class="menu">
+                  <li class="menu__nav thin mobile mobile-order-1" id="header_menu_close_btn_m"><i class="fas fa-times rotation-style"></i></li>
+                  <li class="menu__nav active">內容管理<a class="click-area"></a></li>
+                  <li class="menu__nav">會員管理<a class="click-area" href="backstage-member.html"></a></li>
+                  <li class="menu__nav">數據管理<a class="click-area" href="backstage-api.html"></a></li>
+                  <li class="menu__nav">權限管理<a class="click-area" href="backstage-admin.html"></a></li>
+                  <li class="menu__nav">系統管理<a class="click-area" href="backstage-access-log.html"></a></li>
+                  <li class="menu__nav mobile">登出<span class="thin mobile">LOGOUT</span><a class="click-area" href="backstage-logout.html"></a></li>
+                  <li class="menu__nav mobile mobile-order-2 mobile-thin"><i class="fas fa-user inline"></i>&nbsp;歡迎，陳先生</li>
+                  <li class="menu__nav pc"><i class="fas fa-user inline"></i>&nbsp;歡迎，陳先生
+                    <ul class="nav-select" style="display: none;">
+                      <li class="nav-select__option">登出<a class="click-area" href="backstage-logout.html"></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </header>
+      <section class="backstage" id="section">
+        <div class="main-wrap">
+          <div class="content">
+            <div class="article-wrap">
+                    <aside class="sidebar">
+                      <div class="sidebar__nav">首頁Banner<a class="click-area" href="backstage-banner.html"></a></div>
+                      <div class="sidebar__nav active">平台緣起<a class="click-area"></a></div>
+                      <div class="sidebar__nav">最新消息<a class="click-area" href="backstage-news.html"></a></div>
+                      <div class="sidebar__nav">數據創育專欄<a class="click-area" href="backstage-data.html"></a></div>
+                      <div class="sidebar__nav">API交換共同規範<a class="click-area" href="#"></a></div>
+                      <div class="sidebar__nav">API使用條款<a class="click-area" href="#"></a></div>
+                      <div class="sidebar__nav">API上架使用教學<a class="click-area" href="#"></a></div>
+                      <div class="sidebar__nav">隱私權聲明<a class="click-area" href="backstage-privacy.html"></a></div>
+                      <div class="sidebar__nav">資料開放宣告<a class="click-area" href="#"></a></div>
+                      <div class="sidebar__nav">蒐集資料同意書<a class="click-area" href="#"></a></div>
+                      <div class="sidebar__nav">常見問題<a class="click-area" href="#"></a></div>
+                      <div class="sidebar__nav">新創業者列表<a class="click-area" href="#"></a></div>
+                      <div class="sidebar__nav">數據活動資訊<a class="click-area" href="#"></a></div>
+                      <div class="sidebar__nav">網站地圖<a class="click-area" href="#"></a></div>
+                      <div class="sidebar__nav">相關連結<a class="click-area" href="#"></a></div>
+                      <div class="sidebar__nav">圖檔上傳<a class="click-area" href="backstage-image-upload.html"></a></div>
+                      <div class="sidebar__nav">圖檔上傳紀錄<a class="click-area" href="backstage-image-history.html"></a></div>
+                    </aside>
+              <article class="article">
+                <div class="breadcrumb">首頁 > 內容管理 > 平台緣起</div>
+                    <div class="input">
+                      <input id="input_title" name="title" type="text" placeholder="請輸入標題" required="required"/>
+                    </div>
+                    <div class="input">
+                      <input id="input_desc" name="desc" type="text" placeholder="請輸入文件說明" required="required"/>
+                    </div>
+                <textarea id="ckeditor" name="ckeditor" rows="10" cols="80">This is my textarea to be replaced with CKEditor.</textarea>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="./lib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/greensock-js/TweenMax.min.js"></script>
+    <script src="./lib/ckeditor/ckeditor.js"></script>
+    <script src="./js/backstage-main.js"></script>
+  </body>
+</html>

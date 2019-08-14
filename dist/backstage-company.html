@@ -1,0 +1,459 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=480px"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=7"/>
+    <title>資料</title>
+    <link rel="stylesheet" href="./styles/main.css"/>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./lib/fontawesome-free-5.9.0-web/css/all.css"/>
+    <link rel="stylesheet" href="./lib/datatables/datatables.min.css"/>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="wrapper__mask"></div>
+            <header class="header" id="header">
+              <div class="header__logo">LOGO<a class="click-area" href="/"></a></div>
+              <div class="header__hamburger" id="header_menu_btn_m"><i class="fas fa-bars"></i></div>
+              <div class="header__menu">
+                <ul class="menu">
+                  <li class="menu__nav thin mobile mobile-order-1" id="header_menu_close_btn_m"><i class="fas fa-times rotation-style"></i></li>
+                  <li class="menu__nav">內容管理<a class="click-area" href="backstage-banner.html"></a></li>
+                  <li class="menu__nav active">會員管理<a class="click-area"></a></li>
+                  <li class="menu__nav">數據管理<a class="click-area" href="backstage-api.html"></a></li>
+                  <li class="menu__nav">權限管理<a class="click-area" href="backstage-admin.html"></a></li>
+                  <li class="menu__nav">系統管理<a class="click-area" href="backstage-access-log.html"></a></li>
+                  <li class="menu__nav mobile">登出<span class="thin mobile">LOGOUT</span><a class="click-area" href="backstage-logout.html"></a></li>
+                  <li class="menu__nav mobile mobile-order-2 mobile-thin"><i class="fas fa-user inline"></i>&nbsp;歡迎，陳先生</li>
+                  <li class="menu__nav pc"><i class="fas fa-user inline"></i>&nbsp;歡迎，陳先生
+                    <ul class="nav-select" style="display: none;">
+                      <li class="nav-select__option">登出<a class="click-area" href="backstage-logout.html"></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </header>
+      <section class="backstage" id="section">
+        <div class="main-wrap">
+          <div class="content">
+            <div class="article-wrap">
+                    <aside class="sidebar">
+                      <div class="sidebar__nav">會員列表<a class="click-area" href="backstage-member.html"></a></div>
+                      <div class="sidebar__nav active">新創公司列表<a class="click-area"></a></div>
+                    </aside>
+              <article class="article">
+                <div class="breadcrumb">首頁 > 會員管理 > 新創公司列表</div>
+                <div class="form-row align-items-center">
+                  <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">統編搜尋</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">統編</div>
+                      </div>
+                      <input class="form-control" id="company_id_filter" type="text" placeholder="統編搜尋"/>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">類型搜尋</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">類型</div>
+                      </div>
+                      <select class="form-control company-type" id="company_type_filter" type="text" placeholder="類型搜尋"></select>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">規模搜尋</label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">規模</div>
+                      </div>
+                      <select class="form-control" id="company_size_filter">
+                        <option value="-1" selected="selected">全部</option>
+                        <option value="1,10">10人以下</option>
+                        <option value="11,50">11~50</option>
+                        <option value="51,200">51~200</option>
+                        <option value="201,500">201~500</option>
+                        <option value="501">501人以上</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup"></label>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">狀態</div>
+                      </div>
+                      <select class="form-control" id="company_state_filter">
+                        <option value="-1" selected="selected">全部</option>
+                        <option value="1">啟用</option>
+                        <option value="0">停用</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <button class="btn btn-outline-danger mb-2" id="company_reset_filter"><i class="fas fa-redo"></i>&nbsp;回復列表</button>
+                  </div>
+                  <div class="col-auto ml-auto"><a class="btn btn-primary mb-2" href="backstage-company-add.html"><i class="fas fa-plus-square"></i>&nbsp;新增</a></div>
+                </div>
+                <table class="table-style" id="company_table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>公司</th>
+                      <th>Codename</th>
+                      <th>Token</th>
+                      <th>統編</th>
+                      <th>狀態</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="hover-style" page-href="backstage-company-edit.html">
+                      <td>1</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>1776</td>
+                      <td>啟用</td>
+                    </tr>
+                    <tr class="hover-style" page-href="backstage-company-edit.html">
+                      <td>2</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>1664</td>
+                      <td>啟用</td>
+                    </tr>
+                    <tr class="hover-style" page-href="backstage-company-edit.html">
+                      <td>3</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>24</td>
+                      <td>啟用</td>
+                    </tr>
+                    <tr class="hover-style" page-href="backstage-company-edit.html">
+                      <td>4</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>啟用</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="modal fade" id="modal_company_add" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">新增新創公司</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+              <div class="input">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">公司名稱</div>
+                  </div>
+                  <input class="form-control" type="company_name" placeholder="請輸入公司名稱"/>
+                </div>
+              </div>
+              <div class="input">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Codename</div>
+                  </div>
+                  <input class="form-control" type="codename" placeholder="請輸入Codename"/>
+                </div>
+              </div>
+              <div class="input">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">統編</div>
+                  </div>
+                  <input class="form-control" type="company_id" placeholder="請輸入統編"/>
+                </div>
+              </div>
+              <div class="input">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">TOKEN</div>
+                  </div>
+                  <input class="form-control" type="company_token" value="4kab3s" disabled="disabled"/>
+                </div>
+              </div>
+              <div class="input">
+                <div class="custom-control custom-switch">
+                  <input class="custom-control-input" id="customSwitch3" type="checkbox"/>
+                  <label class="custom-control-label" for="customSwitch3">啟用</label>
+                </div>
+              </div>
+              <div class="form-division">
+                <div class="title">公司相關資訊</div>
+              </div>
+              <div class="input">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">產業類別</div>
+                  </div>
+                  <select class="company-type form-control"></select>
+                </div>
+              </div>
+              <div class="input">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">公司規模</div>
+                  </div>
+                  <select class="form-control">
+                    <option>10人以下</option>
+                    <option>11~50</option>
+                    <option>51~200</option>
+                    <option>201~500</option>
+                    <option>501人以上</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-division">
+                <div class="title">新創會員</div>
+              </div>
+              <table class="table-style" id="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>帳號</th>
+                    <th>姓名</th>
+                    <th>職稱</th>
+                    <th>狀態</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover-style" data-toggle="modal" data-target="#modal_member_edit">
+                    <td>1</td>
+                    <td>james@abc.com</td>
+                    <td>James</td>
+                    <td>一般</td>
+                    <th>啟用</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" type="button">儲存送出</button>
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">關閉</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modal_company_edit" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">修改新創公司</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+              <div class="input">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">公司名稱</div>
+                  </div>
+                  <input class="form-control" type="company_name" placeholder="請輸入公司名稱"/>
+                </div>
+              </div>
+              <div class="input">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">Codename</div>
+                  </div>
+                  <input class="form-control" type="codename" placeholder="請輸入Codename"/>
+                </div>
+              </div>
+              <div class="input">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">統編</div>
+                  </div>
+                  <input class="form-control" type="company_id" placeholder="請輸入統編"/>
+                </div>
+              </div>
+              <div class="input">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">TOKEN</div>
+                  </div>
+                  <input class="form-control" type="company_token" value="4kab3s" disabled="disabled"/>
+                </div>
+              </div>
+              <div class="input">
+                <div class="custom-control custom-switch">
+                  <input class="custom-control-input" id="customSwitch1" type="checkbox"/>
+                  <label class="custom-control-label" for="customSwitch1">啟用</label>
+                </div>
+              </div>
+              <div class="form-division">
+                <div class="title">公司相關資訊</div>
+              </div>
+              <div class="input">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">產業類別</div>
+                  </div>
+                  <select class="company-type form-control"></select>
+                </div>
+              </div>
+              <div class="input">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">公司規模</div>
+                  </div>
+                  <select class="form-control">
+                    <option>10人以下</option>
+                    <option>11~50</option>
+                    <option>51~200</option>
+                    <option>201~500</option>
+                    <option>501人以上</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-division">
+                <div class="title">新創會員</div>
+              </div>
+              <table class="table-style" id="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>帳號</th>
+                    <th>姓名</th>
+                    <th>職稱</th>
+                    <th>狀態</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover-style" data-toggle="modal" data-target="#modal_member_edit">
+                    <td>1</td>
+                    <td>james@abc.com</td>
+                    <td>James</td>
+                    <td>一般</td>
+                    <th>啟用</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" type="button">儲存送出</button>
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">關閉</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./lib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/greensock-js/TweenMax.min.js"></script>
+    <script src="./lib/datatables/datatables.min.js"></script>
+    <script src="./lib/ckeditor/ckeditor.js"></script>
+    <script>
+      $.fn.dataTable.ext.search.push(
+          function( settings, data, dataIndex ) {
+              var id = $('#company_id_filter').val();
+              var dataId = data[4]; // use data for the age column
+      
+              if ( dataId.indexOf(id) !== -1 )
+              {
+                  return true;
+              }
+              return false;
+          }
+      );
+      
+      $.fn.dataTable.ext.search.push(
+          function( settings, data, dataIndex ) {
+              var state = $('#company_state_filter').val();
+              var dataState = data[5] || ''; // use data for the age column
+      
+              if ( +state === -1 ||
+                  (dataState.indexOf('啟用') !== -1 && +state === 1) ||
+                  (dataState.indexOf('關閉') !== -1 && +state === 0) )
+              {
+                  return true;
+              }
+              return false;
+          }
+      );
+      
+      const datatableBinding = () => {
+          const table = $('#company_table')
+          if(table.length) {
+              const filter = $('#filter')
+              const wrapper = $('#wrapper')
+      
+              const dataTable = table.DataTable({
+                  language: {
+                      lengthMenu: '每頁 _MENU_ 筆',
+                      zeroRecords: '<i class="fas fa-box-open"></i> 很抱歉，沒有符合的結果',
+                      info: '第 _PAGE_ 頁，共 _PAGES_ 頁',
+                      infoEmpty: '',
+                      search: '<i class="fas fa-search"></i>',
+                      infoFiltered: '',
+                      paginate: {
+                          first: '第一頁',
+                          last: '最後一頁',
+                          next: '下一頁',
+                          previous: '上一頁'
+                      }
+                  }
+              })
+      
+              const filterInsert = () => {
+                  setTimeout(() => {
+                      const tableFilter = $('#table_filter')
+                      if (tableFilter.length === 0) {
+                          filterInsert()
+                      } else {
+                          if (filter.length === 0) return
+                          $('<i id="table_filter_icon" class="table-filter mobile fas fa-filter"/>').prependTo(tableFilter)
+                      }
+                  }, 10)
+              };
+              filterInsert()
+      
+              // 篩選器手機板事件綁定
+              wrapper
+                  .on('click', '#table_filter_icon', () => {
+                      filter.fadeIn()
+                      filter.css('display', 'flex')
+                      wrapper.addClass('fixed')
+                  })
+                  .on('click', '#filter_confirm_button', () => {
+                      filter.fadeOut()
+                      wrapper.removeClass('fixed')
+                  })
+      
+              $('#company_id_filter').on('keyup', () => {
+                  dataTable.draw()
+              })
+      
+              $('#company_size_filter, #company_state_filter, #company_type_filter').on('change', () => {
+                  dataTable.draw()
+              })
+      
+              $('#company_reset_filter').on('click', () => {
+                  $('#company_id_filter').val('')
+                  $('#company_size_filter').val('-1')
+                  $('#company_state_filter').val('-1')
+                  $('#company_type_filter').val('-1')
+                  dataTable.draw()
+              })
+          }
+      }
+      datatableBinding()
+    </script>
+    <script src="./js/backstage-main.js"></script>
+  </body>
+</html>
