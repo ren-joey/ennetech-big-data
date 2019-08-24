@@ -412,6 +412,10 @@
         }
     }
 
+    p {
+        line-height: 1.6;
+    }
+
     @media (min-width: 1024.98px) {
         overflow-x: visible;
         padding: $padding-2;

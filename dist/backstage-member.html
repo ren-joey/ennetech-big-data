@@ -102,7 +102,7 @@
                     <tr class="hover-style" page-href="backstage-member-edit.html">
                       <td>1</td>
                       <td>james@abc.com</td>
-                      <td>James</td>
+                      <td>James3</td>
                       <td>最高</td>
                       <th>統編</th>
                       <td>啟用</td>
@@ -110,13 +110,13 @@
                     <tr class="hover-style" page-href="backstage-member-edit.html">
                       <td>1</td>
                       <td>james@abc.com</td>
-                      <td>James</td>
+                      <td>James1</td>
                       <td>最高</td>
                       <th>統編</th>
                       <td>啟用</td>
                     </tr>
                     <tr class="hover-style" page-href="backstage-member-edit.html">
-                      <td>1</td>
+                      <td>3</td>
                       <td>james@abc.com</td>
                       <td>James</td>
                       <td>最高</td>
@@ -408,6 +408,7 @@
               const wrapper = $('#wrapper')
       
               const dataTable = table.DataTable({
+                  order: [[2, 'asc']],
                   language: {
                       lengthMenu: '每頁 _MENU_ 筆',
                       zeroRecords: '<i class="fas fa-box-open"></i> 很抱歉，沒有符合的結果',

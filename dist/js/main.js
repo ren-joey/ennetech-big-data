@@ -534,7 +534,8 @@ const removeParameterByName = (parameter, url) => {
 
     // ckeditor綁定
     const ckeditBinding = () => {
-        const CKEDITOR = window.CKEDITOR;
+        const CKEDITOR = window.CKEDITOR
+        CKEDITOR.config.height = 500
         const editor = document.getElementById('ckeditor')
         if (editor) CKEDITOR.replace('ckeditor')
     }

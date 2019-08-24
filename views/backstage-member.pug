@@ -69,19 +69,19 @@ block body
                                 tr.hover-style(page-href="backstage-member-edit.html")
                                     td 1
                                     td james@abc.com
-                                    td James
+                                    td James3
                                     td 最高
                                     th 統編
                                     td 啟用
                                 tr.hover-style(page-href="backstage-member-edit.html")
                                     td 1
                                     td james@abc.com
-                                    td James
+                                    td James1
                                     td 最高
                                     th 統編
                                     td 啟用
                                 tr.hover-style(page-href="backstage-member-edit.html")
-                                    td 1
+                                    td 3
                                     td james@abc.com
                                     td James
                                     td 最高
@@ -151,6 +151,7 @@ block body-end
                 const wrapper = $('#wrapper')
 
                 const dataTable = table.DataTable({
+                    order: [[2, 'asc']],
                     language: {
                         lengthMenu: '每頁 _MENU_ 筆',
                         zeroRecords: '<i class="fas fa-box-open"></i> 很抱歉，沒有符合的結果',
