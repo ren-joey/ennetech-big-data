@@ -15,7 +15,7 @@ block body
                 .main-title.mb-2
                     h2 分析引擎
                     #swiper_container_simple_controller.btn-group.btn-group-sm.ml-2(role='group', aria-label='Basic example')
-                        button.btn.btn-primary.page1(type='button') Page1
+                        button.btn.btn-primary.active.page1(type='button') Page1
                         button.btn.btn-primary.page2(type='button') Page2
                         button.btn.btn-primary.page3(type='button') Page3
                 article.article.p-0
@@ -66,3 +66,31 @@ block body-end
             if (fileName) label.text(`您已選擇檔案${fileName}`)
             else label.text('未選擇任何檔案')
         })
+
+        const navActive = (idx) => {
+            $('#swiper_container_simple_controller button').removeClass('active')
+            $(`#swiper_container_simple_controller .page${idx}`).addClass('active')
+        }
+        const simpleSwiperElement = document.getElementsByClassName('swiper-container-simple')
+        if (simpleSwiperElement) {
+            const mySwiper = new Swiper('.swiper-container-simple', {
+                autoplay: false
+            })
+
+            const mySwiperController = $('#swiper_container_simple_controller')
+            if (mySwiperController.length > 0) {
+                mySwiperController
+                    .on('click', '.page1', () => {
+                        mySwiper.slideTo(0)
+                        navActive(1)
+                    })
+                    .on('click', '.page2', () => {
+                        mySwiper.slideTo(1)
+                        navActive(2)
+                    })
+                    .on('click', '.page3', () => {
+                        mySwiper.slideTo(2)
+                        navActive(3)
+                    })
+            }
+        }

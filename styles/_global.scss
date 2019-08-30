@@ -19,6 +19,7 @@ hr {
 
 #section {
     .btn-primary {
+        color: $white;
         background-color: $blue-1;
         border-color: $blue-1;
 
@@ -27,6 +28,10 @@ hr {
         &:active {
             background-color: $blue-3;
             border-color: $blue-3;
+        }
+
+        &.active {
+            background-color: $blue-3;
         }
     }
 }

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="./lib/fontawesome-free-5.9.0-web/css/all.css"/>
     <link rel="stylesheet" href="./lib/datatables/datatables.min.css"/>
+    <link rel="stylesheet" href="./lib/swiper/css/swiper.min.css"/>
   </head>
   <body>
     <div id="wrapper">
@@ -381,131 +382,71 @@
       <section id="section">
         <div class="main-wrap">
           <div class="content">
-                <div class="breadcrumb">首頁 &gt; API市集 &gt; 最新上架</div>
-                <div class="main-title">
-                  <h1>最新上架</h1>
-                  <div class="status">
-                    <div class="status__date">發布日期7/17/2019</div>
-                    <div class="status__ver">發布版本1.0.0</div>
-                  </div>
-                </div>
-            <div class="article-wrap">
-              <aside class="sidebar" id="filter">
-                <div class="sidebar__name">
-                  <div class="name"><i class="fas fa-caret-down"></i>&nbsp;機關分類</div>
-                  <div class="tip">共83項</div>
-                </div>
-                <div class="sidebar__filter">
-                  <div class="input">
-                    <select>
-                      <option>test</option>
-                      <option>test</option>
-                      <option>test</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="sidebar__name">
-                  <div class="name"><i class="fas fa-caret-down"></i>&nbsp;主題分類</div>
-                  <div class="tip">共83項</div>
-                </div>
-                <div class="sidebar__filter">
-                  <div class="input">
-                    <select>
-                      <option>test</option>
-                      <option>test</option>
-                      <option>test</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="sidebar__name">
-                  <div class="name"><i class="fas fa-caret-down"></i>&nbsp;行政區分類</div>
-                  <div class="tip">共83項</div>
-                </div>
-                <div class="sidebar__filter">
-                  <div class="input">
-                    <select>
-                      <option>test</option>
-                      <option>test</option>
-                      <option>test</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="sidebar__name">
-                  <div class="name"><i class="fas fa-caret-down"></i>&nbsp;更新時間分類</div>
-                  <div class="tip">共83項</div>
-                </div>
-                <div class="sidebar__filter">
-                  <div class="input">
-                    <select>
-                      <option>test</option>
-                      <option>test</option>
-                      <option>test</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="sidebar__nav mobile">
-                  <div class="input">
-                    <div class="confirm-button" id="filter_confirm_button">完成</div>
-                  </div>
-                </div>
-              </aside>
-              <article class="article">
-                <table class="table-style" id="table">
-                  <thead>
-                    <tr>
-                      <th style="font-weight: bold;">#</th>
-                      <th>主題</th>
-                      <th>描述</th>
-                      <th>建立時間</th>
-                      <th>分類</th>
-                      <th>點擊次數</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="hover-style" page-href="./api-new-info.html">
-                      <td>1</td>
-                      <td class="text-left">標題</td>
-                      <td>7/15/2019</td>
-                      <td></td>
-                      <td></td>
-                      <td>1,000</td>
-                    </tr>
-                    <tr class="hover-style" page-href="./api-new-info.html">
-                      <td>2</td>
-                      <td class="text-left">標題</td>
-                      <td>7/15/2019</td>
-                      <td></td>
-                      <td></td>
-                      <td>1,000</td>
-                    </tr>
-                    <tr class="hover-style" page-href="./api-new-info.html">
-                      <td>3</td>
-                      <td class="text-left">標題</td>
-                      <td>7/15/2019</td>
-                      <td></td>
-                      <td></td>
-                      <td>1,000</td>
-                    </tr>
-                    <tr class="hover-style" page-href="./api-new-info.html">
-                      <td>4</td>
-                      <td class="text-left">標題</td>
-                      <td>7/15/2019</td>
-                      <td></td>
-                      <td></td>
-                      <td>1,000</td>
-                    </tr>
-                    <tr class="hover-style" page-href="./api-new-info.html">
-                      <td>5</td>
-                      <td class="text-left">標題</td>
-                      <td>7/15/2019</td>
-                      <td></td>
-                      <td></td>
-                      <td>1,000</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </article>
+                <div class="breadcrumb">首頁 &gt; API市集 &gt; 最新上架 &gt; 詳細資料</div>
+            <div class="main-title mb-2">
+              <h2>詳細資料</h2>
+              <div class="btn-group btn-group-sm ml-2" id="swiper_container_simple_controller" role="group" aria-label="Basic example">
+                <button class="btn btn-primary active page1" type="button">Page1</button>
+                <button class="btn btn-primary page2" type="button">Page2</button>
+              </div>
             </div>
+            <article class="article">
+              <div class="swiper-container swiper-container-simple">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                        <article class="article p-1">
+                          <iframe class="iframe" src="http://220.135.181.172:8080/bigobject/login" frameborder="0"></iframe>
+                        </article>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="padding-container">
+                      <div class="pt-4"></div>
+                          <div class="article-title">
+                            <h2>API詳細資料</h2>
+                            <div class="subtitle">API Information</div>
+                            <div class="line"></div>
+                          </div>
+                      <table class="table-style">
+                        <tbody>
+                          <tr>
+                            <th class="left-title">主題分類</th>
+                            <td class="text-left">資訊</td>
+                          </tr>
+                          <tr>
+                            <th class="left-title">政府網站分類</th>
+                            <td class="text-left">公共資訊</td>
+                          </tr>
+                          <tr>
+                            <th class="left-title">資料集描述</th>
+                            <td class="text-left">今日氣相資訊資料集描述</td>
+                          </tr>
+                          <tr>
+                            <th class="left-title">主要欄位說明</th>
+                            <td class="text-left">今日氣相資訊主要欄位說明</td>
+                          </tr>
+                          <tr>
+                            <th class="left-title">國發會政府資料開放平台資料集類型</th>
+                            <td class="text-left">網路服務</td>
+                          </tr>
+                          <tr>
+                            <th class="left-title">最後更新日期</th>
+                            <td class="text-left">2019-08-09 00:19:03</td>
+                          </tr>
+                          <tr>
+                            <th class="left-title">資料量</th>
+                            <td class="text-left">2418</td>
+                          </tr>
+                          <tr>
+                            <th class="left-title">下載</th>
+                            <td class="text-left"><a class="btn btn-primary"><i class="fas fa-arrow-down"></i>&nbsp;點此下載</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -537,6 +478,32 @@
     <script src="./lib/greensock-js/TweenMax.min.js"></script>
     <script src="./lib/datatables/datatables.min.js"></script>
     <script src="./lib/ckeditor/ckeditor.js"></script>
+    <script src="./lib/swiper/js/swiper.min.js"></script>
+    <script>
+      const navActive = (idx) => {
+          $('#swiper_container_simple_controller button').removeClass('active')
+          $(`#swiper_container_simple_controller .page${idx}`).addClass('active')
+      }
+      const simpleSwiperElement = document.getElementsByClassName('swiper-container-simple')
+      if (simpleSwiperElement) {
+          const mySwiper = new Swiper('.swiper-container-simple', {
+              autoplay: false
+          })
+      
+          const mySwiperController = $('#swiper_container_simple_controller')
+          if (mySwiperController.length > 0) {
+              mySwiperController
+                  .on('click', '.page1', () => {
+                      mySwiper.slideTo(0)
+                      navActive(1)
+                  })
+                  .on('click', '.page2', () => {
+                      mySwiper.slideTo(1)
+                      navActive(2)
+                  })
+          }
+      }
+    </script>
     <script src="./js/main.js"></script>
   </body>
 </html>

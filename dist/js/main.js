@@ -201,11 +201,13 @@ const removeParameterByName = (parameter, url) => {
         }
 
         // 必填欄位綁定
-        const requiredInputs = $('input[required]');
+        const requiredInputs = $('[required]');
         [...requiredInputs].forEach((input) => {
             const _input = $(input)
             const inputWrap = $('<div/>', { class: 'input-wrap' })
             const requiredWarn = $('<div/>', { class: 'input-wrap__required-warn', text: '必填' })
+
+            if($(input).prop('tagName').toLowerCase() === 'select') requiredWarn.css('right', '20px')
             inputWrap.insertAfter(_input)
             inputWrap.append(_input, requiredWarn)
         })
@@ -432,11 +434,15 @@ const removeParameterByName = (parameter, url) => {
 
     // swiper輪播綁定
     const swiperBinding = () => {
+        if (!document.querySelector('.swiper-container-banner')) return
+
+        const speed = (document.getElementById("speed")) ? Number(document.getElementById("speed").value) * 1000 : 5000;
+
         const bannerSwiperElement = document.getElementsByClassName('swiper-container-banner')
         if (bannerSwiperElement) {
             const mySwiper = new Swiper('.swiper-container-banner', {
                 autoplay: {
-                    delay: 5000,
+                    delay: speed,
                     disableOnInteraction: false,
                 },
 
@@ -457,27 +463,6 @@ const removeParameterByName = (parameter, url) => {
                     el: '.swiper-scrollbar',
                 },
             })
-        }
-
-        const simpleSwiperElement = document.getElementsByClassName('swiper-container-simple')
-        if (simpleSwiperElement) {
-            const mySwiper = new Swiper('.swiper-container-simple', {
-                autoplay: false
-            })
-
-            const mySwiperController = $('#swiper_container_simple_controller')
-            if (mySwiperController.length > 0) {
-                mySwiperController
-                    .on('click', '.page1', () => {
-                        mySwiper.slideTo(0)
-                    })
-                    .on('click', '.page2', () => {
-                        mySwiper.slideTo(1)
-                    })
-                    .on('click', '.page3', () => {
-                        mySwiper.slideTo(2)
-                    })
-            }
         }
     }
 

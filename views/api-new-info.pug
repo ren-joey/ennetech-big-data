@@ -1,0 +1,87 @@
+extends ./layouts/main
+
+block script
+
+block style
+    link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+    link(rel="stylesheet", href="./lib/swiper/css/swiper.min.css")
+
+block body
+    +header-login(2, 1)
+
+    section#section
+        .main-wrap
+            .content
+                +breadcrumb('首頁 > API市集 > 最新上架 > 詳細資料')
+                .main-title.mb-2
+                    h2 詳細資料
+                    #swiper_container_simple_controller.btn-group.btn-group-sm.ml-2(role='group', aria-label='Basic example')
+                        button.btn.btn-primary.active.page1(type='button') Page1
+                        button.btn.btn-primary.page2(type='button') Page2
+                article.article
+                    .swiper-container.swiper-container-simple
+                        .swiper-wrapper
+                            .swiper-slide
+                                +iframe('http://220.135.181.172:8080/bigobject/login')
+                            .swiper-slide
+                                .padding-container
+                                    .pt-4
+                                    +article-title('API詳細資料', 'API Information')
+                                    table.table-style
+                                        tbody
+                                            tr
+                                                th.left-title 主題分類
+                                                td.text-left 資訊
+                                            tr
+                                                th.left-title 政府網站分類
+                                                td.text-left 公共資訊
+                                            tr
+                                                th.left-title 資料集描述
+                                                td.text-left 今日氣相資訊資料集描述
+                                            tr
+                                                th.left-title 主要欄位說明
+                                                td.text-left 今日氣相資訊主要欄位說明
+                                            tr
+                                                th.left-title 國發會政府資料開放平台資料集類型
+                                                td.text-left 網路服務
+                                            tr
+                                                th.left-title 最後更新日期
+                                                td.text-left 2019-08-09 00:19:03
+                                            tr
+                                                th.left-title 資料量
+                                                td.text-left 2418
+                                            tr
+                                                th.left-title 下載
+                                                td.text-left
+                                                    a.btn.btn-primary
+                                                        i.fas.fa-arrow-down
+                                                        | &nbsp;點此下載
+
+block body-end
+    script(src="./lib/datatables/datatables.min.js")
+    script(src="./lib/ckeditor/ckeditor.js")
+    script(src="./lib/swiper/js/swiper.min.js")
+    script.
+        const navActive = (idx) => {
+            $('#swiper_container_simple_controller button').removeClass('active')
+            $(`#swiper_container_simple_controller .page${idx}`).addClass('active')
+        }
+        const simpleSwiperElement = document.getElementsByClassName('swiper-container-simple')
+        if (simpleSwiperElement) {
+            const mySwiper = new Swiper('.swiper-container-simple', {
+                autoplay: false
+            })
+
+            const mySwiperController = $('#swiper_container_simple_controller')
+            if (mySwiperController.length > 0) {
+                mySwiperController
+                    .on('click', '.page1', () => {
+                        mySwiper.slideTo(0)
+                        navActive(1)
+                    })
+                    .on('click', '.page2', () => {
+                        mySwiper.slideTo(1)
+                        navActive(2)
+                    })
+            }
+        }

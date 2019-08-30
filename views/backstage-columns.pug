@@ -1,0 +1,151 @@
+extends ./layouts/backstage-login
+
+block script
+
+block style
+    link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+
+block body
+    +header-backstage-login(1)
+
+    section#section.backstage
+        .main-wrap
+            .content
+                .article-wrap
+                    //- include ./blocks/backstage-aside
+                    +sidebar(4)
+                    article.article
+                        .breadcrumb
+                            | 首頁 > 內容管理 > 數據創育專欄
+                        .form-row.align-items-center
+                            .col-auto
+                                label.sr-only(for='inlineFormInputGroup')
+                                .input-group.mb-2
+                                    .input-group-prepend
+                                        .input-group-text 狀態
+                                    select#columns_state_filter.form-control
+                                        option(value="-1", selected) 全部
+                                        option(value="1") 啟用
+                                        option(value="0") 停用
+                            .col-auto
+                                button#columns_reset_filter.btn.btn-outline-danger.mb-2
+                                    i.fas.fa-redo
+                                    | &nbsp;回復列表
+                            .col-auto.ml-auto
+                                a.btn.btn-primary.mb-2(href="backstage-columns-add.html")
+                                    i.fas.fa-plus-square
+                                    | &nbsp;新增
+                        table#columns_table.table-style
+                            thead
+                                tr
+                                    th #
+                                    th 標題
+                                    th 更新日期
+                                    th 狀態
+                            tbody
+                                tr.hover-style(page-href="backstage-columns-edit.html")
+                                    td 1
+                                    td.text-left 標題換行測試標題換行測試標題換行測試標題換行測試標題換行測試標題換行測試標題換行測試標題換行測試
+                                    td.text-nowrap 2019-08-28 15:00
+                                    td 啟用
+                                tr.hover-style(page-href="backstage-columns-edit.html")
+                                    td 1
+                                    td.text-left 標題
+                                    td.text-nowrap 2019-08-28 15:00
+                                    td 啟用
+                                tr.hover-style(page-href="backstage-columns-edit.html")
+                                    td 1
+                                    td.text-left 標題
+                                    td.text-nowrap 2019-08-28 15:00
+                                    td 啟用
+                                tr.hover-style(page-href="backstage-columns-edit.html")
+                                    td 1
+                                    td.text-left 標題
+                                    td.text-nowrap 2019-08-28 15:00
+                                    td 關閉
+
+    include ./blocks/modal-log
+
+block body-end
+    script(src="./lib/datatables/datatables.min.js")
+    script(src="./lib/ckeditor/ckeditor.js")
+    script.
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var state = $('#columns_state_filter').val();
+                var dataState = data[3] || ''; // use data for the age column
+
+                if ( +state === -1 ||
+                    (dataState.indexOf('啟用') !== -1 && +state === 1) ||
+                    (dataState.indexOf('關閉') !== -1 && +state === 0) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+        const datatableBinding = () => {
+            const table = $('#columns_table')
+            if(table.length) {
+                const filter = $('#filter')
+                const wrapper = $('#wrapper')
+
+                const dataTable = table.DataTable({
+                    language: {
+                        lengthMenu: '每頁 _MENU_ 筆',
+                        zeroRecords: '<i class="fas fa-box-open"></i> 很抱歉，沒有符合的結果',
+                        info: '第 _PAGE_ 頁，共 _PAGES_ 頁',
+                        infoEmpty: '',
+                        search: '<i class="fas fa-search"></i>',
+                        infoFiltered: '',
+                        paginate: {
+                            first: '第一頁',
+                            last: '最後一頁',
+                            next: '下一頁',
+                            previous: '上一頁'
+                        }
+                    }
+                })
+
+                const filterInsert = () => {
+                    setTimeout(() => {
+                        const tableFilter = $('#table_filter')
+                        if (tableFilter.length === 0) {
+                            filterInsert()
+                        } else {
+                            if (filter.length === 0) return
+                            $('<i id="table_filter_icon" class="table-filter mobile fas fa-filter"/>').prependTo(tableFilter)
+                        }
+                    }, 10)
+                };
+                filterInsert()
+
+                // 篩選器手機板事件綁定
+                wrapper
+                    .on('click', '#table_filter_icon', () => {
+                        filter.fadeIn()
+                        filter.css('display', 'flex')
+                        wrapper.addClass('fixed')
+                    })
+                    .on('click', '#filter_confirm_button', () => {
+                        filter.fadeOut()
+                        wrapper.removeClass('fixed')
+                    })
+
+                $('#columns_state_filter').on('change', () => {
+                    dataTable.draw()
+                })
+
+                $('#columns_reset_filter').on('click', () => {
+                    $('#columns_id_filter').val('')
+                    $('#columns_level_filter').val('-1')
+                    $('#columns_state_filter').val('-1')
+                    dataTable.draw()
+                })
+            }
+        }
+
+        window.onload = () => {
+            datatableBinding()
+        }

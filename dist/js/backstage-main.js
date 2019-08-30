@@ -152,11 +152,13 @@ const removeParameterByName = (parameter, url) => {
         }
 
         // 必填欄位綁定
-        const requiredInputs = $('input[required]');
+        const requiredInputs = $('[required]');
         [...requiredInputs].forEach((input) => {
             const _input = $(input)
             const inputWrap = $('<div/>', { class: 'input-wrap' })
             const requiredWarn = $('<div/>', { class: 'input-wrap__required-warn', text: '必填' })
+
+            if($(input).prop('tagName').toLowerCase() === 'select') requiredWarn.css('right', '20px')
             inputWrap.insertAfter(_input)
             inputWrap.append(_input, requiredWarn)
         })
@@ -265,7 +267,7 @@ const removeParameterByName = (parameter, url) => {
 
     // swiper輪播綁定
     const swiperBinding = () => {
-        const swiperElement = document.getElementsByClassName('swiper-container')
+        const swiperElement = document.getElementsByClassName('swiper-container-banner')
         if (swiperElement) {
             const mySwiper = new Swiper('.swiper-container', {
                 autoplay: {

@@ -5,11 +5,16 @@
         @extend .responsive-width;
 
         display: flex;
+        flex-wrap: wrap;
         margin-right: auto;
         margin-left: auto;
         padding: $padding-2;
         // height: $footer-height;
         color: $white;
+
+        @media (min-width: 1024.98px) {
+            flex-wrap: nowrap;
+        }
     }
 
     &__map {
@@ -38,18 +43,27 @@
     }
 
     &__contact {
-        margin-left: auto;
-        padding-left: $padding-2;
-        border-left: 1px dotted $white;
+        margin-top: $padding-1;
+        width: 100%;
+        border-top: 1px dotted $white;
 
         .brand {
             font-size: 1.6em;
             font-weight: bolder;
         }
+
+        @media (min-width: 1024.98px) {
+            margin-top: 0;
+            margin-left: auto;
+            padding-left: $padding-2;
+            width: auto;
+            border-top: 0;
+            border-left: 1px dotted $white;
+        }
     }
 
     .copyright {
-        padding: $padding-1 0;
+        padding: $padding-1 $padding-2;
         // height: $copyright-height;
         font-size: 0.675em;
         text-align: center;

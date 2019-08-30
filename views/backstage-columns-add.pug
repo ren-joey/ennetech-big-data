@@ -1,0 +1,37 @@
+extends ./layouts/backstage-login
+
+block script
+
+block style
+    link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+
+block body
+    +header-backstage-login(1)
+
+    section#section.backstage
+        .main-wrap
+            .content
+                .article-wrap
+                    //- include ./blocks/backstage-aside
+                    +sidebar(4)
+                    article.article
+                        .breadcrumb
+                            | 首頁 > 內容管理 > 數據創育專欄 > 新增專欄
+                        +input-bootstrap('input_title', 'title', '標題', '請輸入標題', '', true)
+                        .input
+                            .input-group
+                                .input-group-prepend
+                                    .input-group-text 說明
+                                input.form-control(type='text', placeholder='請輸入文件說明')
+                        textarea#ckeditor(name='ckeditor', rows='10', cols='80')
+                            | This is my textarea to be replaced with CKEditor.
+                        .row.my-2.justify-content-end
+                            .col-auto
+                                a.btn.btn-primary.px-4(href="./backstage-columns.html") 儲存
+                                a.btn.btn-outline-secondary.px-4(href="./backstage-columns.html") 取消
+
+    include ./blocks/modal-log
+
+block body-end
+    script(src="./lib/datatables/datatables.min.js")
+    script(src="./lib/ckeditor/ckeditor.js")
