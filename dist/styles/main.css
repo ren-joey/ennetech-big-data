@@ -600,6 +600,10 @@ textarea {
   }
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .pt-0 {
   padding-top: 0 !important;
 }
@@ -1425,12 +1429,6 @@ body {
   margin-bottom: 30px;
 }
 
-@media (min-width: 1024.98px) {
-  .main-wrap {
-    padding: 30px;
-  }
-}
-
 .content {
   width: 100%;
 }
@@ -1674,8 +1672,6 @@ body {
 }
 
 .breadcrumb {
-  margin-bottom: 15px;
-  padding-top: 30px;
   font-size: 0.875em;
   background-color: inherit;
 }
@@ -2229,6 +2225,10 @@ body {
           transform: translate(-50%, -50%);
 }
 
+.article .form-division > .title {
+  background-color: #fff;
+}
+
 .input-wrap {
   position: relative;
   -webkit-box-flex: 1;
@@ -2462,6 +2462,10 @@ body {
           background-size: 100% 100%;
   opacity: 0.15;
   z-index: -1;
+}
+
+.backstage .article .breadcrumb {
+  margin-bottom: 1rem;
 }
 
 .member__wrap {

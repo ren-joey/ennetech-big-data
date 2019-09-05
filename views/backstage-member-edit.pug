@@ -50,6 +50,8 @@ block body
                                 select.form-control
                                     option 男
                                     option 女
+                        .form-division
+                            .title 公司相關資訊
                         .input
                             .input-group
                                 .input-group-prepend
@@ -65,6 +67,11 @@ block body
                                 .input-group-prepend
                                     .input-group-text 統編
                                 input.form-control(type='password', placeholder='請輸入公司統一編號')
+                        .form-division
+                            .title 公司所在地點
+                        .input
+                            select.select-city
+                            select.select-region
                         .input
                             .custom-control.custom-switch
                                 input#customSwitch3.custom-control-input(type='checkbox')

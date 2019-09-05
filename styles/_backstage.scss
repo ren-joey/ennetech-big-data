@@ -11,6 +11,12 @@
         opacity: 0.15;
         z-index: -1;
     }
+
+    .article {
+        .breadcrumb {
+            margin-bottom: 1rem;
+        }
+    }
 }
 
 .member {
