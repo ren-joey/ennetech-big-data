@@ -1,0 +1,171 @@
+extends ./layouts/main
+
+block script
+
+block style
+    link(rel="stylesheet", href="./lib/datatables/datatables.min.css")
+
+block body
+    +header-login(5, 2)
+
+    section#section
+        .main-wrap
+            .content
+                +breadcrumb('首頁 > 數據能量庫 > 新創業者分類列表')
+                +title('新創業者分類列表')
+                .article-wrap
+                    aside#filter.sidebar
+                        .sidebar__name
+                            .name
+                                i.fas.fa-caret-down
+                                | &nbsp;機關分類
+                            .tip 共83項
+                        .sidebar__filter
+                            .input
+                                select#intro_tag_filter
+                                    option(value='-1', selected='selected') 全部
+                                    option(value='0') 農林漁牧業
+                                    option(value='1') 礦業及土石採取業
+                                    option(value='2') 製造業
+                                    option(value='3') 電力及燃氣供應業
+                                    option(value='4') 用水供應及污染整治業
+                                    option(value='5') 營建工程業
+                                    option(value='6') 批發及零售業
+                                    option(value='7') 運輸及倉儲業
+                                    option(value='8') 住宿及餐飲業
+                                    option(value='9') 出版影音製作傳播及資通訊服務業
+                                    option(value='10') 金融及保險業
+                                    option(value='11') 不動產業
+                                    option(value='12') 專業科學及技術服務業
+                                    option(value='13') 支援服務業
+                                    option(value='14') 公共行政及國防強制性社會安全
+                                    option(value='15') 教育業
+                                    option(value='16') 醫療保健及社會工作服務業
+                                    option(value='17') 藝術娛樂及休閒服務業
+                                    option(value='18') 其他服務業
+                        .sidebar__nav.mobile
+                            .input
+                                #filter_confirm_button.confirm-button 完成
+
+                    article.article
+                        table#intro_table.table-style
+                            thead
+                                tr
+                                    th(style="font-weight: bold;") 編號
+                                    th 類型
+                                    th 公司
+                                    th 簡介
+                                    th 更新時間
+                            tbody
+                                tr.hover-style(page-href="./api-new-info.html")
+                                    td 1
+                                    td 農林漁牧業
+                                    td 公司
+                                    td.text-left 簡介
+                                    td 2019-10-04 10:57
+
+
+block body-end
+    script(src="./lib/datatables/datatables.min.js")
+    script(src="./lib/ckeditor/ckeditor.js")
+    script.
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var state = $('#intro_tag_filter').val();
+                var dataState = data[1] || ''; // use data for the age column
+
+                if ( +state === -1 ||
+                    (dataState.indexOf('農林漁牧業') !== -1 && +state === 0) ||
+                    (dataState.indexOf('礦業及土石採取業') !== -1 && +state === 1) ||
+                    (dataState.indexOf('製造業') !== -1 && +state === 2) ||
+                    (dataState.indexOf('電力及燃氣供應業') !== -1 && +state === 3) ||
+                    (dataState.indexOf('用水供應及污染整治業') !== -1 && +state === 4) ||
+                    (dataState.indexOf('營建工程業') !== -1 && +state === 5) ||
+                    (dataState.indexOf('批發及零售業') !== -1 && +state === 6) ||
+                    (dataState.indexOf('運輸及倉儲業') !== -1 && +state === 7) ||
+                    (dataState.indexOf('住宿及餐飲業') !== -1 && +state === 8) ||
+                    (dataState.indexOf('出版影音製作傳播及資通訊服務業') !== -1 && +state === 9) ||
+                    (dataState.indexOf('金融及保險業') !== -1 && +state === 10) ||
+                    (dataState.indexOf('不動產業') !== -1 && +state === 11) ||
+                    (dataState.indexOf('專業科學及技術服務業') !== -1 && +state === 12) ||
+                    (dataState.indexOf('支援服務業') !== -1 && +state === 13) ||
+                    (dataState.indexOf('公共行政及國防強制性社會安全') !== -1 && +state === 14) ||
+                    (dataState.indexOf('教育業') !== -1 && +state === 15) ||
+                    (dataState.indexOf('醫療保健及社會工作服務業') !== -1 && +state === 16) ||
+                    (dataState.indexOf('藝術娛樂及休閒服務業') !== -1 && +state === 17) ||
+                    (dataState.indexOf('其他服務業') !== -1 && +state === 18) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+        const datatableBinding = () => {
+            const table = $('#intro_table');
+            if(table.length) {
+                const filter = $('#filter');
+                const wrapper = $('#wrapper');
+
+                const dataTable = table.DataTable({
+                    language: {
+                        lengthMenu: '每頁 _MENU_ 筆',
+                        zeroRecords: '<i class="fas fa-box-open"></i> 很抱歉，沒有符合的結果',
+                        info: '第 _PAGE_ 頁，共 _PAGES_ 頁',
+                        infoEmpty: '',
+                        search: '<i class="fas fa-search"></i>',
+                        infoFiltered: '',
+                        paginate: {
+                            first: '第一頁',
+                            last: '最後一頁',
+                            next: '下一頁',
+                            previous: '上一頁'
+                        }
+                    }
+                });
+
+                const filterInsert = () => {
+                    setTimeout(() => {
+                        const tableFilter = $('#table_filter');
+                        if (tableFilter.length === 0) {
+                            filterInsert();
+                        } else {
+                            if (filter.length === 0) return
+                            $('<i id="table_filter_icon" class="table-filter mobile fas fa-filter"/>').prependTo(tableFilter);
+                        }
+                    }, 10);
+                };
+                filterInsert();
+
+                // 篩選器手機板事件綁定
+                wrapper
+                    .on('click', '#table_filter_icon', () => {
+                    filter.fadeIn();
+                    filter.css('display', 'flex');
+                    wrapper.addClass('fixed');
+                })
+            .on('click', '#filter_confirm_button', () => {
+                    filter.fadeOut();
+                    wrapper.removeClass('fixed');
+                })
+
+                $('#intro_id_filter').on('keyup', () => {
+                    dataTable.draw();
+                })
+
+                $('#intro_tag_filter').on('change', () => {
+                    dataTable.draw();
+                });
+
+                $('#intro_reset_filter').on('click', () => {
+                    $('#intro_id_filter').val('');
+                $('#intro_level_filter').val('-1');
+                $('#intro_state_filter').val('-1');
+                dataTable.draw();
+            });
+            }
+        }
+
+        window.onload = () => {
+            datatableBinding();
+        }

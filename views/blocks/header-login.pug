@@ -6,7 +6,7 @@ mixin header-login(active, subActive)
     include reset-password
     header#header.header
         .header__logo
-            | LOGO
+            img(src="./assets/images/logo.svg", height="50", width="auto", alt="", srcset="")
             a.click-area(href="/")
         form.search-wrap
             input.search-input(type="text", name="search")
@@ -81,7 +81,7 @@ mixin header-login(active, subActive)
                             a.click-area(href=(active === 5 && subActive === 1) ? false : "#")
                         li.nav-select__option(class=(active === 5 && subActive === 2) ? 'active': '')
                             | 新創業者分類列表
-                            a.click-area(href=(active === 5 && subActive === 2) ? false : "#")
+                            a.click-area(href=(active === 5 && subActive === 2) ? false : "introList.html")
                         li.nav-select__option(class=(active === 5 && subActive === 3) ? 'active' : '')
                             | 數據活動資訊
                             a.click-area(href=(active === 5 && subActive === 3) ? false : "#")
