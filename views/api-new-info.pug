@@ -9,16 +9,18 @@ block style
 block body
     +header-login(2, 1)
 
-    section#section
-        .main-wrap
+    section#section.w-100
+        .main-wrap.p-3
             .content
-                +breadcrumb('首頁 > API市集 > 最新上架 > 詳細資料')
+                //- +breadcrumb('首頁 > API市集 > 最新上架 > 詳細資料')
                 .main-title.mb-2
-                    h2 詳細資料
+                    h2.cursor-pointer(page-href="./api-new.html")
+                        i.fas.fa-chevron-left
+                        | &nbsp;詳細資料
                     #swiper_container_simple_controller.btn-group.btn-group-sm.ml-2(role='group', aria-label='Basic example')
                         button.btn.btn-primary.active.page1(type='button') Page1
                         button.btn.btn-primary.page2(type='button') Page2
-                article.article
+                article.article.p-0
                     .swiper-container.swiper-container-simple
                         .swiper-wrapper
                             .swiper-slide

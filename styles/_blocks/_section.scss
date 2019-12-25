@@ -72,9 +72,9 @@
         }
     }
 
-    @media (min-width: 1024.98px) {
-        padding: $padding-2;
-    }
+    // @media (min-width: 1024.98px) {
+    //     padding: $padding-1;
+    // }
 }
 
 .content {
@@ -299,8 +299,8 @@
 
 .breadcrumb {
     // margin: 0 $padding-2 $padding-1 $padding-2;
-    margin-bottom: $padding-1;
-    padding-top: $padding-2;
+    // margin-bottom: $padding-1;
+    // padding-top: $padding-2;
     font-size: 0.875em;
     background-color: inherit;
 }

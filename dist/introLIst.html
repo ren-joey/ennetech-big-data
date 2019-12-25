@@ -332,10 +332,10 @@
               <div class="header__menu">
                 <ul class="menu">
                   <li class="menu__nav thin mobile mobile-order-1" id="header_menu_close_btn_m"><i class="fas fa-times rotation-style"></i></li>
-                  <li class="menu__nav active">關於平台<span class="thin mobile">About</span>
+                  <li class="menu__nav">關於平台<span class="thin mobile">About</span>
                     <ul class="nav-select" style="display: none;">
                       <li class="nav-select__option">平台緣起<a class="click-area" href="about.html"></a></li>
-                      <li class="nav-select__option active">最新消息<a class="click-area"></a></li>
+                      <li class="nav-select__option">最新消息<a class="click-area" href="news.html"></a></li>
                       <li class="nav-select__option">數據創育專欄<a class="click-area" href="living-data.html"></a></li>
                       <li class="nav-select__option">網站地圖<a class="click-area" href="map.html"></a></li>
                       <li class="nav-select__option">相關連結<a class="click-area" href="link.html"></a></li>
@@ -360,10 +360,10 @@
                       <li class="nav-select__option">視覺化<a class="click-area" href="data-chart.html"></a></li>
                     </ul>
                   </li>
-                  <li class="menu__nav">數據能量庫<span class="thin mobile">API Market</span>
+                  <li class="menu__nav active">數據能量庫<span class="thin mobile">API Market</span>
                     <ul class="nav-select" style="display: none;">
                       <li class="nav-select__option">數據育成樣貌輪廓<a class="click-area" href="#"></a></li>
-                      <li class="nav-select__option">新創業者分類列表<a class="click-area" href="introList.html"></a></li>
+                      <li class="nav-select__option active">新創業者分類列表<a class="click-area"></a></li>
                       <li class="nav-select__option">數據活動資訊<a class="click-area" href="#"></a></li>
                     </ul>
                   </li>
@@ -381,47 +381,75 @@
       <section id="section">
         <div class="main-wrap">
           <div class="content">
-                <div class="breadcrumb">首頁 &gt; 關於平台 &gt; 最新消息</div>
+                <div class="breadcrumb">首頁 &gt; 數據能量庫 &gt; 新創業者分類列表</div>
                 <div class="main-title">
-                  <h1>最新消息</h1>
+                  <h1>新創業者分類列表</h1>
                   <div class="status">
                     <div class="status__date">發布日期7/17/2019</div>
                     <div class="status__ver">發布版本1.0.0</div>
                   </div>
                 </div>
-            <article class="article">
-              <table class="table-style" id="table">
-                <thead>
-                  <tr>
-                    <th style="width: 4em; font-weight: bold;">編號</th>
-                    <th>標題</th>
-                    <th style="width: 10em;">更新日期</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td class="hover-style text-left">新聞標題<a class="click-area" href="#"></a></td>
-                    <td>7/15/2019</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td class="hover-style text-left">新聞標題<a class="click-area" href="#"></a></td>
-                    <td>7/15/2019</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td class="hover-style text-left">新聞標題<a class="click-area" href="#"></a></td>
-                    <td>7/15/2019</td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td class="hover-style text-left">新聞標題<a class="click-area" href="#"></a></td>
-                    <td>7/15/2019</td>
-                  </tr>
-                </tbody>
-              </table>
-            </article>
+            <div class="article-wrap">
+              <aside class="sidebar" id="filter">
+                <div class="sidebar__name">
+                  <div class="name"><i class="fas fa-caret-down"></i>&nbsp;機關分類</div>
+                  <div class="tip">共83項</div>
+                </div>
+                <div class="sidebar__filter">
+                  <div class="input">
+                    <select id="intro_tag_filter">
+                      <option value="-1" selected="selected">全部</option>
+                      <option value="0">農林漁牧業</option>
+                      <option value="1">礦業及土石採取業</option>
+                      <option value="2">製造業</option>
+                      <option value="3">電力及燃氣供應業</option>
+                      <option value="4">用水供應及污染整治業</option>
+                      <option value="5">營建工程業</option>
+                      <option value="6">批發及零售業</option>
+                      <option value="7">運輸及倉儲業</option>
+                      <option value="8">住宿及餐飲業</option>
+                      <option value="9">出版影音製作傳播及資通訊服務業</option>
+                      <option value="10">金融及保險業</option>
+                      <option value="11">不動產業</option>
+                      <option value="12">專業科學及技術服務業</option>
+                      <option value="13">支援服務業</option>
+                      <option value="14">公共行政及國防強制性社會安全</option>
+                      <option value="15">教育業</option>
+                      <option value="16">醫療保健及社會工作服務業</option>
+                      <option value="17">藝術娛樂及休閒服務業</option>
+                      <option value="18">其他服務業</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="sidebar__nav mobile">
+                  <div class="input">
+                    <div class="confirm-button" id="filter_confirm_button">完成</div>
+                  </div>
+                </div>
+              </aside>
+              <article class="article">
+                <table class="table-style" id="intro_table">
+                  <thead>
+                    <tr>
+                      <th style="font-weight: bold;">編號</th>
+                      <th>類型</th>
+                      <th>公司</th>
+                      <th>簡介</th>
+                      <th>更新時間</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="hover-style" page-href="./api-new-info.html">
+                      <td>1</td>
+                      <td>農林漁牧業</td>
+                      <td>公司</td>
+                      <td class="text-left">簡介</td>
+                      <td>2019-10-04 10:57</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -453,6 +481,108 @@
     <script src="./lib/greensock-js/TweenMax.min.js"></script>
     <script src="./lib/datatables/datatables.min.js"></script>
     <script src="./lib/ckeditor/ckeditor.js"></script>
+    <script>
+      $.fn.dataTable.ext.search.push(
+          function( settings, data, dataIndex ) {
+              var state = $('#intro_tag_filter').val();
+              var dataState = data[1] || ''; // use data for the age column
+      
+              if ( +state === -1 ||
+                  (dataState.indexOf('農林漁牧業') !== -1 && +state === 0) ||
+                  (dataState.indexOf('礦業及土石採取業') !== -1 && +state === 1) ||
+                  (dataState.indexOf('製造業') !== -1 && +state === 2) ||
+                  (dataState.indexOf('電力及燃氣供應業') !== -1 && +state === 3) ||
+                  (dataState.indexOf('用水供應及污染整治業') !== -1 && +state === 4) ||
+                  (dataState.indexOf('營建工程業') !== -1 && +state === 5) ||
+                  (dataState.indexOf('批發及零售業') !== -1 && +state === 6) ||
+                  (dataState.indexOf('運輸及倉儲業') !== -1 && +state === 7) ||
+                  (dataState.indexOf('住宿及餐飲業') !== -1 && +state === 8) ||
+                  (dataState.indexOf('出版影音製作傳播及資通訊服務業') !== -1 && +state === 9) ||
+                  (dataState.indexOf('金融及保險業') !== -1 && +state === 10) ||
+                  (dataState.indexOf('不動產業') !== -1 && +state === 11) ||
+                  (dataState.indexOf('專業科學及技術服務業') !== -1 && +state === 12) ||
+                  (dataState.indexOf('支援服務業') !== -1 && +state === 13) ||
+                  (dataState.indexOf('公共行政及國防強制性社會安全') !== -1 && +state === 14) ||
+                  (dataState.indexOf('教育業') !== -1 && +state === 15) ||
+                  (dataState.indexOf('醫療保健及社會工作服務業') !== -1 && +state === 16) ||
+                  (dataState.indexOf('藝術娛樂及休閒服務業') !== -1 && +state === 17) ||
+                  (dataState.indexOf('其他服務業') !== -1 && +state === 18) )
+              {
+                  return true;
+              }
+              return false;
+          }
+      );
+      
+      const datatableBinding = () => {
+          const table = $('#intro_table');
+          if(table.length) {
+              const filter = $('#filter');
+              const wrapper = $('#wrapper');
+      
+              const dataTable = table.DataTable({
+                  language: {
+                      lengthMenu: '每頁 _MENU_ 筆',
+                      zeroRecords: '<i class="fas fa-box-open"></i> 很抱歉，沒有符合的結果',
+                      info: '第 _PAGE_ 頁，共 _PAGES_ 頁',
+                      infoEmpty: '',
+                      search: '<i class="fas fa-search"></i>',
+                      infoFiltered: '',
+                      paginate: {
+                          first: '第一頁',
+                          last: '最後一頁',
+                          next: '下一頁',
+                          previous: '上一頁'
+                      }
+                  }
+              });
+      
+              const filterInsert = () => {
+                  setTimeout(() => {
+                      const tableFilter = $('#table_filter');
+                      if (tableFilter.length === 0) {
+                          filterInsert();
+                      } else {
+                          if (filter.length === 0) return
+                          $('<i id="table_filter_icon" class="table-filter mobile fas fa-filter"/>').prependTo(tableFilter);
+                      }
+                  }, 10);
+              };
+              filterInsert();
+      
+              // 篩選器手機板事件綁定
+              wrapper
+                  .on('click', '#table_filter_icon', () => {
+                  filter.fadeIn();
+                  filter.css('display', 'flex');
+                  wrapper.addClass('fixed');
+              })
+          .on('click', '#filter_confirm_button', () => {
+                  filter.fadeOut();
+                  wrapper.removeClass('fixed');
+              })
+      
+              $('#intro_id_filter').on('keyup', () => {
+                  dataTable.draw();
+              })
+      
+              $('#intro_tag_filter').on('change', () => {
+                  dataTable.draw();
+              });
+      
+              $('#intro_reset_filter').on('click', () => {
+                  $('#intro_id_filter').val('');
+              $('#intro_level_filter').val('-1');
+              $('#intro_state_filter').val('-1');
+              dataTable.draw();
+          });
+          }
+      }
+      
+      window.onload = () => {
+          datatableBinding();
+      }
+    </script>
     <script src="./js/main.js"></script>
   </body>
 </html>

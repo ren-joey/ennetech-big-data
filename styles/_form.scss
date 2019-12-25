@@ -121,6 +121,14 @@
     }
 }
 
+.article {
+    .form-division {
+        > .title {
+            background-color: $white;
+        }
+    }
+}
+
 .input-wrap {
     position: relative;
     flex: 1;
