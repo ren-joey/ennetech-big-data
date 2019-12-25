@@ -2,7 +2,7 @@
     @extend .border;
 
     width: 100%;
-    font-size: 0.875em;
+    font-size: 0.8em;
     line-height: 2em;
 
     .sorting_asc,
@@ -32,7 +32,7 @@
     td,
     th {
         position: relative;
-        padding: $padding-0 $padding-1;
+        padding: 4px 5px;
         text-align: center;
 
         &:not(:last-child) {
@@ -78,6 +78,10 @@
         .left-title {
             border-bottom: 0;
         }
+    }
+
+    .break-all {
+        word-break: break-all;
     }
 }
 

@@ -152,8 +152,10 @@
 
         display: block !important;
         overflow: hidden;
-        margin-right: $padding-2;
+        margin-right: $padding-1;
         width: $sidebar-width;
+        min-width: $sidebar-width;
+        max-width: $sidebar-width;
         background-color: $white;
         border: 1px solid $gray-1;
         border-radius: $radius;
@@ -344,7 +346,7 @@
 .article {
     position: relative;
     overflow-x: auto;
-    padding: $padding-1;
+    padding: $padding-1 0;
     background-color: $white;
 
     &.p-0 {
