@@ -17,51 +17,53 @@ mixin header-login(active, subActive)
             ul.menu
                 li#header_menu_close_btn_m.menu__nav.thin.mobile.mobile-order-1
                     i.fas.fa-times.rotation-style
-                li.menu__nav(class=(active === 1) ? 'active' : '')
+                li.menu__nav(class=(active === 1) ? 'active' : '', tabindex="0")
                     | 關於平台
+                    a.click-area(href="about.html", title="關於平台") 關於平台
                     span.thin.mobile About
                     ul.nav-select(style="display: none;")
-                        li.nav-select__option(class=(active === 1 && subActive === 1) ? 'active' : '')
+                        li.nav-select__option(class=(active === 1 && subActive === 1) ? 'active' : '', tabindex="0")
                             | 平台緣起
-                            a.click-area(href=(active === 1 && subActive === 1) ? false : "about.html")
-                        li.nav-select__option(class=(active === 1 && subActive === 2) ? 'active': '')
+                            a.click-area(href=(active === 1 && subActive === 1) ? false : "about.html", title="平台緣起") 平台緣起
+                        li.nav-select__option(class=(active === 1 && subActive === 2) ? 'active': '', tabindex="0")
                             | 最新消息
-                            a.click-area(href=(active === 1 && subActive === 2) ? false : "news.html")
-                        li.nav-select__option(class=(active === 1 && subActive === 3) ? 'active' : '')
+                            a.click-area(href=(active === 1 && subActive === 2) ? false : "news.html", title="最新消息") 最新消息
+                        li.nav-select__option(class=(active === 1 && subActive === 3) ? 'active' : '', tabindex="0")
                             | 數據創育專欄
-                            a.click-area(href=(active === 1 && subActive === 3) ? false : "living-data.html")
-                        li.nav-select__option(class=(active === 1 && subActive === 4) ? 'active' : '')
+                            a.click-area(href=(active === 1 && subActive === 3) ? false : "living-data.html", title="數據創育專欄") 數據創育專欄
+                        li.nav-select__option(class=(active === 1 && subActive === 4) ? 'active' : '', tabindex="0")
                             | 網站地圖
-                            a.click-area(href=(active === 1 && subActive === 4) ? false : "map.html")
-                        li.nav-select__option(class=(active === 1 && subActive === 5) ? 'active' : '')
+                            a.click-area(href=(active === 1 && subActive === 4) ? false : "map.html", title="網站地圖") 網站地圖
+                        li.nav-select__option.last-option(class=(active === 1 && subActive === 5) ? 'active' : '', tabindex="0")
                             | 相關連結
-                            a.click-area(href=(active === 1 && subActive === 5) ? false : "link.html")
-                li.menu__nav.new(class=(active === 2) ? 'active' : '')
+                            a.click-area(href=(active === 1 && subActive === 5) ? false : "link.html", title="相關連結") 相關連結
+                li.menu__nav.new(class=(active === 2) ? 'active' : '', tabindex="0")
                     | API市集
                     span.thin.mobile API Market
-                    a.click-area(href=(active === 2) ? false : "api-list.html")
+                    a.click-area(href=(active === 2) ? false : "api-list.html", title="API市集") API市集
                     ul.nav-select(style="display: none;")
-                        li.nav-select__option.new(class=(active === 2 && subActive === 1) ? 'active' : '')
+                        li.nav-select__option.new(class=(active === 2 && subActive === 1) ? 'active' : '', tabindex="0")
                             | 最新上架
-                            a.click-area(href=(active === 2 && subActive === 1) ? false : "api-new.html")
-                        li.nav-select__option(class=(active === 2 && subActive === 2) ? 'active': '')
+                            a.click-area(href=(active === 2 && subActive === 1) ? false : "api-new.html", title="最新上架") 最新上架
+                        li.nav-select__option(class=(active === 2 && subActive === 2) ? 'active': '', tabindex="0")
                             | 熱門上架
-                            a.click-area(href=(active === 2 && subActive === 2) ? false : "api-hot.html")
-                        li.nav-select__option(class=(active === 2 && subActive === 3) ? 'active' : '')
+                            a.click-area(href=(active === 2 && subActive === 2) ? false : "api-hot.html", title="熱門上架")
+                        li.nav-select__option(class=(active === 2 && subActive === 3) ? 'active' : '', tabindex="0")
                             | 統計分析
-                            a.click-area(href=(active === 2 && subActive === 3) ? false : "api-analytic.html")
-                        li.nav-select__option(class=(active === 2 && subActive === 4) ? 'active' : '')
+                            a.click-area(href=(active === 2 && subActive === 3) ? false : "api-analytic.html", title="統計分析")
+                        li.nav-select__option.last-option(class=(active === 2 && subActive === 4) ? 'active' : '', tabindex="0")
                             | 我的API
-                            a.click-area(href=(active === 2 && subActive === 4) ? false : "api-custom.html")
-                li.menu__nav.hot(class=(active === 3) ? 'active' : '')
+                            a.click-area(href=(active === 2 && subActive === 4) ? false : "api-custom.html", title="我的API")
+                li.menu__nav.hot(class=(active === 3) ? 'active' : '', tabindex="0")
                     | 數據探索
                     span.thin.mobile Explore
-                    a.click-area(href=(active === 3) ? false : "data-explore.html")
+                    a.click-area(href=(active === 3) ? false : "data-explore.html", title="數據探索") 數據探索
                     ul.nav-select(style="display: none;")
-                        li.nav-select__option.hot(class=(active === 3 && subActive === 1) ? 'active' : '')
+                        li.nav-select__option.hot.last-option(class=(active === 3 && subActive === 1) ? 'active' : '', tabindex="0")
                             | 分析引擎
-                            a.click-area(href=(active === 3 && subActive === 1) ? false : "data-explore.html")
-                li.menu__nav(class=(active === 4) ? 'active' : '')
+                            a.click-area(href=(active === 3 && subActive === 1) ? false : "data-explore.html", title="分析引擎") 分析引擎
+                //- 導盲示意只做到這裡
+                li.menu__nav(class=(active === 4) ? 'active' : '', tabindex="0")
                     | 生活數據
                     span.thin.mobile Living Data
                     a.click-area(href=(active === 4) ? false : "living-data.html")
@@ -72,7 +74,7 @@ mixin header-login(active, subActive)
                         li.nav-select__option(class=(active === 4 && subActive === 2) ? 'active': '')
                             | 視覺化
                             a.click-area(href=(active === 4 && subActive === 2) ? false : "data-chart.html")
-                li.menu__nav(class=(active === 5) ? 'active' : '')
+                li.menu__nav(class=(active === 5) ? 'active' : '', tabindex="0")
                     | 數據能量庫
                     span.thin.mobile API Market
                     ul.nav-select(style="display: none;")

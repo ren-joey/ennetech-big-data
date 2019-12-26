@@ -104,6 +104,12 @@
                 background-color: $gray-1;
             }
 
+            &:focus {
+                font-weight: 700;
+                color: #000;
+                background-color: #ffbf47;
+            }
+
             &.new {
                 &::before {
                     position: absolute;
@@ -208,6 +214,12 @@
         text-align: center;
         white-space: nowrap;
         line-height: $nav-option-height;
+
+        &:focus {
+            font-weight: 700;
+            color: #000;
+            background-color: #ffbf47;
+        }
 
         &:not(:last-child) {
             @extend .border-bottom;

@@ -75,6 +75,22 @@ const removeParameterByName = (parameter, url) => {
 };
 
 ((document, window, $, TimelineMax, TweenMax) => {
+    // 偵測瀏覽器是否為 IE
+    var isIE = window.navigator.userAgent.indexOf("MSIE ") > -1;
+    if(isIE) {
+        $('body')
+            .addClass('isIE')
+            .append(
+                $(`
+                <div class="isIE-annotation">
+                    <div>很抱歉，本平台不支援 Internet Explorer 瀏覽器<br />
+                    建議使用 Chrome Version 70 以版本<br />
+                    造成您的不便敬請見諒</div>
+                </div>
+                `)
+            )
+    }
+
     const addressArray = [
         ['台北市', '100中正區', '103大同區', '104中山區', '105松山區', '106大安區', '108萬華區', '110信義區', '111士林區', '112北投區', '114內湖區', '115南港區', '116文山區'],
         ['基隆市', '200仁愛區', '201信義區', '202中正區', '203中山區', '204安樂區', '205暖暖區', '206七堵區'],
@@ -157,18 +173,33 @@ const removeParameterByName = (parameter, url) => {
             if (regionSelected) regionUpdate()
         }
 
+        // 鍵盤偵測
+        $(document).on('keypress', (e) => {
+            console.log(e.keyCode);
+            console.log($(document.activeElement));
+            console.log($(document.activeElement).children('.click-area')[0]);
+            if(e.keyCode === 13) {
+                const target = $(document.activeElement).children('.click-area')[0]
+                target && target.click()
+            }
+        })
+
         // 上方選單開合綁定
         const navSelects = $('.nav-select')
         navSelects.slideUp(0);
         [...navSelects].forEach((node) => {
             const navSelect = $(node)
             navSelect.parent()
-                .on('mouseenter', () => {
+                .on('mouseenter focus', () => {
                     navSelect.stop(true, false).slideDown(200)
                 })
                 .on('mouseleave', () => {
                     navSelect.stop(true, false).slideUp(200)
                 })
+        })
+        // tab 於最後一個選項失焦時
+        $('.last-option').on('blur', () => {
+            navSelects.slideUp(0);
         })
 
         // 年選項批次塞入
@@ -492,6 +523,14 @@ const removeParameterByName = (parameter, url) => {
                     el: '.swiper-scrollbar',
                 },
             })
+
+            $('.banner')
+                .on('mouseenter focus', () => {
+                    mySwiper.autoplay.stop();
+                })
+                .on('mouseleave blur', () => {
+                    mySwiper.autoplay.start();
+                })
         }
     }
 
