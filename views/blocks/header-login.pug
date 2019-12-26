@@ -62,32 +62,34 @@ mixin header-login(active, subActive)
                         li.nav-select__option.hot.last-option(class=(active === 3 && subActive === 1) ? 'active' : '', tabindex="0")
                             | 分析引擎
                             a.click-area(href=(active === 3 && subActive === 1) ? false : "data-explore.html", title="分析引擎") 分析引擎
-                //- 導盲示意只做到這裡
                 li.menu__nav(class=(active === 4) ? 'active' : '', tabindex="0")
                     | 生活數據
                     span.thin.mobile Living Data
-                    a.click-area(href=(active === 4) ? false : "living-data.html")
+                    a.click-area(href=(active === 4) ? false : "living-data.html", title="生活數據") 生活數據
                     ul.nav-select(style="display: none;")
-                        li.nav-select__option(class=(active === 4 && subActive === 1) ? 'active' : '')
+                        li.nav-select__option(class=(active === 4 && subActive === 1) ? 'active' : '', tabindex="0")
                             | 數據匯入
-                            a.click-area(href=(active === 4 && subActive === 1) ? false : "data-import.html")
-                        li.nav-select__option(class=(active === 4 && subActive === 2) ? 'active': '')
+                            a.click-area(href=(active === 4 && subActive === 1) ? false : "data-import.html", title="數據匯入") 數據匯入
+                        li.nav-select__option.last-option(class=(active === 4 && subActive === 2) ? 'active': '', tabindex="0")
                             | 視覺化
-                            a.click-area(href=(active === 4 && subActive === 2) ? false : "data-chart.html")
+                            a.click-area(href=(active === 4 && subActive === 2) ? false : "data-chart.html", title="視覺化") 視覺化
                 li.menu__nav(class=(active === 5) ? 'active' : '', tabindex="0")
                     | 數據能量庫
                     span.thin.mobile API Market
+                    a.click-area(href=(active === 5) ? false : "#", title="數據能量庫") 數據能量庫
                     ul.nav-select(style="display: none;")
-                        li.nav-select__option(class=(active === 5 && subActive === 1) ? 'active' : '')
+                        li.nav-select__option(class=(active === 5 && subActive === 1) ? 'active' : '', tabindex="0")
                             | 數據育成樣貌輪廓
-                            a.click-area(href=(active === 5 && subActive === 1) ? false : "#")
-                        li.nav-select__option(class=(active === 5 && subActive === 2) ? 'active': '')
+                            a.click-area(href=(active === 5 && subActive === 1) ? false : "#", title="數據能量庫") 數據能量庫
+                        li.nav-select__option(class=(active === 5 && subActive === 2) ? 'active': '', tabindex="0")
                             | 新創業者分類列表
-                            a.click-area(href=(active === 5 && subActive === 2) ? false : "introList.html")
-                        li.nav-select__option(class=(active === 5 && subActive === 3) ? 'active' : '')
+                            a.click-area(href=(active === 5 && subActive === 2) ? false : "introList.html", title="數據能量庫") 數據能量庫
+                        li.nav-select__option.last-option(class=(active === 5 && subActive === 3) ? 'active' : '', tabindex="0")
                             | 數據活動資訊
-                            a.click-area(href=(active === 5 && subActive === 3) ? false : "#")
-                li.menu__nav 常見問題
+                            a.click-area(href=(active === 5 && subActive === 3) ? false : "#", title="數據能量庫") 數據能量庫
+                li.menu__nav(class=(active === 6) ? 'active' : '', tabindex="0")
+                    | 常見問題
+                    a.click-area(href="#", title="常見問題") 常見問題
                 li.menu__nav.mobile
                     | 登出
                     span.thin.mobile LOGOUT
@@ -96,13 +98,13 @@ mixin header-login(active, subActive)
                     i.fas.fa-user.inline
                     | &nbsp;歡迎，陳先生
                     //- a#login_button_m.click-area(href="#")
-                li.menu__nav.pc
+                li.menu__nav.pc(tabindex="0")
                     i.fas.fa-user.inline
                     | &nbsp;歡迎，陳先生
                     ul.nav-select(style="display: none;")
-                        li.nav-select__option
+                        li.nav-select__option.last-option(tabindex="0")
                             | 登出
-                            a.click-area(href="index-logout.html")
+                            a.click-area(href="index-logout.html", title="登出") 登出
                 //- a#login_button.click-area(href="#")
                 //- li.menu__nav
                 //-     | 開發專區
