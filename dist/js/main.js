@@ -172,7 +172,7 @@ if(isIE) {
                 console.log($(document.activeElement));
                 console.log($(document.activeElement).children('.click-area')[0]);
                 if(e.keyCode === 13) {
-                    const target = $(document.activeElement).children('.click-area')[0]
+                    let target = $(document.activeElement).children('.click-area')[0]
                     target && target.click()
                 }
             })
@@ -182,11 +182,11 @@ if(isIE) {
             navSelects.slideUp(0);
             [...navSelects].forEach((node) => {
                 const navSelect = $(node)
-                navSelect.parent()
+                navSelect.siblings('.click-area')
                     .on('mouseenter focus', () => {
                         navSelect.stop(true, false).slideDown(200)
                     })
-                    .on('mouseleave', () => {
+                navSelect.parent().on('mouseleave', () => {
                         navSelect.stop(true, false).slideUp(200)
                     })
             })

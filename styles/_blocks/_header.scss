@@ -73,6 +73,15 @@
         flex-direction: column;
         cursor: pointer;
 
+        a {
+            color: rgb(112, 112, 112);
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+
         @media (min-width: 1024.98px) {
             flex-direction: row;
             margin-left: auto;
@@ -105,9 +114,9 @@
             }
 
             &:focus {
-                font-weight: 700;
-                color: #000;
-                background-color: #ffbf47;
+                font-weight: 700 !important;
+                color: #000 !important;
+                background-color: #ffbf47 !important;
             }
 
             &.new {
@@ -197,6 +206,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    display: block;
     overflow: hidden;
     width: $nav-option-width;
     background-color: $white;
@@ -208,6 +218,7 @@
         @extend .hover-style-1;
 
         position: relative;
+        display: block;
         width: $nav-option-width;
         height: $nav-option-height;
         font-size: 1em;
@@ -216,9 +227,9 @@
         line-height: $nav-option-height;
 
         &:focus {
-            font-weight: 700;
-            color: #000;
-            background-color: #ffbf47;
+            font-weight: 700 !important;
+            color: #000 !important;
+            background-color: #ffbf47 !important;
         }
 
         &:not(:last-child) {
