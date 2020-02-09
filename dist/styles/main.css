@@ -643,6 +643,28 @@ hr {
   display: none !important;
 }
 
+input[type='checkbox']:focus {
+  outline: 5px solid #ffbf47 !important;
+}
+
+input[type='text']:focus, input[type='text']:active,
+input[type='password']:focus,
+input[type='password']:active,
+select:focus,
+select:active {
+  border: 5px solid #ffbf47 !important;
+}
+
+.page-item:not(.active) .page-link {
+  color: #42738a;
+}
+
+.page-item.active .page-link {
+  color: #fff !important;
+  background-color: #42738a !important;
+  border-color: #42738a !important;
+}
+
 .click-area {
   position: absolute;
   top: 0;
@@ -653,7 +675,8 @@ hr {
   z-index: 1;
 }
 
-.click-area:focus ~ .focus-bg {
+.click-area:focus ~ .focus-bg,
+.click-area:focus ~ .focus-border {
   opacity: 1;
 }
 
@@ -666,6 +689,17 @@ hr {
   background-color: #ffbf47;
   opacity: 0;
   z-index: -1;
+}
+
+.focus-border {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 5px solid #ffbf47;
+  opacity: 0;
+  z-index: 0;
 }
 
 .menu .click-area:focus ~ span {
