@@ -19,6 +19,7 @@ mixin header-login(active, subActive)
                     i.fas.fa-times.rotation-style
                 .menu__nav(class=(active === 1) ? 'active' : '')
                     a.click-area(href="about.html", title="關於平台")
+                    .focus-bg
                     span.thin.mobile About
                     span 關於平台
                     .nav-select(style="display: none;")
@@ -29,6 +30,7 @@ mixin header-login(active, subActive)
                         a.nav-select__option.last-option(class=(active === 1 && subActive === 5) ? 'active' : '', href=(active === 1 && subActive === 5) ? false : "link.html", title="相關連結") 相關連結
                 .menu__nav.new(class=(active === 2) ? 'active' : '')
                     a.click-area(href=(active === 2) ? false : "api-list.html", title="API市集")
+                    .focus-bg
                     span.thin.mobile API Market
                     span API市集
                     .nav-select(style="display: none;")
@@ -38,12 +40,14 @@ mixin header-login(active, subActive)
                         a.nav-select__option.last-option(class=(active === 2 && subActive === 4) ? 'active' : '', href=(active === 2 && subActive === 4) ? false : "api-custom.html", title="我的API") 我的API
                 .menu__nav.hot(class=(active === 3) ? 'active' : '')
                     a.click-area(href=(active === 3) ? false : "data-explore.html", title="數據探索")
+                    .focus-bg
                     span.thin.mobile Explore
                     span 數據探索
                     .nav-select(style="display: none;")
                         a.nav-select__option.hot.last-option(class=(active === 3 && subActive === 1) ? 'active' : '', href=(active === 3 && subActive === 1) ? false : "data-explore.html", title="分析引擎") 分析引擎
                 .menu__nav(class=(active === 4) ? 'active' : '')
                     a.click-area(href=(active === 4) ? false : "living-data.html", title="生活數據")
+                    .focus-bg
                     span.thin.mobile Living Data
                     span 生活數據
                     .nav-select(style="display: none;")
@@ -51,6 +55,7 @@ mixin header-login(active, subActive)
                         a.nav-select__option.last-option(class=(active === 4 && subActive === 2) ? 'active': '', href=(active === 4 && subActive === 2) ? false : "data-chart.html", title="視覺化") 視覺化
                 .menu__nav(class=(active === 5) ? 'active' : '')
                     a.click-area(href=(active === 5) ? false : "#", title="數據能量庫")
+                    .focus-bg
                     span.thin.mobile API Market
                     span 數據能量庫
                     .nav-select(style="display: none;")
@@ -59,9 +64,11 @@ mixin header-login(active, subActive)
                         a.nav-select__option.last-option(class=(active === 5 && subActive === 3) ? 'active' : '', href=(active === 5 && subActive === 3) ? false : "#", title="數據能量庫") 數據能量庫
                 .menu__nav(class=(active === 6) ? 'active' : '')
                     a.click-area(href="#", title="常見問題")
+                    .focus-bg
                     span 常見問題
                 .menu__nav.mobile
                     a.click-area(href="index-logout.html")
+                    .focus-bg
                     span.thin.mobile LOGOUT
                     span 登出
                 .menu__nav.mobile.mobile-order-2.mobile-thin
@@ -70,6 +77,7 @@ mixin header-login(active, subActive)
                     //- a#login_button_m.click-area(href="#")
                 .menu__nav.pc
                     a.click-area(href="#", title="歡迎，陳先生")
+                    .focus-bg
                     i.fas.fa-user.inline
                     span &nbsp;歡迎，陳先生
                     .nav-select(style="display: none;")

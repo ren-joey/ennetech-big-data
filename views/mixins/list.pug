@@ -1,5 +1,7 @@
 mixin list(title, subtitle, date)
     .list
+        a.click-area(href="#")
+        .focus-bg
         .list__heading
             .title= title
             if subtitle
@@ -7,4 +9,3 @@ mixin list(title, subtitle, date)
         if date
             .list__state= date
         .list__arrow >
-        a.click-area(href="#")

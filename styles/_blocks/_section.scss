@@ -276,6 +276,7 @@
         text-align: center;
         white-space: nowrap;
         line-height: $nav-option-height;
+        z-index: 1;
         cursor: pointer;
 
         &:not(:last-child) {
@@ -292,6 +293,26 @@
             i {
                 font-size: 1em;
                 opacity: 1;
+            }
+        }
+
+        .click-area {
+            &:focus {
+                // background-color: #ffbf47;
+                // opacity: 1;
+                // z-index: -1;
+
+                ~div,
+                ~i,
+                ~span {
+                    font-weight: bolder;
+                    color: #000;
+
+                    * {
+                        font-weight: bolder;
+                        color: #000;
+                    }
+                }
             }
         }
     }
@@ -399,8 +420,9 @@
         }
 
         &:hover {
-            transform: translate(-5px, -5px);
-            box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
+            // transform: translate(-5px, -5px);
+            // box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.3);
+            border: 5px solid #ffbf47;
 
             > img {
                 transform: scale(1.1);
@@ -411,6 +433,15 @@
             box-shadow: none;
             transition: 0s;
             transform: translate(0, 0);
+        }
+
+        .click-area {
+            z-index: 2;
+
+            &:focus {
+                border: 5px solid #ffbf47;
+                opacity: 1;
+            }
         }
     }
 
@@ -446,6 +477,7 @@
     display: flex;
     align-items: center;
     padding: $padding-1 $padding-1 $padding-1 $padding-2;
+    z-index: 1;
 
     &:last-child {
         border-bottom: 0;
@@ -479,5 +511,23 @@
 
     &__arrow {
         font-size: 2.4em;
+    }
+
+    .click-area {
+        &:focus {
+            // background-color: #ffbf47;
+            // opacity: 1;
+            // z-index: -1;
+
+            ~div {
+                font-weight: bolder;
+                color: #000;
+
+                * {
+                    font-weight: bolder;
+                    color: #000;
+                }
+            }
+        }
     }
 }
